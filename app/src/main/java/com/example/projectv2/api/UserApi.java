@@ -21,6 +21,9 @@ public interface UserApi {
     @POST("api/user/register")
     Call<User> register(@Body User user);
 
+    @GET("api/user/{userId}")
+    Call<User> getUserInfo(@Path("userId") Long userId);
+
     @GET("api/mbti/questions")
     Call<List<MbtiQuestion>> getMbtiQuestions();
 

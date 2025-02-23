@@ -5,10 +5,7 @@ import com.example.mental.entity.User;
 import com.example.mental.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user")
@@ -25,5 +22,10 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<UserDTO> login(@RequestBody User user) {
         return ResponseEntity.ok(userService.login(user.getUsername(), user.getPassword()));
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserDTO> getUserInfo(@PathVariable Long userId) {
+        return ResponseEntity.ok(userService.getUserInfo(userId));
     }
 } 

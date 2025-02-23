@@ -1,5 +1,7 @@
 package com.example.projectv2.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.example.projectv2.R;
 import com.example.projectv2.api.ApiClient;
 import com.example.projectv2.model.MbtiQuestion;
 import com.example.projectv2.model.MbtiType;
+import com.example.projectv2.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +37,7 @@ public class MbtiFragment extends Fragment {
     private List<MbtiQuestion> questions = new ArrayList<>();
     private int currentQuestionIndex = 0;
     private Map<String, Integer> dimensionScores = new HashMap<>();
+    private Long userId;
 
     private LinearLayout questionLayout;
     private ScrollView resultLayout;
@@ -65,7 +69,62 @@ public class MbtiFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initViews(view);
-        loadQuestions();
+        
+        // 初始时隐藏所有布局
+        questionLayout.setVisibility(View.GONE);
+        resultLayout.setVisibility(View.GONE);
+        
+        // 从SharedPreferences获取用户ID
+        SharedPreferences prefs = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        userId = prefs.getLong("user_id", -1);
+        
+        if (userId != -1) {
+            checkUserMbtiType();
+        } else {
+            Toast.makeText(getContext(), "请先登录", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void checkUserMbtiType() {
+        ApiClient.getUserApi().getUserInfo(userId).enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    User user = response.body();
+                    String mbtiType = user.getMbtiType();
+                    
+                    if (mbtiType != null && !mbtiType.isEmpty()) {
+                        // 用户已经完成MBTI测试，直接显示结果
+                        loadMbtiTypeResult(mbtiType);
+                    } else {
+                        // 用户未完成MBTI测试，显示测试页面
+                        questionLayout.setVisibility(View.VISIBLE);
+                        loadQuestions();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(getContext(), "获取用户信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void loadMbtiTypeResult(String mbtiType) {
+        ApiClient.getUserApi().getMbtiType(mbtiType).enqueue(new Callback<MbtiType>() {
+            @Override
+            public void onResponse(Call<MbtiType> call, Response<MbtiType> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    showResult(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MbtiType> call, Throwable t) {
+                Toast.makeText(getContext(), "获取MBTI类型信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initViews(View view) {
@@ -172,22 +231,22 @@ public class MbtiFragment extends Fragment {
     }
 
     private void showResult(MbtiType mbtiType) {
-        questionLayout.setVisibility(View.GONE);
-        resultLayout.setVisibility(View.VISIBLE);
+        if (getActivity() == null || !isAdded()) return;
+        
+        getActivity().runOnUiThread(() -> {
+            questionLayout.setVisibility(View.GONE);
+            resultLayout.setVisibility(View.VISIBLE);
 
-        mbtiTypeText.setText(mbtiType.getTypeCode());
-        typeNameText.setText(mbtiType.getTypeName());
-        descriptionText.setText(mbtiType.getDescription());
-        characteristicsText.setText(mbtiType.getCharacteristics());
-        strengthsText.setText(mbtiType.getStrengths());
-        weaknessesText.setText(mbtiType.getWeaknesses());
+            mbtiTypeText.setText(mbtiType.getTypeCode());
+            typeNameText.setText(mbtiType.getTypeName());
+            descriptionText.setText(mbtiType.getDescription());
+            characteristicsText.setText(mbtiType.getCharacteristics());
+            strengthsText.setText(mbtiType.getStrengths());
+            weaknessesText.setText(mbtiType.getWeaknesses());
+        });
     }
 
     private void updateUserMbtiType(String mbtiType) {
-        // TODO: 获取当前用户ID
-        Long userId = 1L; // 这里需要从SharedPreferences或其他地方获取当前用户ID
-        
-        // 创建请求体
         Map<String, String> requestBody = new HashMap<>();
         requestBody.put("mbtiType", mbtiType);
         
@@ -218,6 +277,6 @@ public class MbtiFragment extends Fragment {
         questionLayout.setVisibility(View.VISIBLE);
         resultLayout.setVisibility(View.GONE);
         
-        showQuestion(0);
+        loadQuestions();
     }
 } 

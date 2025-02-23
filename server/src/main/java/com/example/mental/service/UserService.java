@@ -6,4 +6,5 @@ import com.example.mental.entity.User;
 public interface UserService {
     UserDTO register(User user);
     UserDTO login(String username, String password);
+    UserDTO getUserInfo(Long userId);
 } 

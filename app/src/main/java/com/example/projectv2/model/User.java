@@ -7,6 +7,7 @@ public class User {
     private String email;
     private String phone;
     private String token;
+    private String mbtiType;
 
     // Getters and Setters
     public Long getId() {
@@ -55,5 +56,13 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getMbtiType() {
+        return mbtiType;
+    }
+
+    public void setMbtiType(String mbtiType) {
+        this.mbtiType = mbtiType;
     }
 } 
