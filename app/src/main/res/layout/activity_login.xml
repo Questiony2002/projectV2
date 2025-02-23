@@ -8,12 +8,14 @@
     android:padding="24dp">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/duck_logo"
         android:layout_gravity="center"
         android:layout_marginTop="48dp"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
 
     <TextView
         android:layout_width="match_parent"
