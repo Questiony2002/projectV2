@@ -30,4 +30,8 @@ public class ApiClient {
     public static UserApi getUserApi() {
         return getClient().create(UserApi.class);
     }
+
+    public static NewsApi getNewsApi() {
+        return getClient().create(NewsApi.class);
+    }
 } 
