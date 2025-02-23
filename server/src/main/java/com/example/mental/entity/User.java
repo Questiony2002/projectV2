@@ -28,6 +28,21 @@ public class User {
     @Column(name = "mbti_type", length = 4)
     private String mbtiType;
 
+    @Column(name = "grade")
+    private String grade;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "age")
+    private Integer age;
+
+    @Column(name = "bio", columnDefinition = "TEXT")
+    private String bio;
+
+    @Column(name = "avatar_url")
+    private String avatarUrl;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 

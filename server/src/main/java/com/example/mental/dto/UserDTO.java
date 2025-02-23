@@ -10,4 +10,9 @@ public class UserDTO {
     private String phone;
     private String token;
     private String mbtiType;
+    private String grade;
+    private String gender;
+    private Integer age;
+    private String bio;
+    private String avatarUrl;
 } 

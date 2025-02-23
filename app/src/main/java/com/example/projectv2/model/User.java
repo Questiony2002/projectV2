@@ -8,6 +8,11 @@ public class User {
     private String phone;
     private String token;
     private String mbtiType;
+    private String bio;
+    private String grade;
+    private String gender;
+    private Integer age;
+    private String avatarUrl;
 
     // Getters and Setters
     public Long getId() {
@@ -64,5 +69,45 @@ public class User {
 
     public void setMbtiType(String mbtiType) {
         this.mbtiType = mbtiType;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 } 

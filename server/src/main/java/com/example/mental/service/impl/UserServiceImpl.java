@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -80,6 +81,58 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public UserDTO updateUserField(Long userId, Map<String, String> fieldData) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("用户不存在"));
+
+        String field = fieldData.keySet().iterator().next();
+        String value = fieldData.get(field);
+
+        switch (field) {
+            case "username":
+                // 检查新用户名是否已存在
+                if (userRepository.existsByUsername(value)) {
+                    throw new RuntimeException("用户名已存在");
+                }
+                user.setUsername(value);
+                break;
+            case "bio":
+                user.setBio(value);
+                break;
+            case "grade":
+                user.setGrade(value);
+                break;
+            case "gender":
+                user.setGender(value);
+                break;
+            case "age":
+                user.setAge(Integer.parseInt(value));
+                break;
+            case "avatarUrl":
+                user.setAvatarUrl(value);
+                break;
+            default:
+                throw new IllegalArgumentException("不支持的字段: " + field);
+        }
+
+        user = userRepository.save(user);
+        return convertToDTO(user, null);
+    }
+
+    @Override
+    public void updatePassword(Long userId, String oldPassword, String newPassword) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("用户不存在"));
+
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw new BadCredentialsException("原密码错误");
+        }
+
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("用户不存在"));
@@ -99,6 +152,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         dto.setPhone(user.getPhone());
         dto.setToken(token);
         dto.setMbtiType(user.getMbtiType());
+        dto.setGrade(user.getGrade());
+        dto.setGender(user.getGender());
+        dto.setAge(user.getAge());
+        dto.setBio(user.getBio());
+        dto.setAvatarUrl(user.getAvatarUrl());
         return dto;
     }
 } 

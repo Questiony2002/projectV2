@@ -1,6 +1,7 @@
 package com.example.projectv2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,19 @@ public class LoginActivity extends AppCompatActivity {
 
         initViews();
         setupListeners();
+        
+        // 检查是否已经登录
+        checkLoginStatus();
+    }
+
+    private void checkLoginStatus() {
+        SharedPreferences prefs = getSharedPreferences("user_info", MODE_PRIVATE);
+        long userId = prefs.getLong("user_id", -1);
+        if (userId != -1) {
+            // 已登录，直接进入主界面
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
     }
 
     private void initViews() {
@@ -65,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     // 登录成功，保存用户信息
                     User loggedInUser = response.body();
-                    // TODO: 保存用户信息到SharedPreferences
+                    saveUserInfo(loggedInUser);
                     
                     // 跳转到主界面
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -81,5 +95,13 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "网络错误: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void saveUserInfo(User user) {
+        SharedPreferences.Editor editor = getSharedPreferences("user_info", MODE_PRIVATE).edit();
+        editor.putLong("user_id", user.getId());
+        editor.putString("username", user.getUsername());
+        editor.putString("token", user.getToken());
+        editor.apply();
     }
 } 
