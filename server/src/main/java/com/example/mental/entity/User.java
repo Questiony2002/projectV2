@@ -25,6 +25,9 @@ public class User {
     @Column(unique = true)
     private String phone;
 
+    @Column(name = "mbti_type", length = 4)
+    private String mbtiType;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
