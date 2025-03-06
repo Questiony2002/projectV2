@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DE503973-A21C-33F3-97BA-83C44E8EBBB4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompilerABI.c;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompilerABI.cpp;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCompilerIdDetection.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerABI.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerSupport.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeFindBinUtils.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakePackageConfigHelpers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitLinkInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseLibraryArchitecture.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystem.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCompilerCommon.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTest.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestTargets.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestUseLaunchers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CheckIncludeFileCXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CrayClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OrangeC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TIClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Tasking-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CompilerId\VS-10.vcxproj.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\DartConfiguration.tcl.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindGit.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\GNUInstallDirs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeDetermineLinkerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\FeatureTesting.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Determine-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\WriteBasicConfigVersionFile.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCXXCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeRCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeSystem.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\build-info.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\common.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\git-vars.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama-config.cmake.in;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompilerABI.c;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompilerABI.cpp;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCompilerIdDetection.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerABI.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerSupport.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeFindBinUtils.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakePackageConfigHelpers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitLinkInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseLibraryArchitecture.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystem.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCompilerCommon.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTest.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestTargets.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestUseLaunchers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CheckIncludeFileCXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CrayClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OrangeC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TIClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Tasking-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CompilerId\VS-10.vcxproj.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\DartConfiguration.tcl.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindGit.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\GNUInstallDirs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeDetermineLinkerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\FeatureTesting.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Determine-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\WriteBasicConfigVersionFile.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCXXCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeRCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeSystem.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\build-info.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\common.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\git-vars.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama-config.cmake.in;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompilerABI.c;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompilerABI.cpp;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCompilerIdDetection.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerABI.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerSupport.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeFindBinUtils.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakePackageConfigHelpers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitLinkInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseLibraryArchitecture.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystem.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCompilerCommon.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTest.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestTargets.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestUseLaunchers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CheckIncludeFileCXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CrayClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OrangeC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TIClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Tasking-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CompilerId\VS-10.vcxproj.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\DartConfiguration.tcl.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindGit.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\GNUInstallDirs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeDetermineLinkerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\FeatureTesting.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Determine-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\WriteBasicConfigVersionFile.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCXXCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeRCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeSystem.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\build-info.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\common.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\git-vars.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama-config.cmake.in;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCCompilerABI.c;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXCompilerABI.cpp;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCXXInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCommonLanguageInclude.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeCompilerIdDetection.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerABI.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineCompilerSupport.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeDetermineSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeFindBinUtils.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeGenericSystem.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeInitializeConfigs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeLanguageInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakePackageConfigHelpers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseImplicitLinkInfo.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseLibraryArchitecture.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCCompiler.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeRCInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystem.cmake.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeSystemSpecificInitialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCXXCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestCompilerCommon.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeTestRCCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTest.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestTargets.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CTestUseLaunchers.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CheckIncludeFileCXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\CrayClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\OrangeC-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TI-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TIClang-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Tasking-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\CompilerId\VS-10.vcxproj.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\DartConfiguration.tcl.in;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindGit.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageHandleStandardArgs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\FindPackageMessage.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\GNUInstallDirs.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCXXLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeCommonLinkerInformation.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\CMakeDetermineLinkerId.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Internal\FeatureTesting.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Linker\MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Linker\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Determine-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-Initialize.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-C.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC-CXX.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows-MSVC.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\Windows.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\Platform\WindowsPaths.cmake;D:\dev_environment\CMake\share\cmake-4.0\Modules\WriteBasicConfigVersionFile.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeCXXCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeRCCompiler.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\4.0.0-rc2\CMakeSystem.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\build-info.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\common.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\git-vars.cmake;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama-config.cmake.in;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\cmake\llama.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ZERO_CHECK.vcxproj">
+      <Project>{BCE17617-703C-38FA-8A26-D05FEB5E5541}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\common\build_info.vcxproj">
+      <Project>{6A0888EA-D4EA-3F32-A623-B490EF5850A8}</Project>
+      <Name>build_info</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\common\common.vcxproj">
+      <Project>{761E46AF-B1E6-3E9F-9FBE-D1F5B39B229D}</Project>
+      <Name>common</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml.vcxproj">
+      <Project>{1ADF1F08-1A6B-3341-BE1A-D9B252FD5A81}</Project>
+      <Name>ggml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml-base.vcxproj">
+      <Project>{562BF077-9A74-39D4-A41A-C47DDEF0F26F}</Project>
+      <Name>ggml-base</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml-cpu.vcxproj">
+      <Project>{AD5A68CC-573B-399C-A571-76934AC9AEF8}</Project>
+      <Name>ggml-cpu</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\src\llama.vcxproj">
+      <Project>{16B0902E-50C8-3690-A57D-1A87F893F8D7}</Project>
+      <Name>llama</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\batched\llama-batched.vcxproj">
+      <Project>{7067B218-729F-34AD-9BAE-0483D15083D2}</Project>
+      <Name>llama-batched</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\batched-bench\llama-batched-bench.vcxproj">
+      <Project>{4B63A98A-BC59-34B0-BD76-7A90B2C5D01D}</Project>
+      <Name>llama-batched-bench</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llama-bench\llama-bench.vcxproj">
+      <Project>{A35AFA51-2AE6-3B42-927F-BE22EEE3EC94}</Project>
+      <Name>llama-bench</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\main\llama-cli.vcxproj">
+      <Project>{2C6711A0-CA49-3C1E-ABF6-23BE1C2F1BCA}</Project>
+      <Name>llama-cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\convert-llama2c-to-ggml\llama-convert-llama2c-to-ggml.vcxproj">
+      <Project>{591501FA-67FD-394F-82A6-07CFCB1B852B}</Project>
+      <Name>llama-convert-llama2c-to-ggml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\cvector-generator\llama-cvector-generator.vcxproj">
+      <Project>{3E5F3481-43B3-36B8-A3B1-0B3D1280DA23}</Project>
+      <Name>llama-cvector-generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\embedding\llama-embedding.vcxproj">
+      <Project>{02030DAC-40E0-3885-8F67-6BB41D4D2499}</Project>
+      <Name>llama-embedding</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\eval-callback\llama-eval-callback.vcxproj">
+      <Project>{B4FAE9A3-5532-355B-B680-9282161BDED6}</Project>
+      <Name>llama-eval-callback</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\export-lora\llama-export-lora.vcxproj">
+      <Project>{9941C6E8-E6D8-35AA-8BD0-8E512A22DA3B}</Project>
+      <Name>llama-export-lora</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gen-docs\llama-gen-docs.vcxproj">
+      <Project>{84DA6FAB-B626-3A6D-B5BC-0E40969F1C7C}</Project>
+      <Name>llama-gen-docs</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gguf\llama-gguf.vcxproj">
+      <Project>{45837CFF-61D0-3889-B6DF-DE7ED8C6E207}</Project>
+      <Name>llama-gguf</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gguf-hash\llama-gguf-hash.vcxproj">
+      <Project>{0DCCF747-78E2-393B-BBA3-534A03E9F516}</Project>
+      <Name>llama-gguf-hash</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gguf-split\llama-gguf-split.vcxproj">
+      <Project>{E15F7329-E03B-31CF-A7E9-B6A43355C708}</Project>
+      <Name>llama-gguf-split</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gritlm\llama-gritlm.vcxproj">
+      <Project>{5F3FE32D-165A-3FBA-83C8-BE9943EA69AE}</Project>
+      <Name>llama-gritlm</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\imatrix\llama-imatrix.vcxproj">
+      <Project>{58B29C51-4FC6-372B-A5B3-FCDA735DA601}</Project>
+      <Name>llama-imatrix</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\infill\llama-infill.vcxproj">
+      <Project>{B8220E75-FED5-39DF-99A4-FADF6FD23642}</Project>
+      <Name>llama-infill</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llama-llava-cli.vcxproj">
+      <Project>{9BEA4515-A26F-3B67-99C0-4838EC757151}</Project>
+      <Name>llama-llava-cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llama-llava-clip-quantize-cli.vcxproj">
+      <Project>{36EDB144-6001-3B7A-8D1B-9C72551845CE}</Project>
+      <Name>llama-llava-clip-quantize-cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\lookahead\llama-lookahead.vcxproj">
+      <Project>{C99DD3DD-C007-3DE0-B652-C2657248AA66}</Project>
+      <Name>llama-lookahead</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\lookup\llama-lookup.vcxproj">
+      <Project>{535FA389-29DB-38F8-85CA-1099D14AABE0}</Project>
+      <Name>llama-lookup</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\lookup\llama-lookup-create.vcxproj">
+      <Project>{27C989C7-6F04-322A-B7B8-8F7BB4CB6E8F}</Project>
+      <Name>llama-lookup-create</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\lookup\llama-lookup-merge.vcxproj">
+      <Project>{43E1E580-628B-35B1-B42D-1AF10AC560DB}</Project>
+      <Name>llama-lookup-merge</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\lookup\llama-lookup-stats.vcxproj">
+      <Project>{85D76EE0-7B20-347D-8C9C-54876D51F810}</Project>
+      <Name>llama-lookup-stats</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llama-minicpmv-cli.vcxproj">
+      <Project>{7656B5EA-AAA5-3CB4-8939-951B7052D2B2}</Project>
+      <Name>llama-minicpmv-cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\parallel\llama-parallel.vcxproj">
+      <Project>{79C7E3EE-D8C3-3F30-939C-E2E86C66A486}</Project>
+      <Name>llama-parallel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\passkey\llama-passkey.vcxproj">
+      <Project>{6B05B681-D818-34FF-AE25-97F5100C3D28}</Project>
+      <Name>llama-passkey</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\perplexity\llama-perplexity.vcxproj">
+      <Project>{15F66F48-4A43-3F01-9CB3-6264403B330A}</Project>
+      <Name>llama-perplexity</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\pocs\vdot\llama-q8dot.vcxproj">
+      <Project>{82ACF9C8-EDB9-320B-A12B-C746749119A0}</Project>
+      <Name>llama-q8dot</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\quantize\llama-quantize.vcxproj">
+      <Project>{AD8ECAA3-419C-31A0-84CD-30445E0375D9}</Project>
+      <Name>llama-quantize</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llama-qwen2vl-cli.vcxproj">
+      <Project>{4A362C15-5C22-34C6-8BE8-B7ACF739139C}</Project>
+      <Name>llama-qwen2vl-cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\retrieval\llama-retrieval.vcxproj">
+      <Project>{46A4A523-2EE0-3CDB-9937-0384F4BDBB40}</Project>
+      <Name>llama-retrieval</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\run\llama-run.vcxproj">
+      <Project>{7F93B025-AEBD-34D3-A01B-1F01A7EB42CD}</Project>
+      <Name>llama-run</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\save-load-state\llama-save-load-state.vcxproj">
+      <Project>{A3C2486D-6C67-3D2D-9775-90F36F0837BE}</Project>
+      <Name>llama-save-load-state</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\server\llama-server.vcxproj">
+      <Project>{D0C41C53-902A-337D-8928-EA5CB9733E28}</Project>
+      <Name>llama-server</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\simple\llama-simple.vcxproj">
+      <Project>{C5F596EF-14AF-3C44-8838-2C63C0D1DD4D}</Project>
+      <Name>llama-simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\simple-chat\llama-simple-chat.vcxproj">
+      <Project>{E4682968-8277-38C1-A004-7E76B3A30B5A}</Project>
+      <Name>llama-simple-chat</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\speculative\llama-speculative.vcxproj">
+      <Project>{E743A4CA-6DF7-3C67-A7D0-026764FF8A81}</Project>
+      <Name>llama-speculative</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\speculative-simple\llama-speculative-simple.vcxproj">
+      <Project>{5D613FA9-DF1E-3F0B-835D-7B5A74743001}</Project>
+      <Name>llama-speculative-simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\tokenize\llama-tokenize.vcxproj">
+      <Project>{9B689E1E-E78D-3EC9-87C8-A7D691B279BC}</Project>
+      <Name>llama-tokenize</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\tts\llama-tts.vcxproj">
+      <Project>{E52D06D6-B90A-37A1-B589-FA18E6EF2F19}</Project>
+      <Name>llama-tts</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\pocs\vdot\llama-vdot.vcxproj">
+      <Project>{A60DD629-B76C-3E02-B2E2-142BEF9B811A}</Project>
+      <Name>llama-vdot</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llava.vcxproj">
+      <Project>{26BF092F-2E06-3D97-A3E3-B687A6B1D377}</Project>
+      <Name>llava</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llava_shared.vcxproj">
+      <Project>{EEFC333C-9740-3885-B653-F79730781FCA}</Project>
+      <Name>llava_shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\llava_static.vcxproj">
+      <Project>{D32D3AAD-C0A6-3338-AAB4-93AFE13073CF}</Project>
+      <Name>llava_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gguf-hash\sha1.vcxproj">
+      <Project>{0AF7F1E2-6736-31B2-8A7A-69846B85574C}</Project>
+      <Name>sha1</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gguf-hash\sha256.vcxproj">
+      <Project>{3E643087-1969-3698-B1E6-F836840D284F}</Project>
+      <Name>sha256</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-arg-parser.vcxproj">
+      <Project>{51108FFD-2696-3C88-9690-B9C53E6BA3D1}</Project>
+      <Name>test-arg-parser</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-autorelease.vcxproj">
+      <Project>{ED3015B9-7B3E-363A-8D07-D22F3E369808}</Project>
+      <Name>test-autorelease</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-backend-ops.vcxproj">
+      <Project>{7B8F806B-FE7C-3708-A8B0-89B6A1442B4C}</Project>
+      <Name>test-backend-ops</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-barrier.vcxproj">
+      <Project>{8B42AF73-EB17-3343-853D-407968CA6810}</Project>
+      <Name>test-barrier</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-c.vcxproj">
+      <Project>{9AA6BD18-3002-3E65-B863-3BEDFCC82757}</Project>
+      <Name>test-c</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-chat-template.vcxproj">
+      <Project>{2F01C208-26AB-3A4D-97FE-37C123325A40}</Project>
+      <Name>test-chat-template</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-gguf.vcxproj">
+      <Project>{4CDDEF36-9E21-36D2-BDFA-2DACF76DDA70}</Project>
+      <Name>test-gguf</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-log.vcxproj">
+      <Project>{FA8979CF-454E-37FE-B394-88A26462FA81}</Project>
+      <Name>test-log</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-model-load-cancel.vcxproj">
+      <Project>{71781D5F-452F-3F00-8A97-474C34905ED6}</Project>
+      <Name>test-model-load-cancel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-quantize-fns.vcxproj">
+      <Project>{D86270C4-E762-3E71-9344-4475368BE0F6}</Project>
+      <Name>test-quantize-fns</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-quantize-perf.vcxproj">
+      <Project>{D33D871E-52AB-34B3-A3B1-8FAC37244DD3}</Project>
+      <Name>test-quantize-perf</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-rope.vcxproj">
+      <Project>{22048A0A-D4CE-3674-A8CE-2607D979BC32}</Project>
+      <Name>test-rope</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\test-tokenizer-0.vcxproj">
+      <Project>{5D19BA9D-5E73-3812-9D29-729A5B84329B}</Project>
+      <Name>test-tokenizer-0</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\gguf-hash\xxhash.vcxproj">
+      <Project>{445E59A1-7E09-3C37-ADA2-2D0470A67385}</Project>
+      <Name>xxhash</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

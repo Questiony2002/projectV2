@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-aarch64.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-hbm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-quants.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-traits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\amx\amx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\amx\mmq.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\llamafile\sgemm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-aarch64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-hbm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-quants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-traits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\amx\amx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\amx\mmq.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\ggml-cpu-impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\ggml-cpu\llamafile\sgemm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F0CE58EE-5030-3B9C-9128-4D97CE018774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{025D78FA-9276-3D54-86D1-E1A014C36CF5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

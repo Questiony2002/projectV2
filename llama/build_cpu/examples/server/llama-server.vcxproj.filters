@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\server\server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\server\utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\server\httplib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\server\index.html.gz.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\server\loading.html.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\76193821326fe7661370227c93c66954\index.html.gz.hpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\CMakeFiles\76193821326fe7661370227c93c66954\loading.html.hpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\server\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{69321D61-E55B-3445-B928-B6F8667CDA24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F0CE58EE-5030-3B9C-9128-4D97CE018774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{025D78FA-9276-3D54-86D1-E1A014C36CF5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

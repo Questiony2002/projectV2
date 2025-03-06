@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D33D871E-52AB-34B3-A3B1-8FAC37244DD3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>test-quantize-perf</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">test-quantize-perf.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">test-quantize-perf</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">test-quantize-perf.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">test-quantize-perf</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">test-quantize-perf.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">test-quantize-perf</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">test-quantize-perf.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">test-quantize-perf</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\common\Debug\common.lib;..\src\Debug\llama.lib;..\ggml\src\Debug\ggml.lib;..\ggml\src\Debug\ggml-cpu.lib;..\ggml\src\Debug\ggml-base.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/Debug/test-quantize-perf.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/bin/Debug/test-quantize-perf.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\common\Release\common.lib;..\src\Release\llama.lib;..\ggml\src\Release\ggml.lib;..\ggml\src\Release\ggml-cpu.lib;..\ggml\src\Release\ggml-base.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/Release/test-quantize-perf.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/bin/Release/test-quantize-perf.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\common\MinSizeRel\common.lib;..\src\MinSizeRel\llama.lib;..\ggml\src\MinSizeRel\ggml.lib;..\ggml\src\MinSizeRel\ggml-cpu.lib;..\ggml\src\MinSizeRel\ggml-base.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/MinSizeRel/test-quantize-perf.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/bin/MinSizeRel/test-quantize-perf.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;LLAMA_SHARED;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\common\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\common\RelWithDebInfo\common.lib;..\src\RelWithDebInfo\llama.lib;..\ggml\src\RelWithDebInfo\ggml.lib;..\ggml\src\RelWithDebInfo\ggml-cpu.lib;..\ggml\src\RelWithDebInfo\ggml-base.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/RelWithDebInfo/test-quantize-perf.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/bin/RelWithDebInfo/test-quantize-perf.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\tests\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseArguments.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseArguments.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseArguments.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/tests/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\dev_environment\CMake\share\cmake-4.0\Modules\CMakeParseArguments.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\tests\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\tests\test-quantize-perf.cpp" />
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\tests\get-model.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ZERO_CHECK.vcxproj">
+      <Project>{BCE17617-703C-38FA-8A26-D05FEB5E5541}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\common\build_info.vcxproj">
+      <Project>{6A0888EA-D4EA-3F32-A623-B490EF5850A8}</Project>
+      <Name>build_info</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\common\common.vcxproj">
+      <Project>{761E46AF-B1E6-3E9F-9FBE-D1F5B39B229D}</Project>
+      <Name>common</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml.vcxproj">
+      <Project>{1ADF1F08-1A6B-3341-BE1A-D9B252FD5A81}</Project>
+      <Name>ggml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml-base.vcxproj">
+      <Project>{562BF077-9A74-39D4-A41A-C47DDEF0F26F}</Project>
+      <Name>ggml-base</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml-cpu.vcxproj">
+      <Project>{AD5A68CC-573B-399C-A571-76934AC9AEF8}</Project>
+      <Name>ggml-cpu</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\src\llama.vcxproj">
+      <Project>{16B0902E-50C8-3690-A57D-1A87F893F8D7}</Project>
+      <Name>llama</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

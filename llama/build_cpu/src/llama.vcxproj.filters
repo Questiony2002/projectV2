@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-adapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-arch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-batch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-chat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-context.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-grammar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-hparams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-kv-cache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-mmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-model-loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-quant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-sampling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\llama-vocab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\unicode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\unicode-data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\include\llama.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\unicode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F0CE58EE-5030-3B9C-9128-4D97CE018774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{025D78FA-9276-3D54-86D1-E1A014C36CF5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

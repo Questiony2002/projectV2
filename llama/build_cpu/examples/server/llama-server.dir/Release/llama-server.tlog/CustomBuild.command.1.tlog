@@ -1,0 +1,30 @@
+^D:\WORK_SPACE\MOBILELMAPP\DEPLOY\UTIL\LLAMA.CPP\BUILD_CPU\CMAKEFILES\76193821326FE7661370227C93C66954\INDEX.HTML.GZ.HPP.RULE
+setlocal
+D:\dev_environment\CMake\bin\cmake.exe -DINPUT=D:/work_space/MobileLMAPP/deploy/util/llama.cpp/examples/server/public/index.html.gz -DOUTPUT=D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/server/index.html.gz.hpp -P D:/work_space/MobileLMAPP/deploy/util/llama.cpp/scripts/xxd.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\WORK_SPACE\MOBILELMAPP\DEPLOY\UTIL\LLAMA.CPP\BUILD_CPU\CMAKEFILES\76193821326FE7661370227C93C66954\LOADING.HTML.HPP.RULE
+setlocal
+D:\dev_environment\CMake\bin\cmake.exe -DINPUT=D:/work_space/MobileLMAPP/deploy/util/llama.cpp/examples/server/public/loading.html -DOUTPUT=D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/server/loading.html.hpp -P D:/work_space/MobileLMAPP/deploy/util/llama.cpp/scripts/xxd.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\WORK_SPACE\MOBILELMAPP\DEPLOY\UTIL\LLAMA.CPP\EXAMPLES\SERVER\CMAKELISTS.TXT
+setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/server/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

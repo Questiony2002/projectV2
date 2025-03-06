@@ -1,0 +1,999 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+      鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+      
+      鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:42銆?
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\4.0.0-rc2\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdC.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+      ClCompile:
+        D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\4.0.0-rc2\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\4.0.0-rc2\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:00.69
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/4.0.0-rc2/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+      鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+      
+      鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:43銆?
+      鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\4.0.0-rc2\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdCXX.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+      ClCompile:
+        D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\4.0.0-rc2\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdCXX.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\4.0.0-rc2\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:00.55
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/4.0.0-rc2/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:81 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-7uurut"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-7uurut"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-7uurut'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_b5720.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:44銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-7uurut\\cmTC_b5720.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b5720.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-7uurut\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b5720.dir\\Debug\\cmTC_b5720.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_b5720.dir\\Debug\\cmTC_b5720.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b5720.dir\\Debug\\\\" /Fd"cmTC_b5720.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\dev_environment\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          CMakeCCompilerABI.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b5720.dir\\Debug\\\\" /Fd"cmTC_b5720.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\dev_environment\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-7uurut\\Debug\\cmTC_b5720.exe" /INCREMENTAL /ILK:"cmTC_b5720.dir\\Debug\\cmTC_b5720.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-7uurut/Debug/cmTC_b5720.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-7uurut/Debug/cmTC_b5720.lib" /MACHINE:X64  /machine:x64 cmTC_b5720.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_b5720.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-7uurut\\Debug\\cmTC_b5720.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_b5720.dir\\Debug\\cmTC_b5720.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_b5720.dir\\Debug\\cmTC_b5720.tlog\\cmTC_b5720.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-7uurut\\cmTC_b5720.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.56
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:225 (message)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': D:/software/Visualstudio2019/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:262 (cmake_determine_linker_id)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "D:/software/Visualstudio2019/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.29.30158.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:81 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-bauwl5"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-bauwl5"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-bauwl5'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_ebed4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:45銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-bauwl5\\cmTC_ebed4.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ebed4.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-bauwl5\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ebed4.dir\\Debug\\cmTC_ebed4.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_ebed4.dir\\Debug\\cmTC_ebed4.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ebed4.dir\\Debug\\\\" /Fd"cmTC_ebed4.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\dev_environment\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ebed4.dir\\Debug\\\\" /Fd"cmTC_ebed4.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\dev_environment\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-bauwl5\\Debug\\cmTC_ebed4.exe" /INCREMENTAL /ILK:"cmTC_ebed4.dir\\Debug\\cmTC_ebed4.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-bauwl5/Debug/cmTC_ebed4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-bauwl5/Debug/cmTC_ebed4.lib" /MACHINE:X64  /machine:x64 cmTC_ebed4.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_ebed4.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-bauwl5\\Debug\\cmTC_ebed4.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_ebed4.dir\\Debug\\cmTC_ebed4.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ebed4.dir\\Debug\\cmTC_ebed4.tlog\\cmTC_ebed4.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-bauwl5\\cmTC_ebed4.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.58
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:225 (message)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': D:/software/Visualstudio2019/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:262 (cmake_determine_linker_id)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "D:/software/Visualstudio2019/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.29.30158.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "ggml/CMakeLists.txt:216 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-md1o1l"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-md1o1l"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-md1o1l'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_a05ae.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:46銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\cmTC_a05ae.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a05ae.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a05ae.dir\\Debug\\cmTC_a05ae.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_a05ae.dir\\Debug\\cmTC_a05ae.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_a05ae.dir\\Debug\\\\" /Fd"cmTC_a05ae.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_a05ae.dir\\Debug\\\\" /Fd"cmTC_a05ae.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\src.c"
+        D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\src.c(1,1): fatal error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥減thread.h鈥? No such file or directory [D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\cmTC_a05ae.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\cmTC_a05ae.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\cmTC_a05ae.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\src.c(1,1): fatal error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥減thread.h鈥? No such file or directory [D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-md1o1l\\cmTC_a05ae.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.32
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "ggml/CMakeLists.txt:216 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-labis1"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-labis1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-labis1'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_b5f57.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:47銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\cmTC_b5f57.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b5f57.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b5f57.dir\\Debug\\cmTC_b5f57.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_b5f57.dir\\Debug\\cmTC_b5f57.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_b5f57.dir\\Debug\\\\" /Fd"cmTC_b5f57.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\CheckFunctionExists.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          CheckFunctionExists.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_b5f57.dir\\Debug\\\\" /Fd"cmTC_b5f57.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\CheckFunctionExists.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\Debug\\cmTC_b5f57.exe" /INCREMENTAL /ILK:"cmTC_b5f57.dir\\Debug\\cmTC_b5f57.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-labis1/Debug/cmTC_b5f57.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-labis1/Debug/cmTC_b5f57.lib" /MACHINE:X64  /machine:x64 cmTC_b5f57.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減threads.lib鈥?[D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\cmTC_b5f57.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\cmTC_b5f57.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\cmTC_b5f57.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減threads.lib鈥?[D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-labis1\\cmTC_b5f57.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.44
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "ggml/CMakeLists.txt:216 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-slhe6c"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-slhe6c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-slhe6c'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_dc3b7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:47銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\cmTC_dc3b7.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_dc3b7.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_dc3b7.dir\\Debug\\cmTC_dc3b7.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_dc3b7.dir\\Debug\\cmTC_dc3b7.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_dc3b7.dir\\Debug\\\\" /Fd"cmTC_dc3b7.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\CheckFunctionExists.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          CheckFunctionExists.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_dc3b7.dir\\Debug\\\\" /Fd"cmTC_dc3b7.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\CheckFunctionExists.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\Debug\\cmTC_dc3b7.exe" /INCREMENTAL /ILK:"cmTC_dc3b7.dir\\Debug\\cmTC_dc3b7.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-slhe6c/Debug/cmTC_dc3b7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-slhe6c/Debug/cmTC_dc3b7.lib" /MACHINE:X64  /machine:x64 cmTC_dc3b7.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減thread.lib鈥?[D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\cmTC_dc3b7.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\cmTC_dc3b7.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\cmTC_dc3b7.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          LINK : fatal error LNK1104: 鏃犳硶鎵撳紑鏂囦欢鈥減thread.lib鈥?[D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-slhe6c\\cmTC_dc3b7.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.44
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:47 (find_package)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-x6r3we"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-x6r3we"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_openmp"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-x6r3we'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_3032c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:48銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\cmTC_3032c.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_3032c.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_3032c.dir\\Debug\\cmTC_3032c.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_3032c.dir\\Debug\\cmTC_3032c.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /openmp /std:c11 /Fo"cmTC_3032c.dir\\Debug\\\\" /Fd"cmTC_3032c.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\OpenMPTryFlag.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          OpenMPTryFlag.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /openmp /std:c11 /Fo"cmTC_3032c.dir\\Debug\\\\" /Fd"cmTC_3032c.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\OpenMPTryFlag.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\Debug\\cmTC_3032c.exe" /INCREMENTAL /ILK:"cmTC_3032c.dir\\Debug\\cmTC_3032c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-x6r3we/Debug/cmTC_3032c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-x6r3we/Debug/cmTC_3032c.lib" /MACHINE:X64  /machine:x64 cmTC_3032c.dir\\Debug\\OpenMPTryFlag.obj
+          cmTC_3032c.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\Debug\\cmTC_3032c.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_3032c.dir\\Debug\\cmTC_3032c.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_3032c.dir\\Debug\\cmTC_3032c.tlog\\cmTC_3032c.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-x6r3we\\cmTC_3032c.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.56
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:250 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:557 (_OPENMP_GET_FLAGS)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:47 (find_package)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-qbw4an"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-qbw4an"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_openmp"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-qbw4an'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_ff574.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:49銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\cmTC_ff574.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ff574.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ff574.dir\\Debug\\cmTC_ff574.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_ff574.dir\\Debug\\cmTC_ff574.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /openmp /std:c++17 /Fo"cmTC_ff574.dir\\Debug\\\\" /Fd"cmTC_ff574.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\OpenMPTryFlag.cpp"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          OpenMPTryFlag.cpp
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /openmp /std:c++17 /Fo"cmTC_ff574.dir\\Debug\\\\" /Fd"cmTC_ff574.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\OpenMPTryFlag.cpp"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\Debug\\cmTC_ff574.exe" /INCREMENTAL /ILK:"cmTC_ff574.dir\\Debug\\cmTC_ff574.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-qbw4an/Debug/cmTC_ff574.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-qbw4an/Debug/cmTC_ff574.lib" /MACHINE:X64  /machine:x64 cmTC_ff574.dir\\Debug\\OpenMPTryFlag.obj
+          cmTC_ff574.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\Debug\\cmTC_ff574.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_ff574.dir\\Debug\\cmTC_ff574.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ff574.dir\\Debug\\cmTC_ff574.tlog\\cmTC_ff574.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-qbw4an\\cmTC_ff574.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.57
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:491 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:631 (_OPENMP_GET_SPEC_DATE)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:47 (find_package)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    description: "Detecting C OpenMP version"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-xknmzz"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-xknmzz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "OpenMP_SPECTEST_C_"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-xknmzz'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_14d11.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:50銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\cmTC_14d11.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_14d11.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_14d11.dir\\Debug\\cmTC_14d11.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_14d11.dir\\Debug\\cmTC_14d11.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /openmp /std:c11 /Fo"cmTC_14d11.dir\\Debug\\\\" /Fd"cmTC_14d11.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\OpenMPCheckVersion.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          OpenMPCheckVersion.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /openmp /std:c11 /Fo"cmTC_14d11.dir\\Debug\\\\" /Fd"cmTC_14d11.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\OpenMPCheckVersion.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\Debug\\cmTC_14d11.exe" /INCREMENTAL /ILK:"cmTC_14d11.dir\\Debug\\cmTC_14d11.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-xknmzz/Debug/cmTC_14d11.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-xknmzz/Debug/cmTC_14d11.lib" /MACHINE:X64  /machine:x64 cmTC_14d11.dir\\Debug\\OpenMPCheckVersion.obj
+          cmTC_14d11.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\Debug\\cmTC_14d11.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_14d11.dir\\Debug\\cmTC_14d11.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_14d11.dir\\Debug\\cmTC_14d11.tlog\\cmTC_14d11.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-xknmzz\\cmTC_14d11.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.60
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:491 (try_compile)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake:631 (_OPENMP_GET_SPEC_DATE)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:47 (find_package)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-nzohjq"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-nzohjq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-nzohjq'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_6ac2c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:51銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\cmTC_6ac2c.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_6ac2c.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_6ac2c.dir\\Debug\\cmTC_6ac2c.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_6ac2c.dir\\Debug\\cmTC_6ac2c.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /openmp /std:c++17 /Fo"cmTC_6ac2c.dir\\Debug\\\\" /Fd"cmTC_6ac2c.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\OpenMPCheckVersion.cpp"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          OpenMPCheckVersion.cpp
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /openmp /std:c++17 /Fo"cmTC_6ac2c.dir\\Debug\\\\" /Fd"cmTC_6ac2c.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\OpenMPCheckVersion.cpp"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\Debug\\cmTC_6ac2c.exe" /INCREMENTAL /ILK:"cmTC_6ac2c.dir\\Debug\\cmTC_6ac2c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-nzohjq/Debug/cmTC_6ac2c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-nzohjq/Debug/cmTC_6ac2c.lib" /MACHINE:X64  /machine:x64 cmTC_6ac2c.dir\\Debug\\OpenMPCheckVersion.obj
+          cmTC_6ac2c.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\Debug\\cmTC_6ac2c.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_6ac2c.dir\\Debug\\cmTC_6ac2c.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_6ac2c.dir\\Debug\\cmTC_6ac2c.tlog\\cmTC_6ac2c.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-nzohjq\\cmTC_6ac2c.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.60
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceRuns.cmake:95 (try_run)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceRuns.cmake:52 (cmake_check_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:61 (check_c_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:80 (check_sse)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:172 (include)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAS_AVX_1"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-m7qz3o"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-m7qz3o"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "HAS_AVX_1_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-m7qz3o'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_e3c4a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:52銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\cmTC_e3c4a.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_e3c4a.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_e3c4a.dir\\Debug\\cmTC_e3c4a.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_e3c4a.dir\\Debug\\cmTC_e3c4a.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_e3c4a.dir\\Debug\\\\" /Fd"cmTC_e3c4a.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_e3c4a.dir\\Debug\\\\" /Fd"cmTC_e3c4a.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\src.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\Debug\\cmTC_e3c4a.exe" /INCREMENTAL /ILK:"cmTC_e3c4a.dir\\Debug\\cmTC_e3c4a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-m7qz3o/Debug/cmTC_e3c4a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-m7qz3o/Debug/cmTC_e3c4a.lib" /MACHINE:X64  /machine:x64 cmTC_e3c4a.dir\\Debug\\src.obj
+          cmTC_e3c4a.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\Debug\\cmTC_e3c4a.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_e3c4a.dir\\Debug\\cmTC_e3c4a.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_e3c4a.dir\\Debug\\cmTC_e3c4a.tlog\\cmTC_e3c4a.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-m7qz3o\\cmTC_e3c4a.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.59
+        
+      exitCode: 0
+    runResult:
+      variable: "HAS_AVX_1_EXITCODE"
+      cached: true
+      stdout: |
+      stderr: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceRuns.cmake:95 (try_run)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceRuns.cmake:52 (cmake_check_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:61 (check_c_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:87 (check_sse)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:172 (include)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAS_AVX2_1"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-fxo3zn"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-fxo3zn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "HAS_AVX2_1_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-fxo3zn'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_81c6b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:52銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\cmTC_81c6b.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_81c6b.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_81c6b.dir\\Debug\\cmTC_81c6b.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_81c6b.dir\\Debug\\cmTC_81c6b.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX2_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_81c6b.dir\\Debug\\\\" /Fd"cmTC_81c6b.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX2_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_81c6b.dir\\Debug\\\\" /Fd"cmTC_81c6b.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\src.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\Debug\\cmTC_81c6b.exe" /INCREMENTAL /ILK:"cmTC_81c6b.dir\\Debug\\cmTC_81c6b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-fxo3zn/Debug/cmTC_81c6b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-fxo3zn/Debug/cmTC_81c6b.lib" /MACHINE:X64  /machine:x64 cmTC_81c6b.dir\\Debug\\src.obj
+          cmTC_81c6b.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\Debug\\cmTC_81c6b.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_81c6b.dir\\Debug\\cmTC_81c6b.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_81c6b.dir\\Debug\\cmTC_81c6b.tlog\\cmTC_81c6b.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-fxo3zn\\cmTC_81c6b.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.59
+        
+      exitCode: 0
+    runResult:
+      variable: "HAS_AVX2_1_EXITCODE"
+      cached: true
+      stdout: |
+      stderr: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceRuns.cmake:95 (try_run)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceRuns.cmake:52 (cmake_check_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:61 (check_c_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:88 (check_sse)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:172 (include)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAS_FMA_1"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-hxdccw"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-hxdccw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "HAS_FMA_1_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-hxdccw'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_bf22e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:53銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\cmTC_bf22e.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_bf22e.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_bf22e.dir\\Debug\\cmTC_bf22e.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_bf22e.dir\\Debug\\cmTC_bf22e.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_FMA_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_bf22e.dir\\Debug\\\\" /Fd"cmTC_bf22e.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_FMA_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_bf22e.dir\\Debug\\\\" /Fd"cmTC_bf22e.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\src.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\Debug\\cmTC_bf22e.exe" /INCREMENTAL /ILK:"cmTC_bf22e.dir\\Debug\\cmTC_bf22e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-hxdccw/Debug/cmTC_bf22e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-hxdccw/Debug/cmTC_bf22e.lib" /MACHINE:X64  /machine:x64 cmTC_bf22e.dir\\Debug\\src.obj
+          cmTC_bf22e.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\Debug\\cmTC_bf22e.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_bf22e.dir\\Debug\\cmTC_bf22e.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_bf22e.dir\\Debug\\cmTC_bf22e.tlog\\cmTC_bf22e.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-hxdccw\\cmTC_bf22e.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.62
+        
+      exitCode: 0
+    runResult:
+      variable: "HAS_FMA_1_EXITCODE"
+      cached: true
+      stdout: |
+      stderr: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceRuns.cmake:95 (try_run)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceRuns.cmake:52 (cmake_check_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:61 (check_c_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:95 (check_sse)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:172 (include)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAS_AVX512_1"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-uxz00k"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-uxz00k"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "HAS_AVX512_1_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-uxz00k'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_bbb0c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:54銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\cmTC_bbb0c.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_bbb0c.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_bbb0c.dir\\Debug\\cmTC_bbb0c.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_bbb0c.dir\\Debug\\cmTC_bbb0c.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX512_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_bbb0c.dir\\Debug\\\\" /Fd"cmTC_bbb0c.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX512_1 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_bbb0c.dir\\Debug\\\\" /Fd"cmTC_bbb0c.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\src.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\Debug\\cmTC_bbb0c.exe" /INCREMENTAL /ILK:"cmTC_bbb0c.dir\\Debug\\cmTC_bbb0c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-uxz00k/Debug/cmTC_bbb0c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-uxz00k/Debug/cmTC_bbb0c.lib" /MACHINE:X64  /machine:x64 cmTC_bbb0c.dir\\Debug\\src.obj
+          cmTC_bbb0c.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\Debug\\cmTC_bbb0c.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_bbb0c.dir\\Debug\\cmTC_bbb0c.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_bbb0c.dir\\Debug\\cmTC_bbb0c.tlog\\cmTC_bbb0c.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-uxz00k\\cmTC_bbb0c.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.66
+        
+      exitCode: 0
+    runResult:
+      variable: "HAS_AVX512_1_EXITCODE"
+      cached: true
+      stdout: |
+      stderr: |
+        Illegal instruction
+      exitCode: "FAILED_TO_RUN"
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceRuns.cmake:95 (try_run)"
+      - "D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceRuns.cmake:52 (cmake_check_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:61 (check_c_source_runs)"
+      - "ggml/src/ggml-cpu/cmake/FindSIMD.cmake:95 (check_sse)"
+      - "ggml/src/ggml-cpu/CMakeLists.txt:172 (include)"
+      - "ggml/src/CMakeLists.txt:318 (ggml_add_cpu_backend_variant_impl)"
+    checks:
+      - "Performing Test HAS_AVX512_2"
+    directories:
+      source: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-mwtfaf"
+      binary: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-mwtfaf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/work_space/MobileLMAPP/deploy/util/llama.cpp/cmake/"
+    buildResult:
+      variable: "HAS_AVX512_2_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-mwtfaf'
+        
+        Run Build Command(s): D:/software/Visualstudio2019/MSBuild/Current/Bin/MSBuild.exe cmTC_a7fd2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        鐢ㄤ簬 .NET Framework 鐨?Microsoft (R) 鐢熸垚寮曟搸鐗堟湰 16.11.2+f32259642
+        鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+        
+        鐢熸垚鍚姩鏃堕棿涓?2025/3/3 22:02:55銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\cmTC_a7fd2.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a7fd2.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a7fd2.dir\\Debug\\cmTC_a7fd2.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_a7fd2.dir\\Debug\\cmTC_a7fd2.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        ClCompile:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX512_2 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /arch:AVX512 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_a7fd2.dir\\Debug\\\\" /Fd"cmTC_a7fd2.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\src.c"
+          鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.29.30158 鐗?
+          鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAS_AVX512_2 /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /arch:AVX512 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_a7fd2.dir\\Debug\\\\" /Fd"cmTC_a7fd2.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\src.c"
+        Link:
+          D:\\software\\Visualstudio2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\Debug\\cmTC_a7fd2.exe" /INCREMENTAL /ILK:"cmTC_a7fd2.dir\\Debug\\cmTC_a7fd2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-mwtfaf/Debug/cmTC_a7fd2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/CMakeFiles/CMakeScratch/TryCompile-mwtfaf/Debug/cmTC_a7fd2.lib" /MACHINE:X64  /machine:x64 cmTC_a7fd2.dir\\Debug\\src.obj
+          cmTC_a7fd2.vcxproj -> D:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\Debug\\cmTC_a7fd2.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_a7fd2.dir\\Debug\\cmTC_a7fd2.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_a7fd2.dir\\Debug\\cmTC_a7fd2.tlog\\cmTC_a7fd2.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\work_space\\MobileLMAPP\\deploy\\util\\llama.cpp\\build_cpu\\CMakeFiles\\CMakeScratch\\TryCompile-mwtfaf\\cmTC_a7fd2.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:00.60
+        
+      exitCode: 0
+    runResult:
+      variable: "HAS_AVX512_2_EXITCODE"
+      cached: true
+      stdout: |
+      stderr: |
+        Illegal instruction
+      exitCode: "FAILED_TO_RUN"
+...

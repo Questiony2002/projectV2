@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakeParseImplicitLinkInfo.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceRuns.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCXXCompilerFlag.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCXXSourceCompiles.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindOpenMP.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindPackageMessage.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckCompilerFlag.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckFlagCommonConfig.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceRuns.cmake
+D:/work_space/MobileLMAPP/deploy/util/llama.cpp/ggml/src/CMakeLists.txt
+D:/work_space/MobileLMAPP/deploy/util/llama.cpp/ggml/src/ggml-cpu/cmake/FindSIMD.cmake

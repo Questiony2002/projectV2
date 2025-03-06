@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Release\ggml-base.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Release\ggml-cpu.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Release\ggml.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Release\llama.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\bin\Release\llama-run.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

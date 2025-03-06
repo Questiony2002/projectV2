@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26BF092F-2E06-3D97-A3E3-B687A6B1D377}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>llava</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">llava.dir\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">llava.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">llava</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">llava.dir\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">llava.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">llava</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">llava.dir\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">llava.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">llava</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">llava.dir\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">llava.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">llava</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8 /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;LLAMA_SHARED;LLAMA_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_USE_CPU;GGML_SHARED;GGML_BACKEND_SHARED;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\..\..\common;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\ggml\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\.;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\include;D:\work_space\MobileLMAPP\deploy\util\llama.cpp\src\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/examples/llava/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/llava/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/examples/llava/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/llava/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/examples/llava/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/llava/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/work_space/MobileLMAPP/deploy/util/llama.cpp/examples/llava/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/examples/llava/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\examples\llava\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\llava.cpp" />
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\llava.h" />
+    <ClCompile Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\clip.cpp" />
+    <ClInclude Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\examples\llava\clip.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ZERO_CHECK.vcxproj">
+      <Project>{BCE17617-703C-38FA-8A26-D05FEB5E5541}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml.vcxproj">
+      <Project>{1ADF1F08-1A6B-3341-BE1A-D9B252FD5A81}</Project>
+      <Name>ggml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml-base.vcxproj">
+      <Project>{562BF077-9A74-39D4-A41A-C47DDEF0F26F}</Project>
+      <Name>ggml-base</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\ggml\src\ggml-cpu.vcxproj">
+      <Project>{AD5A68CC-573B-399C-A571-76934AC9AEF8}</Project>
+      <Name>ggml-cpu</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\work_space\MobileLMAPP\deploy\util\llama.cpp\build_cpu\src\llama.vcxproj">
+      <Project>{16B0902E-50C8-3690-A57D-1A87F893F8D7}</Project>
+      <Name>llama</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+D:/dev_environment/CMake/share/cmake-4.0/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CMakePackageConfigHelpers.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckIncludeFileCXX.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindPackageMessage.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/GNUInstallDirs.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/WriteBasicConfigVersionFile.cmake
+D:/work_space/MobileLMAPP/deploy/util/llama.cpp/ggml/CMakeLists.txt
+D:/work_space/MobileLMAPP/deploy/util/llama.cpp/ggml/cmake/ggml-config.cmake.in

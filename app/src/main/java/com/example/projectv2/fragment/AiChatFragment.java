@@ -1,11 +1,13 @@
 package com.example.projectv2.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +19,7 @@ import com.example.projectv2.R;
 import com.example.projectv2.adapter.MessageAdapter;
 import com.example.projectv2.db.ChatDbHelper;
 import com.example.projectv2.model.Message;
+import com.example.projectv2.service.AiService;
 
 import java.util.List;
 
@@ -63,24 +66,74 @@ public class AiChatFragment extends Fragment {
     private void sendMessage() {
         String content = messageInput.getText().toString().trim();
         if (!content.isEmpty()) {
-            // 保存并显示用户消息
-            Message userMessage = new Message(content, false);
-            dbHelper.insertMessage(userMessage);
-            messageAdapter.addMessage(userMessage);
+            try {
+                // 保存并显示用户消息
+                Message userMessage = new Message(content, false);
+                dbHelper.insertMessage(userMessage);
+                messageAdapter.addMessage(userMessage);
 
-            // 清空输入框
-            messageInput.setText("");
+                // 清空输入框
+                messageInput.setText("");
 
-            // 滚动到底部
-            messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                // 滚动到底部
+                messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
 
-            // 模拟AI回复
-            Message aiMessage = new Message("你好！世界", true);
-            dbHelper.insertMessage(aiMessage);
-            messageAdapter.addMessage(aiMessage);
+                // 创建AI消息对象
+                Message aiMessage = new Message("", true);
+                dbHelper.insertMessage(aiMessage);
+                messageAdapter.addMessage(aiMessage);
 
-            // 滚动到底部
-            messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                // 调用AI服务
+                AiService.getAiResponse(content, new AiService.AiResponseCallback() {
+                    private StringBuilder currentResponse = new StringBuilder();
+
+                    @Override
+                    public void onResponse(String response) {
+                        if (getActivity() == null) return;
+                        
+                        getActivity().runOnUiThread(() -> {
+                            try {
+                                currentResponse.append(response);
+                                aiMessage.setContent(currentResponse.toString());
+                                messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
+                                messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                            } catch (Exception e) {
+                                Log.e("AiChatFragment", "Error updating UI", e);
+                                Toast.makeText(requireContext(), "更新UI失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        if (getActivity() == null) return;
+
+                        getActivity().runOnUiThread(() -> {
+                            try {
+                                aiMessage.setContent(currentResponse.toString());
+                                dbHelper.insertMessage(aiMessage);
+                                messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
+                            } catch (Exception e) {
+                                Log.e("AiChatFragment", "Error completing response", e);
+                                Toast.makeText(requireContext(), "保存消息失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onError(String error) {
+                        if (getActivity() == null) return;
+
+                        Log.e("AiChatFragment", "AI service error: " + error);
+                        getActivity().runOnUiThread(() -> {
+                            Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show();
+                        });
+                    }
+                });
+            } catch (Exception e) {
+                Log.e("AiChatFragment", "Error sending message", e);
+                Toast.makeText(requireContext(), "发送消息失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

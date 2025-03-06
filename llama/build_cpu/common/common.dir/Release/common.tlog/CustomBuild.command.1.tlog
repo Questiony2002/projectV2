@@ -1,0 +1,10 @@
+^D:\WORK_SPACE\MOBILELMAPP\DEPLOY\UTIL\LLAMA.CPP\COMMON\CMAKELISTS.TXT
+setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/common/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

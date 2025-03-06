@@ -50,6 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/upload/**").permitAll()
             .antMatchers("/uploads/**").permitAll()
             .antMatchers("/api/news/**").permitAll()
+            .antMatchers("/api/chat/**").permitAll()
             .anyRequest().authenticated()
             .and()
             .sessionManagement()

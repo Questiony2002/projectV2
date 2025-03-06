@@ -3,6 +3,7 @@ com\example\mental\controller\UserController.class
 com\example\mental\service\impl\NewsServiceImpl$1.class
 com\example\mental\service\NewsService.class
 com\example\mental\entity\MbtiQuestion.class
+com\example\mental\controller\ChatController$1.class
 com\example\mental\service\MbtiService.class
 com\example\mental\config\FileUploadConfig.class
 com\example\mental\config\SecurityConfig.class
@@ -24,4 +25,5 @@ com\example\mental\controller\MbtiController.class
 com\example\mental\repository\NewsRepository.class
 com\example\mental\dto\MbtiTypeDTO.class
 com\example\mental\security\JwtTokenUtil.class
+com\example\mental\controller\ChatController.class
 com\example\mental\repository\UserRepository.class

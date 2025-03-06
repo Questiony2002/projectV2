@@ -1,0 +1,24 @@
+^D:\WORK_SPACE\MOBILELMAPP\DEPLOY\UTIL\LLAMA.CPP\BUILD_CPU\CMAKEFILES\42491086655EDBAD493A2B0E71E42D02\BUILD-INFO.CPP.RULE
+setlocal
+cd D:\work_space\MobileLMAPP\deploy\util\llama.cpp
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\dev_environment\CMake\bin\cmake.exe -DMSVC=1 -DCMAKE_C_COMPILER_VERSION=19.29.30158.0 -DCMAKE_C_COMPILER_ID=MSVC -DCMAKE_VS_PLATFORM_NAME=x64 -DCMAKE_C_COMPILER=D:/software/Visualstudio2019/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe -P D:/work_space/MobileLMAPP/deploy/util/llama.cpp/common/cmake/build-info-gen-cpp.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\WORK_SPACE\MOBILELMAPP\DEPLOY\UTIL\LLAMA.CPP\COMMON\CMAKELISTS.TXT
+setlocal
+D:\dev_environment\CMake\bin\cmake.exe -SD:/work_space/MobileLMAPP/deploy/util/llama.cpp -BD:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu --check-stamp-file D:/work_space/MobileLMAPP/deploy/util/llama.cpp/build_cpu/common/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindPackageMessage.cmake
+D:/dev_environment/CMake/share/cmake-4.0/Modules/FindThreads.cmake
+D:/work_space/MobileLMAPP/deploy/util/llama.cpp/pocs/CMakeLists.txt
