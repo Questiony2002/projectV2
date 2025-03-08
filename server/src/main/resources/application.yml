@@ -1,5 +1,6 @@
 server:
   port: 8080
+  address: 0.0.0.0  # 允许从任何IP地址访问
 
 spring:
   main:
