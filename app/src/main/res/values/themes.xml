@@ -13,4 +13,12 @@
         <item name="android:navigationBarColor">@color/telegram_background</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
+
+    <!-- 启动页主题 -->
+    <style name="Theme.ProjectV2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
 </resources>

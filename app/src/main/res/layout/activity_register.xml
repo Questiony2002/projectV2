@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/duck_logo"
+            android:src="@drawable/blue_cat_logo"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:padding="0dp"/>

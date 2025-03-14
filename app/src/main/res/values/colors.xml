@@ -10,7 +10,7 @@
 
     <!-- Telegram Colors -->
     <color name="telegram_blue">#0088CC</color>
-    <color name="telegram_blue_dark">#0077B5</color>
+    <color name="telegram_blue_dark">#006699</color>
     <color name="telegram_background">#FFFFFF</color>
     <color name="telegram_text_primary">#222222</color>
     <color name="telegram_text_secondary">#8E8E93</color>
