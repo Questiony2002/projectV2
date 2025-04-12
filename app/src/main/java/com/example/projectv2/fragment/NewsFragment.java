@@ -65,18 +65,22 @@ public class NewsFragment extends Fragment {
         ApiClient.getNewsApi().getLatestNews().enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    newsAdapter.updateNews(response.body());
-                } else {
-                    showError("获取新闻失败");
+                if (isAdded()) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        newsAdapter.updateNews(response.body());
+                    } else {
+                        showError("获取新闻失败");
+                    }
+                    swipeRefreshLayout.setRefreshing(false);
                 }
-                swipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
             public void onFailure(Call<List<News>> call, Throwable t) {
-                showError("网络错误: " + t.getMessage());
-                swipeRefreshLayout.setRefreshing(false);
+                if (isAdded()) {
+                    showError("网络错误: " + t.getMessage());
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
         });
     }
@@ -85,24 +89,28 @@ public class NewsFragment extends Fragment {
         ApiClient.getNewsApi().refreshNews().enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.isSuccessful()) {
-                    loadNews();
-                } else {
-                    showError("刷新新闻失败");
-                    swipeRefreshLayout.setRefreshing(false);
+                if (isAdded()) {
+                    if (response.isSuccessful()) {
+                        loadNews();
+                    } else {
+                        showError("刷新新闻失败");
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                showError("网络错误: " + t.getMessage());
-                swipeRefreshLayout.setRefreshing(false);
+                if (isAdded()) {
+                    showError("网络错误: " + t.getMessage());
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
         });
     }
 
     private void showError(String message) {
-        if (getContext() != null) {
+        if (getContext() != null && isAdded()) {
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
     }

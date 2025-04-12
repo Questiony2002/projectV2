@@ -106,7 +106,9 @@ public class MbtiFragment extends Fragment {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getContext(), "获取用户信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "获取用户信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -122,7 +124,9 @@ public class MbtiFragment extends Fragment {
 
             @Override
             public void onFailure(Call<MbtiType> call, Throwable t) {
-                Toast.makeText(getContext(), "获取MBTI类型信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "获取MBTI类型信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -166,7 +170,9 @@ public class MbtiFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<MbtiQuestion>> call, Throwable t) {
-                Toast.makeText(getContext(), "加载问题失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "加载问题失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -184,7 +190,9 @@ public class MbtiFragment extends Fragment {
 
     private void handleNextQuestion() {
         if (optionsGroup.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(getContext(), "请选择一个选项", Toast.LENGTH_SHORT).show();
+            if (isAdded() && getContext() != null) {
+                Toast.makeText(getContext(), "请选择一个选项", Toast.LENGTH_SHORT).show();
+            }
             return;
         }
 
@@ -225,7 +233,9 @@ public class MbtiFragment extends Fragment {
 
             @Override
             public void onFailure(Call<MbtiType> call, Throwable t) {
-                Toast.makeText(getContext(), "获取结果失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "获取结果失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -253,16 +263,20 @@ public class MbtiFragment extends Fragment {
         ApiClient.getUserApi().updateUserMbtiType(userId, requestBody).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.isSuccessful()) {
-                    Toast.makeText(getContext(), "MBTI类型更新成功", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "更新MBTI类型失败", Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(getContext(), "MBTI类型更新成功", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "更新MBTI类型失败", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(getContext(), "更新MBTI类型失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "更新MBTI类型失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

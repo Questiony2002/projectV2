@@ -264,8 +264,79 @@
                     android:focusable="true"
                     android:padding="16dp"
                     android:text="退出登录"
-                    android:textColor="@color/design_default_color_error"
+                    android:textColor="@color/telegram_text_danger"
                     android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 模型管理卡片 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/modelManagementCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AI模型管理"
+                    android:textColor="@color/telegram_text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/modelStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="模型未加载，请先加载模型"
+                    android:textColor="@color/telegram_text_secondary"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <ProgressBar
+                    android:id="@+id/modelLoadingProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/loadModelButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="加载模型"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/telegram_button_primary"/>
+
+                    <Button
+                        android:id="@+id/unloadModelButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="卸载模型"
+                        android:layout_marginStart="8dp"
+                        android:enabled="false"
+                        android:backgroundTint="@color/telegram_button_secondary"/>
+                </LinearLayout>
 
             </LinearLayout>
 

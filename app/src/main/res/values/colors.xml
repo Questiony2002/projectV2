@@ -18,4 +18,9 @@
     <color name="telegram_input_background">#F5F5F5</color>
     <color name="telegram_message_background">#EEFFDE</color>
     <color name="telegram_message_background_ai">#E3F2FD</color>
+    
+    <!-- 添加缺失的颜色资源 -->
+    <color name="telegram_text_danger">#FF3B30</color>
+    <color name="telegram_button_primary">#0088CC</color>
+    <color name="telegram_button_secondary">#8E8E93</color>
 </resources>

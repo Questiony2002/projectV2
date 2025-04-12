@@ -11,13 +11,18 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +34,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.projectv2.LLamaAPI;
 import com.example.projectv2.LoginActivity;
 import com.example.projectv2.R;
 import com.example.projectv2.api.ApiClient;
@@ -50,7 +56,9 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okio.BufferedSink;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateListener {
+    private static final String TAG = "ProfileFragment";
+    
     private CardView avatarContainer;
     private ImageView avatarImage;
     private TextView usernameText;
@@ -65,8 +73,17 @@ public class ProfileFragment extends Fragment {
     private TextView changePasswordButton;
     private TextView logoutButton;
 
+    // 添加模型管理相关UI元素
+    private CardView modelManagementCard;
+    private TextView modelStatusText;
+    private Button loadModelButton;
+    private Button unloadModelButton;
+    private ProgressBar modelLoadingProgress;
+    
     private Long userId;
     private User currentUser;
+    private LLamaAPI llamaApi;
+    private boolean isModelLoading = false;
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final int PERMISSION_REQUEST = 2;
@@ -87,6 +104,12 @@ public class ProfileFragment extends Fragment {
         initViews(view);
         setupListeners();
         loadUserInfo();
+        
+        // 初始化LLamaAPI
+        llamaApi = LLamaAPI.getInstance();
+        
+        // 检查模型状态
+        updateModelStatus();
     }
 
     @Override
@@ -103,7 +126,7 @@ public class ProfileFragment extends Fragment {
         if (requestCode == PERMISSION_REQUEST) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openImagePicker();
-            } else {
+            } else if (isAdded() && getContext() != null) {
                 Toast.makeText(requireContext(), "需要存储权限才能选择图片", Toast.LENGTH_SHORT).show();
             }
         }
@@ -124,6 +147,13 @@ public class ProfileFragment extends Fragment {
         changePasswordButton = view.findViewById(R.id.changePasswordButton);
         logoutButton = view.findViewById(R.id.logoutButton);
 
+        // 初始化模型管理相关UI元素
+        modelManagementCard = view.findViewById(R.id.modelManagementCard);
+        modelStatusText = view.findViewById(R.id.modelStatusText);
+        loadModelButton = view.findViewById(R.id.loadModelButton);
+        unloadModelButton = view.findViewById(R.id.unloadModelButton);
+        modelLoadingProgress = view.findViewById(R.id.modelLoadingProgress);
+
         // 从SharedPreferences获取用户ID
         SharedPreferences prefs = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
         userId = prefs.getLong("user_id", -1);
@@ -138,26 +168,36 @@ public class ProfileFragment extends Fragment {
         ageContainer.setOnClickListener(v -> showEditAgeDialog());
         changePasswordButton.setOnClickListener(v -> showChangePasswordDialog());
         logoutButton.setOnClickListener(v -> showLogoutConfirmDialog());
+        
+        // 设置模型管理相关监听器
+        loadModelButton.setOnClickListener(v -> loadModel());
+        unloadModelButton.setOnClickListener(v -> unloadModel());
     }
 
     private void loadUserInfo() {
         if (userId == -1) {
-            Toast.makeText(getContext(), "请先登录", Toast.LENGTH_SHORT).show();
+            if (isAdded() && getContext() != null) {
+                Toast.makeText(getContext(), "请先登录", Toast.LENGTH_SHORT).show();
+            }
             return;
         }
 
         ApiClient.getUserApi().getUserInfo(userId).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    currentUser = response.body();
-                    updateUI();
+                if (isAdded()) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        currentUser = response.body();
+                        updateUI();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getContext(), "获取用户信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "获取用户信息失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -259,20 +299,18 @@ public class ProfileFragment extends Fragment {
             ApiClient.getUserApi().uploadAvatar(body, userId).enqueue(new Callback<Map<String, String>>() {
                 @Override
                 public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
-                    if (response.isSuccessful() && response.body() != null) {
-                        String avatarUrl = response.body().get("url");
-                        // 更新UI显示新头像
-                        if (isAdded() && getContext() != null) {
+                    if (isAdded() && getContext() != null) {
+                        if (response.isSuccessful() && response.body() != null) {
+                            String avatarUrl = response.body().get("url");
+                            // 更新UI显示新头像
                             Glide.with(ProfileFragment.this)
                                     .load(ApiClient.BASE_URL.substring(0, ApiClient.BASE_URL.length() - 1) + avatarUrl)
                                     .placeholder(R.drawable.default_avatar)
                                     .error(R.drawable.default_avatar)
                                     .into(avatarImage);
-                            Toast.makeText(requireContext(), "头像上传成功", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        if (isAdded() && getContext() != null) {
-                            Toast.makeText(requireContext(), "头像上传失败", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "头像上传成功", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), "头像上传失败", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -280,31 +318,35 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onFailure(Call<Map<String, String>> call, Throwable t) {
                     if (isAdded() && getContext() != null) {
-                        Toast.makeText(requireContext(), "头像上传失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "头像上传失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
         } catch (Exception e) {
             if (isAdded() && getContext() != null) {
-                Toast.makeText(requireContext(), "文件处理失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "文件处理失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void showEditUsernameDialog() {
-        EditText input = new EditText(requireContext());
+        if (!isAdded() || getContext() == null) return;
+        
+        EditText input = new EditText(getContext());
         input.setText(currentUser.getUsername());
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         input.setSingleLine(true);
 
-        new AlertDialog.Builder(requireContext())
+        new AlertDialog.Builder(getContext())
                 .setTitle("修改用户名")
                 .setView(input)
                 .setPositiveButton("确定", (dialog, which) -> {
                     String newUsername = input.getText().toString().trim();
                     if (newUsername.isEmpty()) {
-                        Toast.makeText(requireContext(), "用户名不能为空", Toast.LENGTH_SHORT).show();
+                        if (isAdded() && getContext() != null) {
+                            Toast.makeText(getContext(), "用户名不能为空", Toast.LENGTH_SHORT).show();
+                        }
                         return;
                     }
                     if (newUsername.equals(currentUser.getUsername())) {
@@ -434,18 +476,22 @@ public class ProfileFragment extends Fragment {
         ApiClient.getUserApi().updateUserField(userId, updateData).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    currentUser = response.body();
-                    updateUI();
-                    Toast.makeText(getContext(), "更新成功", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "更新失败", Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        currentUser = response.body();
+                        updateUI();
+                        Toast.makeText(getContext(), "更新成功", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "更新失败", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getContext(), "更新失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "更新失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -458,16 +504,20 @@ public class ProfileFragment extends Fragment {
         ApiClient.getUserApi().updatePassword(userId, passwordData).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.isSuccessful()) {
-                    Toast.makeText(getContext(), "密码修改成功", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "密码修改失败，请检查原密码是否正确", Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(getContext(), "密码修改成功", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "密码修改失败，请检查原密码是否正确", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(getContext(), "密码修改失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                if (isAdded() && getContext() != null) {
+                    Toast.makeText(getContext(), "密码修改失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -483,5 +533,209 @@ public class ProfileFragment extends Fragment {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         requireActivity().finish();
+    }
+
+    // 添加模型管理相关方法
+    private void loadModel() {
+        if (isModelLoading) {
+            if (isAdded() && getContext() != null) {
+                Toast.makeText(getContext(), "模型正在加载中，请稍候...", Toast.LENGTH_SHORT).show();
+            }
+            return;
+        }
+        
+        // 显示模型选择对话框
+        if (isAdded() && getContext() != null) {
+            String[] models = {"小模型(QwQ-0.5B，快速)", "大模型(Minicpm-4B，高质量)"};
+            new AlertDialog.Builder(getContext())
+                .setTitle("选择要加载的模型")
+                .setItems(models, (dialog, which) -> {
+                    String modelFileName = which == 0 ? "QwQ-0.5B.Q4_K_M.gguf" : "Minicpm-4B-Q4_K_M.gguf";
+                    startModelLoading(modelFileName);
+                })
+                .show();
+        }
+    }
+    
+    private void startModelLoading(String modelFileName) {
+        // 显示加载进度条
+        isModelLoading = true;
+        modelLoadingProgress.setVisibility(View.VISIBLE);
+        modelStatusText.setText("正在加载模型...");
+        loadModelButton.setEnabled(false);
+        unloadModelButton.setEnabled(false);
+        
+        // 在后台线程中加载模型
+        new Thread(() -> {
+            try {
+                // 从assets复制模型到外部存储
+                String modelPath = copyAssetToExternalStorage(modelFileName);
+                if (modelPath == null) {
+                    throw new IOException("无法复制模型文件");
+                }
+                
+                Log.d(TAG, "开始加载模型: " + modelFileName);
+                // 加载模型 (监听器将处理成功加载后的UI更新)
+                llamaApi.loadModel(modelPath);
+            } catch (Exception e) {
+                Log.e(TAG, "模型加载失败", e);
+                // 主线程更新UI
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    if (isAdded() && getActivity() != null) {
+                        isModelLoading = false;
+                        modelLoadingProgress.setVisibility(View.GONE);
+                        modelStatusText.setText("模型加载失败: " + e.getMessage());
+                        loadModelButton.setEnabled(true);
+                        unloadModelButton.setEnabled(false);
+                        if (getContext() != null) {
+                            Toast.makeText(getContext(), "模型加载失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        }).start();
+    }
+    
+    private void unloadModel() {
+        modelStatusText.setText("正在卸载模型...");
+        loadModelButton.setEnabled(false);
+        unloadModelButton.setEnabled(false);
+        
+        // 卸载模型 (监听器将处理卸载后的UI更新)
+        llamaApi.unloadModel();
+    }
+    
+    private void updateModelStatus() {
+        try {
+            // 检查模型是否已加载
+            boolean isModelLoaded = llamaApi != null && llamaApi.isModelLoaded();
+            String currentModelName = llamaApi != null ? llamaApi.getCurrentModelName() : null;
+            
+            Log.d(TAG, "updateModelStatus: isModelLoaded = " + isModelLoaded + 
+                  ", isModelLoading = " + isModelLoading + 
+                  ", currentModel = " + currentModelName);
+            
+            modelLoadingProgress.setVisibility(View.GONE);
+            loadModelButton.setEnabled(!isModelLoaded && !isModelLoading);
+            unloadModelButton.setEnabled(isModelLoaded && !isModelLoading);
+            
+            if (isModelLoaded) {
+                if (currentModelName != null) {
+                    // 显示模型名称
+                    if (currentModelName.contains("QwQ")) {
+                        modelStatusText.setText("已加载小模型 (QwQ-0.5B)，可以开始聊天");
+                    } else if (currentModelName.contains("Minicpm")) {
+                        modelStatusText.setText("已加载大模型 (Minicpm-4B)，可以开始聊天");
+                    } else {
+                        modelStatusText.setText("模型已加载: " + currentModelName);
+                    }
+                } else {
+                    modelStatusText.setText("模型已加载，可以开始聊天");
+                }
+            } else if (isModelLoading) {
+                modelStatusText.setText("模型加载中...");
+                modelLoadingProgress.setVisibility(View.VISIBLE);
+            } else {
+                modelStatusText.setText("模型未加载，请先加载模型");
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "更新模型状态失败", e);
+            modelStatusText.setText("无法获取模型状态");
+        }
+    }
+    
+    private String copyAssetToExternalStorage(String assetName) {
+        if (!isAdded() || getContext() == null) return null;
+        
+        File outputFile = new File(getContext().getExternalFilesDir(null), assetName);
+        
+        // 如果文件已存在，直接返回路径
+        if (outputFile.exists() && outputFile.length() > 0) {
+            Log.i(TAG, "模型文件已存在: " + outputFile.getAbsolutePath());
+            return outputFile.getAbsolutePath();
+        }
+        
+        // 否则从assets复制
+        try (InputStream in = getContext().getAssets().open(assetName);
+             OutputStream out = new FileOutputStream(outputFile)) {
+            
+            byte[] buffer = new byte[8192];
+            int read;
+            long total = 0;
+            long fileSize = in.available();
+            
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+                total += read;
+                
+                // 更新进度（可选）
+                int finalProgress = (int) (total * 100 / fileSize);
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    if (isAdded()) {
+                        modelLoadingProgress.setProgress(finalProgress);
+                        modelStatusText.setText("正在加载模型... " + finalProgress + "%");
+                    }
+                });
+            }
+            
+            Log.i(TAG, "模型文件复制完成: " + outputFile.getAbsolutePath());
+            return outputFile.getAbsolutePath();
+        } catch (IOException e) {
+            Log.e(TAG, "复制模型文件失败", e);
+            return null;
+        }
+    }
+    
+    @Override
+    public void onResume() {
+        super.onResume();
+        
+        // 注册监听器
+        if (llamaApi != null) {
+            llamaApi.addModelStateListener(this);
+        }
+        
+        // 更新状态
+        updateModelStatus();
+    }
+    
+    @Override
+    public void onPause() {
+        super.onPause();
+        
+        // 移除监听器
+        if (llamaApi != null) {
+            llamaApi.removeModelStateListener(this);
+        }
+    }
+    
+    // 实现ModelStateListener接口
+    @Override
+    public void onModelLoaded() {
+        // 在主线程更新UI
+        if (isAdded() && getActivity() != null) {
+            Log.d(TAG, "onModelLoaded callback received");
+            getActivity().runOnUiThread(() -> {
+                isModelLoading = false;
+                updateModelStatus();
+                if (getContext() != null) {
+                    Toast.makeText(getContext(), "模型已加载", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+    
+    @Override
+    public void onModelUnloaded() {
+        // 在主线程更新UI
+        if (isAdded() && getActivity() != null) {
+            Log.d(TAG, "onModelUnloaded callback received");
+            getActivity().runOnUiThread(() -> {
+                updateModelStatus();
+                if (getContext() != null) {
+                    Toast.makeText(getContext(), "模型已卸载", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 } 

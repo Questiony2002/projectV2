@@ -52,6 +52,26 @@ public class ChatDbHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    public boolean updateMessage(Message message) {
+        if (message.getId() <= 0) {
+            return false; // 无效的ID
+        }
+        
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_CONTENT, message.getContent());
+        
+        // 更新消息内容
+        int rowsAffected = db.update(
+            TABLE_MESSAGES, 
+            values, 
+            COLUMN_ID + " = ?", 
+            new String[] { String.valueOf(message.getId()) }
+        );
+        
+        return rowsAffected > 0;
+    }
+
     public List<Message> getAllMessages() {
         List<Message> messages = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
