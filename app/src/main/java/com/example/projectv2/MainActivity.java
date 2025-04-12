@@ -2,9 +2,11 @@ package com.example.projectv2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.projectv2.fragment.AiChatFragment;
 import com.example.projectv2.fragment.MbtiFragment;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        
+
         // 默认选中AI心理咨询页面
         if (savedInstanceState == null) {
             loadFragment(AiChatFragment.newInstance());
@@ -33,19 +35,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
-        switch (item.getItemId()) {
-            case R.id.navigation_ai_chat:
-                fragment = AiChatFragment.newInstance();
-                break;
-            case R.id.navigation_mbti:
-                fragment = MbtiFragment.newInstance();
-                break;
-            case R.id.navigation_news:
-                fragment = NewsFragment.newInstance();
-                break;
-            case R.id.navigation_profile:
-                fragment = ProfileFragment.newInstance();
-                break;
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.navigation_ai_chat) {
+            fragment = AiChatFragment.newInstance();
+        } else if (itemId == R.id.navigation_mbti) {
+            fragment = MbtiFragment.newInstance();
+        } else if (itemId == R.id.navigation_news) {
+            fragment = NewsFragment.newInstance();
+        } else if (itemId == R.id.navigation_profile) {
+            fragment = ProfileFragment.newInstance();
         }
         return loadFragment(fragment);
     }

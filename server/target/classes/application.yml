@@ -1,5 +1,6 @@
 server:
-  port: 8080
+  port: 8081
+  address: 0.0.0.0  # 允许从任何IP地址访问
 
 spring:
   main:
@@ -7,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/ai_chat_v2?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     username: root
-    password: 123456
+    password: Wx@195844
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
