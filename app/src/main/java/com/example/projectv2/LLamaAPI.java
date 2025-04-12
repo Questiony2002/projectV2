@@ -28,7 +28,7 @@ public class LLamaAPI {
     private final ExecutorService executorService;
 
     // 预测长度
-    private final int nlen = 64;
+    private final int nlen = 256;
     
     // 上下文大小，对于大模型可能需要调整
     private final int ctxSize = 2048;
