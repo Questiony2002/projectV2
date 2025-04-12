@@ -61,6 +61,9 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
         // 注册监听器
         llamaApi.addModelStateListener(this);
         
+        // 重置聊天会话
+        llamaApi.resetChatSession();
+        
         // 检查模型状态并记录
         boolean modelLoaded = llamaApi.isModelLoaded();
         Log.d(TAG, "Initial model load state: " + modelLoaded);
@@ -104,6 +107,9 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                 }
                 return;
             }
+            
+            // 确保清除之前的状态
+            llamaApi.resetChatSession();
             
             // 保存并显示用户消息
             Message userMessage = new Message(content, false);

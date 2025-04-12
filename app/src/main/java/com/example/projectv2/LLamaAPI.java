@@ -146,6 +146,25 @@ public class LLamaAPI {
     // 清除聊天历史
     public void clearChatHistory() {
         messageHistory.clear();
+        Log.i(TAG, "聊天历史已彻底清除");
+    }
+
+    // 清理特殊标记
+    private String cleanSpecialTokens(String text) {
+        if (text == null) {
+            return "";
+        }
+        
+        // 移除类似 <|im_start|> <|im_end|> 的模板标记
+        text = text.replaceAll("<\\|im_(start|end)\\|>", "");
+        
+        // 移除数学公式相关标记
+        text = text.replaceAll("\\$\\\\underline\\{[^}]*\\}\\$", "");
+        
+        // 移除其他可能的特殊标记
+        text = text.replaceAll("\\|\\$[^$]*\\$\\|", "");
+        
+        return text.trim();
     }
 
     // 加载模型
@@ -238,8 +257,6 @@ public class LLamaAPI {
             return;
         }
         
-        messageHistory.add(new ChatMessage("user", userMessage));
-
         executorService.execute(() -> {
             try {
                 State currentState = threadLocalState.get();
@@ -248,13 +265,20 @@ public class LLamaAPI {
                 }
 
                 State.Loaded loadedState = (State.Loaded) currentState;
+                
+                // 在开始新的对话前清除KV缓存
+                kv_cache_clear(loadedState.context);
+                
+                // 创建一个新的消息列表，只包含当前用户问题
+                List<ChatMessage> currentMessages = new ArrayList<>();
+                currentMessages.add(new ChatMessage("user", userMessage));
 
-                // 调用新的JNI方法处理聊天
+                // 调用新的JNI方法处理聊天，传入只有当前问题的消息列表
                 IntVar ncur = new IntVar(chat_completion_init(
                         loadedState.context,
                         loadedState.batch,
                         loadedState.model,
-                        messageHistory,
+                        currentMessages,  // 使用临时列表而不是成员变量
                         nlen));
 
                 StringBuilder responseBuilder = new StringBuilder();
@@ -268,8 +292,17 @@ public class LLamaAPI {
                     callback.onToken(str);
                 }
 
-                // 保存AI的回复到历史记录
-                messageHistory.add(new ChatMessage("assistant", responseBuilder.toString()));
+                // 获取完整回复
+                String response = responseBuilder.toString();
+                
+                // 清理回复中的特殊标记
+                response = cleanSpecialTokens(response);
+                
+                // 如果回复为空，使用一个默认回复
+                if (response.trim().isEmpty()) {
+                    response = "我没能理解您的问题，请再说一次。";
+                    callback.onToken(response);
+                }
 
                 kv_cache_clear(loadedState.context);
                 callback.onComplete();
@@ -299,8 +332,7 @@ public class LLamaAPI {
         }
         
         if (formatChat) {
-            // 如果需要聊天格式，使用新的chat方法
-            clearChatHistory(); // 清除之前的历史
+            // 如果需要聊天格式，直接调用chat方法
             chat(message, callback);
         } else {
             executorService.execute(() -> {
@@ -311,6 +343,10 @@ public class LLamaAPI {
                     }
 
                     State.Loaded loadedState = (State.Loaded) currentState;
+                    
+                    // 在开始新的文本生成前清除KV缓存
+                    kv_cache_clear(loadedState.context);
+                    
                     IntVar ncur = new IntVar(completion_init(loadedState.context,
                             loadedState.batch, message, false, nlen));
 
@@ -330,6 +366,29 @@ public class LLamaAPI {
                 }
             });
         }
+    }
+
+    // 添加重置聊天会话的方法
+    public void resetChatSession() {
+        executorService.execute(() -> {
+            try {
+                // 清空历史记录
+                messageHistory.clear();
+                Log.i(TAG, "已清空聊天历史记录");
+                
+                State currentState = threadLocalState.get();
+                if (currentState instanceof State.Loaded) {
+                    State.Loaded loadedState = (State.Loaded) currentState;
+                    
+                    // 彻底清除KV缓存
+                    kv_cache_clear(loadedState.context);
+                    
+                    Log.i(TAG, "聊天会话已重置，KV缓存已清除");
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "重置聊天会话时出错", e);
+            }
+        });
     }
 
     // 卸载模型
