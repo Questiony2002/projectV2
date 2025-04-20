@@ -413,51 +413,61 @@ Java_com_example_projectv2_LLamaAPI_completion_1init(JNIEnv *env,
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_example_projectv2_LLamaAPI_completion_1loop(JNIEnv *env, jobject thiz, jlong context_pointer,
-                                                     jlong batch_pointer, jlong sampler_pointer, jint n_len,
-                                                     jobject intvar_ncur) {
-//    LOGi("Starting completion loop");
+Java_com_example_projectv2_LLamaAPI_completion_1loop(JNIEnv *env, jobject thiz,
+                                                     jlong context_pointer, jlong batch_pointer, jlong sampler_pointer,
+                                                     jint n_len, jobject intvar_ncur) {
+
     const auto context = reinterpret_cast<llama_context *>(context_pointer);
     const auto batch = reinterpret_cast<llama_batch *>(batch_pointer);
     const auto sampler = reinterpret_cast<llama_sampler *>(sampler_pointer);
     const auto model = llama_get_model(context);
     const auto vocab = llama_model_get_vocab(model);
 
+    // 获取IntVar Java对象
     if (!la_int_var) la_int_var = env->GetObjectClass(intvar_ncur);
     if (!la_int_var_value) la_int_var_value = env->GetMethodID(la_int_var, "getValue", "()I");
     if (!la_int_var_inc) la_int_var_inc = env->GetMethodID(la_int_var, "inc", "()V");
 
-    // sample the most likely token
+    // 采样下一个token
     const auto new_token_id = llama_sampler_sample(sampler, context, -1);
-//    LOGi("Sampled token ID: %d", new_token_id);
 
-    const auto n_cur = env->CallIntMethod(intvar_ncur, la_int_var_value);
-    if (llama_vocab_is_eog(vocab, new_token_id) || n_cur == n_len) {
-//        LOGi("End of generation detected");
+    // 检测是否是结束标记
+    if (llama_vocab_is_eog(vocab, new_token_id)) {
+        LOGi("检测到EOG标记，结束生成");
         return nullptr;
     }
 
+    // 获取当前位置，检查是否超出最大长度
+    const auto n_cur = env->CallIntMethod(intvar_ncur, la_int_var_value);
+    if (n_cur >= n_len) {
+        LOGi("达到最大长度限制: %d", n_len);
+        return nullptr;
+    }
+
+    // 将token ID转换为字符串
     auto new_token_chars = common_token_to_piece(context, new_token_id);
     cached_token_chars += new_token_chars;
-//    LOGi("New token chars: %s", new_token_chars.c_str());
 
+    // 确保是有效的UTF-8序列
     jstring new_token = nullptr;
     if (is_valid_utf8(cached_token_chars.c_str())) {
         new_token = env->NewStringUTF(cached_token_chars.c_str());
-//        LOGi("Generated text: %s", cached_token_chars.c_str());
         cached_token_chars.clear();
     } else {
-//        LOGi("Invalid UTF-8 sequence, skipping");
+        // 如果不是有效的UTF-8，返回空字符串并保留缓存
         new_token = env->NewStringUTF("");
     }
 
+    // 增加计数器
+    env->CallVoidMethod(intvar_ncur, la_int_var_inc);
+
+    // 准备下一个batch
     common_batch_clear(*batch);
     common_batch_add(*batch, new_token_id, n_cur, { 0 }, true);
 
-    env->CallVoidMethod(intvar_ncur, la_int_var_inc);
-
+    // 解码
     if (llama_decode(context, *batch) != 0) {
-        LOGe("llama_decode() failed");
+        LOGe("llama_decode() 失败");
     }
 
     return new_token;

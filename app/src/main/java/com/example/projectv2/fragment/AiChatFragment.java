@@ -1,5 +1,6 @@
 package com.example.projectv2.fragment;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -61,8 +62,10 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
         // 注册监听器
         llamaApi.addModelStateListener(this);
         
-        // 重置聊天会话
-        llamaApi.resetChatSession();
+        // 只有在首次创建时重置聊天会话，而不是每次进入页面
+        if (savedInstanceState == null) {
+            llamaApi.resetChatSession();
+        }
         
         // 检查模型状态并记录
         boolean modelLoaded = llamaApi.isModelLoaded();
@@ -84,6 +87,12 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
 
         // 设置发送按钮点击事件
         sendButton.setOnClickListener(v -> sendMessage());
+        
+        // 添加长按发送按钮清除历史记录的功能
+        sendButton.setOnLongClickListener(v -> {
+            clearChatHistory();
+            return true;
+        });
     }
 
     private void sendMessage() {
@@ -107,9 +116,6 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                 }
                 return;
             }
-            
-            // 确保清除之前的状态
-            llamaApi.resetChatSession();
             
             // 保存并显示用户消息
             Message userMessage = new Message(content, false);
@@ -155,6 +161,9 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                             aiMessage.setContent(responseBuilder.toString());
                             dbHelper.updateMessage(aiMessage);
                             messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
+                            
+                            // 更新对话状态指示器
+                            showChatHistoryStatus();
                             
                             // 重新启用发送按钮
                             isGenerating = false;
@@ -242,5 +251,46 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                 Toast.makeText(getContext(), "模型已卸载，需要重新加载才能使用AI对话", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    // 添加一个重置聊天历史的方法
+    private void clearChatHistory() {
+        new AlertDialog.Builder(requireContext())
+            .setTitle("清除聊天历史")
+            .setMessage("是否要清除所有聊天历史？AI将不再记得之前的对话内容。")
+            .setPositiveButton("确定", (dialog, which) -> {
+                // 清除历史记录
+                llamaApi.resetChatSession(true);
+                // 更新UI
+                if (messageAdapter != null) {
+                    messageAdapter.clearMessages();
+                    messageAdapter.notifyDataSetChanged();
+                }
+                // 添加系统消息
+                Message systemMessage = new Message("系统：聊天历史已清除", true);
+                messageAdapter.addMessage(systemMessage);
+                dbHelper.insertMessage(systemMessage);
+                messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                
+                Toast.makeText(requireContext(), "聊天历史已清除", Toast.LENGTH_SHORT).show();
+            })
+            .setNegativeButton("取消", null)
+            .show();
+    }
+
+    // 显示当前对话状态
+    private void showChatHistoryStatus() {
+        if (isAdded() && llamaApi != null) {
+            int historySize = llamaApi.getChatHistorySize();
+            
+            if (historySize > 2) {
+                // 计算轮数（一轮是用户+AI的对话）
+                int rounds = historySize / 2;
+                String status = "AI已记忆" + rounds + "轮对话";
+                
+                // 只记录到日志，不打扰用户
+                Log.d(TAG, status + ", 历史记录长度: " + historySize);
+            }
+        }
     }
 } 

@@ -581,7 +581,7 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
             loadModelFromFile(modelFile.getAbsolutePath());
         } else {
             // 检查设备存储空间是否足够
-            long requiredSpace = 5120L * 1024 * 1024; // 预估模型文件大小：5GB
+            long requiredSpace = 3072L * 1024 * 1024; // 预估模型文件大小：3GB
             long availableSpace = 0;
             
             File externalDir = getContext().getExternalFilesDir(null);
@@ -593,7 +593,7 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
                 // 存储空间不足，提示用户
                 new AlertDialog.Builder(requireContext())
                     .setTitle("存储空间不足")
-                    .setMessage("下载模型需要约5GB存储空间，您的设备可用空间不足。请清理存储空间后再试。")
+                    .setMessage("下载模型需要约3GB存储空间，您的设备可用空间不足。请清理存储空间后再试。")
                     .setPositiveButton("确定", null)
                     .show();
                 return;
