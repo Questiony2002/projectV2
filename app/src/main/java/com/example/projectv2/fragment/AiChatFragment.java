@@ -33,11 +33,14 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
     private RecyclerView messagesRecyclerView;
     private EditText messageInput;
     private ImageButton sendButton;
+    private ImageButton clearButton;
     private MessageAdapter messageAdapter;
     private ChatDbHelper dbHelper;
     private LLamaAPI llamaApi;
     private Handler mainHandler;
     private boolean isGenerating = false;
+    private long lastUIUpdateTime = 0;
+    private static final long UI_UPDATE_INTERVAL = 50; // 毫秒
 
     public static AiChatFragment newInstance() {
         return new AiChatFragment();
@@ -78,6 +81,7 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
         messagesRecyclerView = view.findViewById(R.id.messagesRecyclerView);
         messageInput = view.findViewById(R.id.messageInput);
         sendButton = view.findViewById(R.id.sendButton);
+        clearButton = view.findViewById(R.id.clearButton);
 
         // 设置RecyclerView
         messagesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -87,6 +91,9 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
 
         // 设置发送按钮点击事件
         sendButton.setOnClickListener(v -> sendMessage());
+        
+        // 设置清空按钮点击事件
+        clearButton.setOnClickListener(v -> clearChatHistory());
         
         // 添加长按发送按钮清除历史记录的功能
         sendButton.setOnLongClickListener(v -> {
@@ -144,21 +151,32 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                 @Override
                 public void onToken(String token) {
                     responseBuilder.append(token);
-                    mainHandler.post(() -> {
-                        if (isAdded()) {
-                            aiMessage.setContent(responseBuilder.toString());
-                            messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
-                            messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
-                        }
-                    });
+                    
+                    // 使用时间间隔控制UI更新频率，减少UI线程负担
+                    long currentTime = System.currentTimeMillis();
+                    if (currentTime - lastUIUpdateTime > UI_UPDATE_INTERVAL) {
+                        mainHandler.post(() -> {
+                            if (isAdded()) {
+                                aiMessage.setContent(responseBuilder.toString());
+                                messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
+                                messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                            }
+                        });
+                        lastUIUpdateTime = currentTime;
+                    }
                 }
 
                 @Override
                 public void onComplete() {
+                    // 立即清空所有待处理的UI更新
+                    mainHandler.removeCallbacksAndMessages(null);
+                    
+                    // 确保最终更新显示完整的响应
                     mainHandler.post(() -> {
                         if (isAdded()) {
                             // 更新最终结果并保存到数据库
-                            aiMessage.setContent(responseBuilder.toString());
+                            String finalContent = responseBuilder.toString();
+                            aiMessage.setContent(finalContent);
                             dbHelper.updateMessage(aiMessage);
                             messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
                             
@@ -168,6 +186,8 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                             // 重新启用发送按钮
                             isGenerating = false;
                             sendButton.setEnabled(true);
+                            
+                            Log.d(TAG, "生成完成，内容长度: " + finalContent.length());
                         }
                     });
                 }
@@ -266,11 +286,6 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                     messageAdapter.clearMessages();
                     messageAdapter.notifyDataSetChanged();
                 }
-                // 添加系统消息
-                Message systemMessage = new Message("系统：聊天历史已清除", true);
-                messageAdapter.addMessage(systemMessage);
-                dbHelper.insertMessage(systemMessage);
-                messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
                 
                 Toast.makeText(requireContext(), "聊天历史已清除", Toast.LENGTH_SHORT).show();
             })

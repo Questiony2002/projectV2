@@ -39,6 +39,10 @@ public class LLamaAPI {
     // 添加监听器接口和相关方法
     private final List<ModelStateListener> modelStateListeners = new ArrayList<>();
 
+    // 添加控制变量
+    private boolean useIncrementalGeneration = true;
+    private boolean clearKVCacheNeeded = false;
+
     public interface ModelStateListener {
         void onModelLoaded();
 
@@ -159,6 +163,89 @@ public class LLamaAPI {
     private native int chat_completion_init(long context, long batch, long model,
                                             List<ChatMessage> messages, int nLen);
 
+    // 添加新的原生方法声明
+    private native int incremental_chat_completion(long context, long batch, long model, 
+                                                  ChatMessage newMessage, int nLen);
+    private native int get_kv_cache_used(long context);
+    private native int get_context_size(long context);
+
+    // 新增的JNI方法声明
+    private native boolean has_kv_cache_space(long context, int nTokensNeeded);
+    private native void save_kv_cache_state(long context, String filename);
+    private native boolean load_kv_cache_state(long context, String filename);
+
+    // 辅助方法：估算token数量
+    private int estimateTokenCount(String text) {
+        if (text == null || text.isEmpty()) {
+            return 0;
+        }
+        
+        // 模仿simple-chat.cpp中的token计算方式
+        // 简化版本：英文约4字符/token，中文约1字符/token
+        int englishChars = 0;
+        int chineseChars = 0;
+        
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c >= 0x4E00 && c <= 0x9FA5) {
+                // 中文字符
+                chineseChars++;
+            } else if (c >= 32 && c <= 126) {
+                // 英文字符
+                englishChars++;
+            }
+        }
+        
+        // 基础token数估算
+        int baseTokens = (englishChars / 4) + chineseChars;
+        
+        // 添加角色和格式开销 (类似simple-chat.cpp中模板overhead)
+        int overhead = 20;
+        
+        return baseTokens + overhead;
+    }
+
+    // 辅助方法：生成响应
+    private void generateResponse(State.Loaded state, IntVar ncur, int maxTokens, 
+                                CompletionCallback callback) {
+        // 用于收集完整响应
+        StringBuilder response = new StringBuilder();
+        
+        // 循环生成tokens，直到达到限制或生成结束标记
+        while (ncur.getValue() < maxTokens) {
+            // 获取下一个token
+            String token = completion_loop(state.context, state.batch, 
+                                          state.sampler, maxTokens, ncur);
+            
+            // 检查是否结束生成
+            if (token == null) {
+                Log.d(TAG, "检测到EOG标记，结束生成");
+                break;
+            }
+            
+            // 过滤掉特殊标记（如有需要）
+            if (!token.contains("<|") && !token.contains("</s>")) {
+                response.append(token);
+                callback.onToken(token);
+            }
+        }
+        
+        // 清理最终响应并添加到历史
+        String finalResponse = cleanSpecialTokens(response.toString());
+        if (!finalResponse.isEmpty()) {
+            messageHistory.add(new ChatMessage("assistant", finalResponse));
+        }
+        
+        // 完成回调
+        callback.onComplete();
+        
+        // 检查并记录KV缓存状态
+        int newKvUsed = get_kv_cache_used(state.context);
+        int ctxSize = get_context_size(state.context);
+        Log.i(TAG, "生成完成后KV缓存: " + newKvUsed + "/" + ctxSize + 
+              " (" + (newKvUsed * 100 / ctxSize) + "%)");
+    }
+
     // 清除聊天历史
     public void clearChatHistory() {
         messageHistory.clear();
@@ -171,21 +258,15 @@ public class LLamaAPI {
             return "";
         }
 
-        // 去掉明显的assistant标记
-        text = text.replaceAll("\\bassistant\\b", "");
-        
-        // 移除重复的assistant标记
-        text = text.replaceAll("assistant\\s+assistant", "");
-        
-        // 移除常见的特殊标记
-        text = text.replaceAll("<\\|.*?\\|>", "");
-        text = text.replaceAll("</s>|<s>", "");
-        
-        // 移除角色标记
-        text = text.replaceAll("(?i)(user|assistant|system)\\s*:", "");
-        
-        // 移除连续空白
-        text = text.replaceAll("\\s+", " ").trim();
+        // 彻底清理所有特殊标记和角色标签
+        text = text.replaceAll("<\\|im_\\w+\\|>", "") // 明确匹配所有im_xxx标记
+                  .replaceAll("<\\|.*?\\|>", "")      // 匹配所有<|...|>格式标记
+                  .replaceAll("</s>|<s>|<pad>", "")
+                  .replaceAll("im_\\w+", "")          // 匹配所有im_xxx格式
+                  .replaceAll("\\b(assistant|user|system)\\b", "")
+                  .replaceAll("(?i)(user|assistant|system)\\s*:", "")
+                  .replaceAll("\\s+", " ")
+                  .trim();
         
         return text;
     }
@@ -267,8 +348,6 @@ public class LLamaAPI {
 
                 // 清理内存
                 System.gc();
-
-                // 不向外抛出异常，只是记录，避免崩溃
             }
         });
     }
@@ -276,96 +355,107 @@ public class LLamaAPI {
     // 添加聊天方法
     public void chat(String userMessage, CompletionCallback callback) {
         if (!isModelLoaded) {
-            callback.onError(new IllegalStateException("No model loaded"));
+            callback.onError(new IllegalStateException("未加载模型"));
             return;
         }
         
         executorService.execute(() -> {
             try {
-                State currentState = threadLocalState.get();
-                if (!(currentState instanceof State.Loaded)) {
-                    throw new IllegalStateException("No model loaded");
-                }
-
-                State.Loaded loadedState = (State.Loaded) currentState;
+                State.Loaded loadedState = (State.Loaded) threadLocalState.get();
+                ChatMessage userMsg = new ChatMessage("user", userMessage);
                 
-                // 添加用户问题到消息历史
-                if (messageHistory.size() > 20) { // 增加历史记录长度上限，支持更长对话
-                    messageHistory.subList(0, 4).clear(); // 移除最旧的两组对话（4条消息）
-                    Log.i(TAG, "移除旧对话，保持历史记录在合理长度");
-                }
-                messageHistory.add(new ChatMessage("user", userMessage));
+                // 1. 检查KV缓存状态
+                int n_ctx = get_context_size(loadedState.context);
+                int n_ctx_used = get_kv_cache_used(loadedState.context);
                 
-                // 使用较短的最大响应长度，减少生成过长回复的可能性
-                int maxResponseTokens = 250;
+                // 2. 记录当前状态
+                Log.i(TAG, String.format("KV缓存状态: %d/%d", n_ctx_used, n_ctx));
                 
-                // 使用完整的消息历史
-                IntVar ncur = new IntVar(chat_completion_init(
+                // 3. 尝试增量处理
+                if (n_ctx_used > 0) {
+                    int result = incremental_chat_completion(
                         loadedState.context,
                         loadedState.batch,
                         loadedState.model,
-                        messageHistory,
-                        maxResponseTokens));
-                
-                // 用于收集完整响应
-                StringBuilder response = new StringBuilder();
-                int maxIterations = maxResponseTokens * 2; // 安全上限
-                int iterations = 0;
-
-                // 生成循环
-                while (iterations < maxIterations) {
-                    String token = completion_loop(loadedState.context, loadedState.batch,
-                            loadedState.sampler, maxResponseTokens, ncur);
+                        userMsg,
+                        nlen);  // 使用预设的生成长度
                     
-                    // 检查是否结束生成
-                    if (token == null) {
-                        Log.d(TAG, "EOG标记检测或达到长度上限，终止生成");
-                        break;
+                    if (result >= 0) {
+                        // 增量处理成功
+                        messageHistory.add(userMsg);
+                        Log.i(TAG, "增量处理成功，位置: " + result);
+                        processCompletion(loadedState, result, callback);
+                        return;
                     }
                     
-                    // 简单过滤特殊标记
-                    if (token.contains("<|im_") || token.contains("</s>") || token.contains("<s>")) {
-                        continue; // 跳过此token不发送给用户
-                    }
-                    
-                    // 添加到响应并发送给客户端
-                    response.append(token);
-                    
-                    // 直接发送token给客户端
-                    String cleanToken = token;
-                    if (!cleanToken.isEmpty()) {
-                        callback.onToken(cleanToken);
-                    }
-                    
-                    iterations++;
+                    // 增量处理失败，继续尝试完整处理
+                    Log.i(TAG, "增量处理失败，切换到完整处理");
                 }
                 
-                // 获取完整回复并清理
-                String finalResponse = cleanSpecialTokens(response.toString());
+                // 4. 完整处理流程
+                // 先清理KV缓存
+                kv_cache_clear(loadedState.context);
+                Log.i(TAG, "已清理KV缓存，开始完整处理");
                 
-                // 如果回复为空，使用默认回复
-                if (finalResponse.trim().isEmpty()) {
-                    finalResponse = "我没能理解您的问题，请再说一次。";
-                    callback.onToken(finalResponse);
+                // 添加到历史
+                messageHistory.add(userMsg);
+                
+                // 如果历史太长，裁剪一些早期消息
+                if (messageHistory.size() > 8) {
+                    messageHistory.subList(0, 4).clear();
+                    Log.i(TAG, "历史记录已裁剪，保留最新消息");
                 }
                 
-                // 记录AI回复到历史中
-                messageHistory.add(new ChatMessage("assistant", finalResponse));
-                Log.i(TAG, "对话已添加到历史，当前历史长度: " + messageHistory.size());
+                // 初始化完整处理
+                int pos = chat_completion_init(
+                    loadedState.context,
+                    loadedState.batch,
+                    loadedState.model,
+                    messageHistory,
+                    nlen);
                 
-                // 只在真正需要时清理KV缓存
-                int estimatedTokens = estimateHistoryTokens();
-                if (estimatedTokens > ctxSize * 0.8) { // 如果使用了超过80%的上下文长度
-                    Log.i(TAG, "历史接近上下文限制，清理KV缓存");
-                    kv_cache_clear(loadedState.context);
-                }
+                // 处理生成
+                processCompletion(loadedState, pos, callback);
                 
-                callback.onComplete();
             } catch (Exception e) {
                 Log.e(TAG, "聊天过程中出错: " + e.getMessage(), e);
                 callback.onError(e);
             }
         });
+    }
+
+    // 处理生成过程的辅助方法
+    private void processCompletion(State.Loaded state, int startPos, 
+                                 CompletionCallback callback) {
+        StringBuilder response = new StringBuilder();
+        IntVar ncur = new IntVar(startPos);
+        
+        while (true) {
+            String token = completion_loop(
+                state.context,
+                state.batch,
+                state.sampler,
+                nlen,
+                ncur);
+            
+            if (token == null) {
+                break;  // 生成结束
+            }
+            
+            // 过滤特殊标记
+            if (!token.contains("<|") && !token.contains("</s>")) {
+                response.append(token);
+                callback.onToken(token);
+            }
+        }
+        
+        // 处理完成
+        String finalResponse = cleanSpecialTokens(response.toString());
+        if (!finalResponse.isEmpty()) {
+            messageHistory.add(new ChatMessage("assistant", finalResponse));
+        }
+        
+        callback.onComplete();
     }
 
     // 生成文本
@@ -624,11 +714,69 @@ public class LLamaAPI {
 
     // 估算历史消息的token数量
     private int estimateHistoryTokens() {
-        // 简单估算：每个字符约0.5个token
+        // 更准确地估算：每个英文字符约0.25个token，每个中文字符约1个token
         int estimate = 0;
         for (ChatMessage msg : messageHistory) {
-            estimate += (msg.content.length() / 2) + 10; // 10是角色标记的估计token数
+            String content = msg.content;
+            int englishChars = 0;
+            int chineseChars = 0;
+            
+            for (int i = 0; i < content.length(); i++) {
+                char c = content.charAt(i);
+                if (c >= 0x4E00 && c <= 0x9FA5) {
+                    // 中文字符
+                    chineseChars++;
+                } else if (c >= 32 && c <= 126) {
+                    // ASCII可打印字符
+                    englishChars++;
+                }
+            }
+            
+            // 每个角色标记和格式标记大约需要10个token
+            int roleTokens = 10;
+            // 英文字符通常每4个字符约1个token
+            int textTokens = (englishChars / 4) + chineseChars;
+            
+            estimate += roleTokens + textTokens;
+            
+            Log.d(TAG, "消息: [" + msg.role + "] 长度=" + content.length() + 
+                  ", 估算token=" + (roleTokens + textTokens));
         }
+        
+        // 添加格式化开销
+        estimate += messageHistory.size() * 5;
+        
         return estimate;
+    }
+
+    /**
+     * 检测并处理生成结束标记，确保终止生成过程
+     * @param token 当前token
+     * @param buffer 缓冲区
+     * @return 是否检测到结束标记
+     */
+    private boolean isEndOfGenerationToken(String token, StringBuilder buffer) {
+        // 检测null (直接EOG标记)
+        if (token == null) {
+            Log.d(TAG, "检测到明确的EOG标记，立即终止生成");
+            buffer.setLength(0); // 清空缓冲区
+            return true;
+        }
+        
+        // 检测长度限制标记
+        if (token.contains("<|length_limit|>")) {
+            Log.d(TAG, "达到最大长度限制，终止生成");
+            return true;
+        }
+        
+        // 检测可能的结束标记
+        if (token.contains("<|endoftext|>") || 
+            token.contains("<|eot|>") || 
+            token.contains("</s>")) {
+            Log.d(TAG, "检测到间接EOG标记，终止生成");
+            return true;
+        }
+        
+        return false;
     }
 }
