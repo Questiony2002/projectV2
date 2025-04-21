@@ -98,6 +98,7 @@ public class LLamaAPI {
         }
     }
 
+    //    LLamaAPI使用单线程执行器处理所有AI任务
     private LLamaAPI() {
         executorService = Executors.newSingleThreadExecutor(new ThreadFactory() {
             @Override
@@ -169,10 +170,6 @@ public class LLamaAPI {
     private native int get_kv_cache_used(long context);
     private native int get_context_size(long context);
 
-    // 新增的JNI方法声明
-    private native boolean has_kv_cache_space(long context, int nTokensNeeded);
-    private native void save_kv_cache_state(long context, String filename);
-    private native boolean load_kv_cache_state(long context, String filename);
 
     // 辅助方法：估算token数量
     private int estimateTokenCount(String text) {
@@ -458,13 +455,13 @@ public class LLamaAPI {
         callback.onComplete();
     }
 
-    // 生成文本
-    /*
-     *  回调模式设计 处理需要长时间运行的文本生成任务
-     *
-     * */
 
-    // 回调接口
+     // 定义的回调接口
+    /*
+    *   回调模式设计 处理需要长时间运行的文本生成任务
+    *
+    *   接口定义的方法，在 AiChatFragment.java 中使用匿名类实现
+    * */
     public interface CompletionCallback {
         void onToken(String token);     // 逐个返回生成的文本片段，流式输出
 
@@ -473,6 +470,9 @@ public class LLamaAPI {
         void onError(Exception e);      // 出错时传递异常
     }
 
+    /*
+    * llamacpp原仓库官方demo的代码实现，本项目废弃不用，暂作保存
+    * */
     public void generateCompletion(String message, boolean formatChat, CompletionCallback callback) {
         if (!isModelLoaded) {
             callback.onError(new IllegalStateException("No model loaded"));
@@ -620,6 +620,9 @@ public class LLamaAPI {
      *
      *  Method:
      *       对外提供简单的 getValue() 和 inc() 方法
+     *
+     *  作用： 在cpp和java中实现当前预测token长度的信息通信
+     *  todo：该设计可能不是必须的
      * */
     private static class IntVar {
         private final AtomicInteger value;

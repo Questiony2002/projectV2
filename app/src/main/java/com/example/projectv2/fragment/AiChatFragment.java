@@ -146,7 +146,15 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
             
             // 使用LLamaAPI生成回复
             StringBuilder responseBuilder = new StringBuilder();
-            
+
+
+            // 匿名类实现回调接口 CompletionCallback
+            /*
+            *   onToken 实现流式返回token
+            *   OnComplete 实现任务完成后的通知
+            *   onError 实现异常通知
+            *   todo：匿名类可能性能损耗较大，因为每次对话都会新建对象，使用static创建静态对象也许性能更高
+            * */
             llamaApi.chat(content, new LLamaAPI.CompletionCallback() {
                 @Override
                 public void onToken(String token) {
