@@ -34,45 +34,6 @@ jclass la_int_var;
 jmethodID la_int_var_value;
 jmethodID la_int_var_inc;
 
-std::string cached_token_chars;
-
-bool is_valid_utf8(const char * string) {
-    if (!string) {
-        return true;
-    }
-
-    const unsigned char * bytes = (const unsigned char *)string;
-    int num;
-
-    while (*bytes != 0x00) {
-        if ((*bytes & 0x80) == 0x00) {
-            // U+0000 to U+007F
-            num = 1;
-        } else if ((*bytes & 0xE0) == 0xC0) {
-            // U+0080 to U+07FF
-            num = 2;
-        } else if ((*bytes & 0xF0) == 0xE0) {
-            // U+0800 to U+FFFF
-            num = 3;
-        } else if ((*bytes & 0xF8) == 0xF0) {
-            // U+10000 to U+10FFFF
-            num = 4;
-        } else {
-            return false;
-        }
-
-        bytes += 1;
-        for (int i = 1; i < num; ++i) {
-            if ((*bytes & 0xC0) != 0x80) {
-                return false;
-            }
-            bytes += 1;
-        }
-    }
-
-    return true;
-}
-
 static void log_callback(ggml_log_level level, const char * fmt, void * data) {
     if (level == GGML_LOG_LEVEL_ERROR)     __android_log_print(ANDROID_LOG_ERROR, TAG, fmt, data);
     else if (level == GGML_LOG_LEVEL_INFO) __android_log_print(ANDROID_LOG_INFO, TAG, fmt, data);
@@ -326,14 +287,28 @@ Java_com_example_projectv2_LLamaAPI_free_1batch(JNIEnv *env, jobject thiz, jlong
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_com_example_projectv2_LLamaAPI_new_1sampler(JNIEnv *env, jobject thiz) {
+Java_com_example_projectv2_LLamaAPI_new_1sampler(JNIEnv *env, jobject thiz, jfloat temp) {
     auto sparams = llama_sampler_chain_default_params();
-//    sparams.no_perf = true;
     llama_sampler * smpl = llama_sampler_chain_init(sparams);
-//    llama_sampler_chain_add(smpl, llama_sampler_init_greedy());
+    
+    LOGi("创建采样器 - 温度: %.2f", temp);
+    
+    // 使用与simple-chat.cpp相同的配置
     llama_sampler_chain_add(smpl, llama_sampler_init_min_p(0.05f, 1));
-    llama_sampler_chain_add(smpl, llama_sampler_init_temp(0.8f));
+    
+    if (temp <= 0.0f) {
+        // 温度为0时使用贪婪搜索
+        LOGi("启用贪婪采样策略");
+        llama_sampler_chain_add(smpl, llama_sampler_init_greedy());
+    } else {
+        // 使用温度采样
+        LOGi("启用温度采样策略: %.2f", temp);
+        llama_sampler_chain_add(smpl, llama_sampler_init_temp(temp));
+    }
+    
+    // 添加分布采样
     llama_sampler_chain_add(smpl, llama_sampler_init_dist(LLAMA_DEFAULT_SEED));
+    
     return reinterpret_cast<jlong>(smpl);
 }
 
@@ -348,7 +323,7 @@ Java_com_example_projectv2_LLamaAPI_free_1sampler(JNIEnv *env, jobject thiz, jlo
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_example_projectv2_LLamaAPI_backend_1init(JNIEnv *env, jobject thiz, jboolean numa) {
-    llama_backend_init();
+    ggml_backend_load_all();
 }
 
 extern "C"
@@ -375,8 +350,6 @@ Java_com_example_projectv2_LLamaAPI_completion_1init(JNIEnv *env,
     LOGi("Format chat: %d", format_chat);
     LOGi("Max length: %d", n_len);
     
-    cached_token_chars.clear();
-
     bool parse_special = (format_chat == JNI_TRUE);
     const auto tokens_list = common_tokenize(context, text, true, parse_special);
 
@@ -429,7 +402,7 @@ Java_com_example_projectv2_LLamaAPI_completion_1loop(JNIEnv *env, jobject thiz,
     const auto sampler = reinterpret_cast<llama_sampler *>(sampler_pointer);
     const auto model = llama_get_model(context);
     const auto vocab = llama_model_get_vocab(model);
-//    const bool is_first = llama_kv_self_used_cells(context) == 0;
+    
     // 获取IntVar Java对象
     if (!la_int_var) la_int_var = env->GetObjectClass(intvar_ncur);
     if (!la_int_var_value) la_int_var_value = env->GetMethodID(la_int_var, "getValue", "()I");
@@ -443,25 +416,53 @@ Java_com_example_projectv2_LLamaAPI_completion_1loop(JNIEnv *env, jobject thiz,
         LOGi("检测到EOG标记，结束生成");
         return nullptr;
     }
-
-    // 将token ID转换为字符串
-    auto new_token_chars = common_token_to_piece(context, new_token_id);
-    cached_token_chars += new_token_chars;
-
-    // 确保是有效的UTF-8序列
-    jstring new_token = nullptr;
-    if (is_valid_utf8(cached_token_chars.c_str())) {
-        new_token = env->NewStringUTF(cached_token_chars.c_str());
-        cached_token_chars.clear();
-    } else {
-        // 如果不是有效的UTF-8，返回空字符串并保留缓存
-        new_token = env->NewStringUTF("");
+    
+    // 检测特殊标记 (<im_end>等)
+    const std::string token_str = common_token_to_piece(context, new_token_id);
+    if (token_str.find("<im_") != std::string::npos || 
+        token_str.find("</s>") != std::string::npos ||
+        token_str.find("<|") != std::string::npos) {
+        
+        LOGi("检测到特殊标记: %d (%s)，忽略并继续生成", new_token_id, token_str.c_str());
+        
+        // 增加计数器但不输出内容
+        env->CallVoidMethod(intvar_ncur, la_int_var_inc);
+        
+        // 获取当前位置
+        const auto n_cur = env->CallIntMethod(intvar_ncur, la_int_var_value);
+        
+        // 准备下一个batch继续生成
+        common_batch_clear(*batch);
+        common_batch_add(*batch, new_token_id, n_cur, { 0 }, true);
+        
+        // 解码
+        if (llama_decode(context, *batch) != 0) {
+            LOGe("llama_decode() 失败");
+        }
+        
+        // 返回空字符串，表示此token被跳过
+        return env->NewStringUTF("");
     }
 
+    // 采用simple-chat.cpp的方式处理token
+    char buf[256];
+    int n = llama_token_to_piece(vocab, new_token_id, buf, sizeof(buf), 0, true);
+    if (n < 0) {
+        LOGe("转换token失败");
+        return env->NewStringUTF("");
+    }
+    
+    // 确保字符串长度精确控制，使用正确长度构造字符串
+    std::string piece(buf, n);
+    LOGi("生成token: %d -> '%s'", new_token_id, piece.c_str());
+    
+    // 创建Java字符串
+    jstring token_text = env->NewStringUTF(piece.c_str());
+    
     // 增加计数器
     env->CallVoidMethod(intvar_ncur, la_int_var_inc);
     
-    // 获取当前位置用于日志和准备batch
+    // 获取当前位置
     const auto n_cur = env->CallIntMethod(intvar_ncur, la_int_var_value);
 
     // 准备下一个batch
@@ -473,7 +474,7 @@ Java_com_example_projectv2_LLamaAPI_completion_1loop(JNIEnv *env, jobject thiz,
         LOGe("llama_decode() 失败");
     }
 
-    return new_token;
+    return token_text;
 }
 
 extern "C"
@@ -494,6 +495,21 @@ JNIEXPORT jint JNICALL
 Java_com_example_projectv2_LLamaAPI_get_1context_1size(JNIEnv *env, jobject thiz, jlong context_pointer) {
     const auto context = reinterpret_cast<llama_context *>(context_pointer);
     return llama_n_ctx(context);
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_example_projectv2_LLamaAPI_can_1fit_1in_1kv_1cache(JNIEnv *env, jobject thiz,
+                                                           jlong context_pointer,
+                                                           jint n_tokens_to_add) {
+    const auto context = reinterpret_cast<llama_context *>(context_pointer);
+    int n_ctx = llama_n_ctx(context);
+    int n_ctx_used = llama_kv_self_used_cells(context);
+    
+    LOGi("KV缓存状态: %d/%d，需要添加 %d 个token", n_ctx_used, n_ctx, n_tokens_to_add);
+    
+    // 简单检查是否有足够空间
+    return (n_ctx_used + n_tokens_to_add <= n_ctx) ? JNI_TRUE : JNI_FALSE;
 }
 
 extern "C"
@@ -657,7 +673,6 @@ Java_com_example_projectv2_LLamaAPI_incremental_1chat_1completion(JNIEnv *env,
     }
     
     // 标记化增量提示
-    cached_token_chars.clear();
     const auto tokens_list = common_tokenize(context, prompt.c_str(), true, false);
     
     // 检查KV缓存空间是否足够
@@ -779,8 +794,6 @@ Java_com_example_projectv2_LLamaAPI_chat_1completion_1init(JNIEnv *env,
 
     std::string prompt(formatted.data(), new_len);
     LOGi("Formatted prompt: %s", prompt.c_str());
-
-    cached_token_chars.clear();
 
     // 标记化格式化的提示
     const auto tokens_list = common_tokenize(context, prompt.c_str(), true, false);
