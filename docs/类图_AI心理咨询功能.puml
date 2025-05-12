@@ -1,0 +1,55 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontName "Times New Roman"
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+skinparam classFontName "Times New Roman"
+skinparam classAttributeFontName "Times New Roman"
+skinparam classStereotypeFontName "Times New Roman"
+
+class Message {
+    - id: long
+    - content: String
+    - timestamp: long
+    - isAi: boolean
+    + getters/setters()
+    + Message()
+    + Message(String, boolean)
+}
+
+class ChatDbHelper {
+    - DATABASE_NAME: String
+    - DATABASE_VERSION: int
+    - ...
+    + insertMessage(Message): long
+    + getAllMessages(): List<Message>
+}
+
+class AiChatFragment {
+    - dbHelper: ChatDbHelper
+    - messageAdapter: MessageAdapter
+    + onCreateView(...): View
+    + onViewCreated(...): void
+    + sendMessage(): void
+}
+
+class MessageAdapter {
+    - messages: List<Message>
+    + addMessage(Message): void
+    + onBindViewHolder(...): void
+}
+
+AiChatFragment --> ChatDbHelper : uses
+AiChatFragment --> MessageAdapter : uses
+MessageAdapter --> Message : depends on
+ChatDbHelper --> Message : operates
+
+@enduml 

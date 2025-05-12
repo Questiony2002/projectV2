@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="800" height="350" fill="white"/>
+    
+    <!-- 表格线 -->
+    <line x1="50" y1="40" x2="750" y2="40" stroke="black" stroke-width="2"/>
+    <line x1="50" y1="80" x2="750" y2="80" stroke="black" stroke-width="1"/>
+    <line x1="50" y1="330" x2="750" y2="330" stroke="black" stroke-width="2"/>
+    
+    <!-- 表头 -->
+    <text x="125" y="65" text-anchor="middle" font-family="宋体" font-size="14">列名</text>
+    <text x="250" y="65" text-anchor="middle" font-family="宋体" font-size="14">数据类型</text>
+    <text x="350" y="65" text-anchor="middle" font-family="宋体" font-size="14">长度</text>
+    <text x="450" y="65" text-anchor="middle" font-family="宋体" font-size="14">是否可空</text>
+    <text x="625" y="65" text-anchor="middle" font-family="宋体" font-size="14">注释</text>
+    
+    <!-- 数据行 -->
+    <text x="125" y="105" text-anchor="middle" font-family="Times New Roman" font-size="14">id</text>
+    <text x="250" y="105" text-anchor="middle" font-family="Times New Roman" font-size="14">bigint</text>
+    <text x="350" y="105" text-anchor="middle" font-family="Times New Roman" font-size="14">20</text>
+    <text x="450" y="105" text-anchor="middle" font-family="宋体" font-size="14">否</text>
+    <text x="625" y="105" text-anchor="middle" font-family="宋体" font-size="14">结果ID，自增主键</text>
+    
+    <text x="125" y="140" text-anchor="middle" font-family="Times New Roman" font-size="14">user_id</text>
+    <text x="250" y="140" text-anchor="middle" font-family="Times New Roman" font-size="14">bigint</text>
+    <text x="350" y="140" text-anchor="middle" font-family="Times New Roman" font-size="14">20</text>
+    <text x="450" y="140" text-anchor="middle" font-family="宋体" font-size="14">否</text>
+    <text x="625" y="140" text-anchor="middle" font-family="宋体" font-size="14">用户ID</text>
+    
+    <text x="125" y="175" text-anchor="middle" font-family="Times New Roman" font-size="14">total_score</text>
+    <text x="250" y="175" text-anchor="middle" font-family="Times New Roman" font-size="14">int</text>
+    <text x="350" y="175" text-anchor="middle" font-family="Times New Roman" font-size="14">11</text>
+    <text x="450" y="175" text-anchor="middle" font-family="宋体" font-size="14">否</text>
+    <text x="625" y="175" text-anchor="middle" font-family="宋体" font-size="14">总分</text>
+    
+    <text x="125" y="210" text-anchor="middle" font-family="Times New Roman" font-size="14">total_average</text>
+    <text x="250" y="210" text-anchor="middle" font-family="Times New Roman" font-size="14">double</text>
+    <text x="350" y="210" text-anchor="middle" font-family="Times New Roman" font-size="14">-</text>
+    <text x="450" y="210" text-anchor="middle" font-family="宋体" font-size="14">否</text>
+    <text x="625" y="210" text-anchor="middle" font-family="宋体" font-size="14">总均分</text>
+    
+    <text x="125" y="245" text-anchor="middle" font-family="Times New Roman" font-size="14">positive_items</text>
+    <text x="250" y="245" text-anchor="middle" font-family="Times New Roman" font-size="14">int</text>
+    <text x="350" y="245" text-anchor="middle" font-family="Times New Roman" font-size="14">11</text>
+    <text x="450" y="245" text-anchor="middle" font-family="宋体" font-size="14">否</text>
+    <text x="625" y="245" text-anchor="middle" font-family="宋体" font-size="14">阳性项目数</text>
+
+    <text x="125" y="280" text-anchor="middle" font-family="Times New Roman" font-size="14">positive_average</text>
+    <text x="250" y="280" text-anchor="middle" font-family="Times New Roman" font-size="14">double</text>
+    <text x="350" y="280" text-anchor="middle" font-family="Times New Roman" font-size="14">-</text>
+    <text x="450" y="280" text-anchor="middle" font-family="宋体" font-size="14">否</text>
+    <text x="625" y="280" text-anchor="middle" font-family="宋体" font-size="14">阳性项目平均分</text>
+
+    <text x="125" y="315" text-anchor="middle" font-family="Times New Roman" font-size="14">factor_scores</text>
+    <text x="250" y="315" text-anchor="middle" font-family="Times New Roman" font-size="14">text</text>
+    <text x="350" y="315" text-anchor="middle" font-family="Times New Roman" font-size="14">-</text>
+    <text x="450" y="315" text-anchor="middle" font-family="宋体" font-size="14">是</text>
+    <text x="625" y="315" text-anchor="middle" font-family="宋体" font-size="14">各因子得分JSON</text>
+</svg> 

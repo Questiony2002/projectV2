@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="265" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="800" height="265" fill="white"/>
+    
+    <!-- 表头 -->
+    <line x1="50" y1="40" x2="750" y2="40" stroke="#333" stroke-width="2"/>
+    <line x1="50" y1="70" x2="750" y2="70" stroke="#333" stroke-width="2"/>
+    <line x1="50" y1="235" x2="750" y2="235" stroke="#333" stroke-width="2"/>
+    
+    <!-- 列名 -->
+    <text x="100" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">列名</text>
+    <text x="250" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">数据类型</text>
+    <text x="350" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">长度</text>
+    <text x="450" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">是否可空</text>
+    <text x="600" y="60" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">注释</text>
+    
+    <!-- 数据行 -->
+    <text x="100" y="100" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">id</text>
+    <text x="250" y="100" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">bigint</text>
+    <text x="350" y="100" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">20</text>
+    <text x="450" y="100" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">否</text>
+    <text x="600" y="100" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">主键</text>
+    
+    <text x="100" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">question_number</text>
+    <text x="250" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">int</text>
+    <text x="350" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">11</text>
+    <text x="450" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">否</text>
+    <text x="600" y="130" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">题目编号</text>
+    
+    <text x="100" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">content</text>
+    <text x="250" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">text</text>
+    <text x="350" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">-</text>
+    <text x="450" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">否</text>
+    <text x="600" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">题目内容</text>
+    
+    <text x="100" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">factor_id</text>
+    <text x="250" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">bigint</text>
+    <text x="350" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">20</text>
+    <text x="450" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">否</text>
+    <text x="600" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">所属因子ID</text>
+    
+    <text x="100" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">created_at</text>
+    <text x="250" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">datetime</text>
+    <text x="350" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">-</text>
+    <text x="450" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">是</text>
+    <text x="600" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">创建时间</text>
+</svg> 

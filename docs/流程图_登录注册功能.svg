@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    @font-face {
+      font-family: "SimSun";
+      src: local("SimSun");
+    }
+    @font-face {
+      font-family: "Times New Roman";
+      src: local("Times New Roman");
+    }
+    .title {
+      font-family: "SimSun", serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .node-text {
+      font-family: "SimSun", serif;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .node {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 1.5;
+    }
+    .decision {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 1.5;
+    }
+    .start-end {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 1.5;
+    }
+    .arrow {
+      stroke: #000;
+      stroke-width: 1.5;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .arrow-text {
+      font-family: "SimSun", serif;
+      font-size: 11px;
+      text-anchor: middle;
+    }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="white" />
+  
+  <!-- 开始节点 -->
+  <ellipse cx="400" cy="60" rx="60" ry="25" class="start-end" />
+  <text x="400" y="65" class="node-text">开始</text>
+  
+  <!-- 用户选择节点 -->
+  <rect x="325" y="110" width="150" height="40" rx="5" ry="5" class="node" />
+  <text x="400" y="135" class="node-text">用户选择登录/注册</text>
+  
+  <!-- 判断登录还是注册 -->
+  <path d="M350,180 L450,180 L400,230 Z" class="decision" />
+  <text x="400" y="200" class="node-text">判断操作类型</text>
+  
+  <!-- 注册流程 -->
+  <!-- 输入注册信息 -->
+  <rect x="150" y="260" width="150" height="40" rx="5" ry="5" class="node" />
+  <text x="225" y="285" class="node-text">输入注册信息</text>
+  
+  <!-- 验证输入字段 -->
+  <path d="M175,330 L275,330 L225,380 Z" class="decision" />
+  <text x="225" y="350" class="node-text">验证输入</text>
+  
+  <!-- 发送注册请求 -->
+  <rect x="150" y="410" width="150" height="40" rx="5" ry="5" class="node" />
+  <text x="225" y="435" class="node-text">发送注册请求</text>
+  
+  <!-- 判断注册是否成功 -->
+  <path d="M175,480 L275,480 L225,530 Z" class="decision" />
+  <text x="225" y="500" class="node-text">注册成功？</text>
+  
+  <!-- 登录流程 -->
+  <!-- 输入登录信息 -->
+  <rect x="500" y="260" width="150" height="40" rx="5" ry="5" class="node" />
+  <text x="575" y="285" class="node-text">输入用户名密码</text>
+  
+  <!-- 验证输入字段 -->
+  <path d="M525,330 L625,330 L575,380 Z" class="decision" />
+  <text x="575" y="350" class="node-text">验证输入</text>
+  
+  <!-- 发送登录请求 -->
+  <rect x="500" y="410" width="150" height="40" rx="5" ry="5" class="node" />
+  <text x="575" y="435" class="node-text">发送登录请求</text>
+  
+  <!-- 判断登录是否成功 -->
+  <path d="M525,480 L625,480 L575,530 Z" class="decision" />
+  <text x="575" y="500" class="node-text">登录成功？</text>
+  
+  <!-- 登录成功 -->
+  <rect x="500" y="560" width="150" height="40" rx="5" ry="5" class="node" />
+  <text x="575" y="585" class="node-text">保存Token信息</text>
+  
+  <!-- 结束节点 -->
+  <ellipse cx="400" cy="560" rx="60" ry="25" class="start-end" />
+  <text x="400" y="565" class="node-text">结束</text>
+  
+  <!-- 连线 -->
+  <!-- 开始到选择 -->
+  <path d="M400,85 L400,110" class="arrow" />
+  
+  <!-- 选择到判断 -->
+  <path d="M400,150 L400,180" class="arrow" />
+  
+  <!-- 判断到注册 -->
+  <path d="M375,205 L225,260" class="arrow" />
+  <text x="300" y="225" class="arrow-text">注册</text>
+  
+  <!-- 判断到登录 -->
+  <path d="M425,205 L575,260" class="arrow" />
+  <text x="500" y="225" class="arrow-text">登录</text>
+  
+  <!-- 注册流程连线 -->
+  <path d="M225,300 L225,330" class="arrow" />
+  
+  <path d="M225,380 L225,410" class="arrow" />
+  <text x="240" y="395" class="arrow-text">有效</text>
+  
+  <path d="M195,350 L100,350 L100,280 L150,280" class="arrow" />
+  <text x="100" y="330" class="arrow-text">无效</text>
+  
+  <path d="M225,450 L225,480" class="arrow" />
+  
+  <path d="M225,530 L340,560" class="arrow" />
+  <text x="325" y="550" class="arrow-text">成功</text>
+  
+  <path d="M195,500 L75,500 L75,280 L150,280" class="arrow" />
+  <text x="75" y="470" class="arrow-text">失败</text>
+  
+  <!-- 登录流程连线 -->
+  <path d="M575,300 L575,330" class="arrow" />
+  
+  <path d="M575,380 L575,410" class="arrow" />
+  <text x="590" y="395" class="arrow-text">有效</text>
+  
+  <path d="M605,350 L700,350 L700,280 L650,280" class="arrow" />
+  <text x="700" y="330" class="arrow-text">无效</text>
+  
+  <path d="M575,450 L575,480" class="arrow" />
+  
+  <path d="M575,530 L575,560" class="arrow" />
+  <text x="590" y="545" class="arrow-text">成功</text>
+  
+  <path d="M605,500 L725,500 L725,280 L650,280" class="arrow" />
+  <text x="725" y="470" class="arrow-text">失败</text>
+  
+  <!-- 保存 Token 到结束 -->
+  <path d="M575,600 L575,625 L400,625 L400,585" class="arrow" />
+</svg> 

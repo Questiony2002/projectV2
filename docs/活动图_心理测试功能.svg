@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="650" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    @font-face { font-family: "SimSun"; src: local("SimSun"); }
+    @font-face { font-family: "Times New Roman"; src: local("Times New Roman"); }
+    .title { font-family: "SimSun"; font-size: 10.5px; font-weight: bold; text-anchor: middle; }
+    .node-text { font-family: "SimSun"; font-size: 10.5px; text-anchor: middle; }
+    .activity { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .decision { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .start-end { fill: #000; stroke: #000; stroke-width: 1.5; }
+    .note { fill: #fff; stroke: #000; stroke-width: 1; }
+    .arrow { stroke: #000; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .arrow-text { font-family: "SimSun"; font-size: 10.5px; text-anchor: middle; }
+    .swimlane { stroke: #000; stroke-width: 1; fill: none; stroke-dasharray: 5,3; }
+    .swimlane-text { font-family: "SimSun"; font-size: 10.5px; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="white" />
+  <!-- 泳道 -->
+  <line x1="266" y1="50" x2="266" y2="580" class="swimlane" />
+  <line x1="533" y1="50" x2="533" y2="580" class="swimlane" />
+  <text x="133" y="90" class="swimlane-text">用户</text>
+  <text x="400" y="90" class="swimlane-text">服务器</text>
+  <text x="666" y="90" class="swimlane-text">数据库</text>
+  <!-- 开始节点 -->
+  <circle cx="100" cy="110" r="10" class="start-end" />
+  <!-- 选择测试类型 -->
+  <rect x="35" y="140" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="100" y="165" class="node-text">选择测试类型</text>
+  <!-- 请求题目 -->
+  <rect x="270" y="140" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="335" y="165" class="node-text">请求题目</text>
+  <!-- 返回题目 -->
+  <rect x="535" y="140" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="600" y="165" class="node-text">查询题库</text>
+  <!-- 展示题目 -->
+  <rect x="35" y="210" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="100" y="235" class="node-text">展示题目</text>
+  <!-- 用户答题 -->
+  <rect x="35" y="280" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="100" y="305" class="node-text">用户答题</text>
+  <!-- 判断中断 -->
+  <path d="M60,350 L140,350 L100,400 Z" class="decision" />
+  <text x="100" y="370" class="node-text">中断？</text>
+  <!-- 保存进度 -->
+  <rect x="35" y="430" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="100" y="455" class="node-text">保存进度</text>
+  <!-- 提交答案 -->
+  <rect x="35" y="500" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="100" y="525" class="node-text">提交答案</text>
+  <!-- 服务端分析 -->
+  <rect x="270" y="500" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="335" y="525" class="node-text">分析结果</text>
+  <!-- 结果入库 -->
+  <rect x="535" y="500" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="600" y="525" class="node-text">保存结果</text>
+  <!-- 展示结果 -->
+  <rect x="35" y="570" width="130" height="40" rx="5" ry="5" class="activity" />
+  <text x="100" y="595" class="node-text">展示结果</text>
+  <!-- 结束节点 -->
+  <circle cx="100" cy="630" r="10" class="start-end" stroke="white" />
+  <circle cx="100" cy="630" r="8" fill="white" />
+  <!-- 连线 -->
+  <path d="M100,120 L100,140" class="arrow" />
+  <path d="M165,160 L270,160" class="arrow" />
+  <path d="M400,160 L535,160" class="arrow" />
+  <path d="M100,180 L100,210" class="arrow" />
+  <path d="M100,250 L100,280" class="arrow" />
+  <path d="M100,320 L100,350" class="arrow" />
+  <path d="M100,400 L100,430" class="arrow" />
+  <path d="M100,470 L100,500" class="arrow" />
+  <path d="M165,520 L270,520" class="arrow" />
+  <path d="M400,520 L535,520" class="arrow" />
+  <path d="M100,540 L100,570" class="arrow" />
+  <path d="M100,610 L100,630" class="arrow" />
+</svg> 

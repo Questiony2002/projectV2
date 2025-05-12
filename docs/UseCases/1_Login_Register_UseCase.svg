@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+
+  
+  <!-- 系统边界 -->
+  <rect x="180" y="50" width="360" height="300" fill="none" stroke="black" stroke-width="2" rx="10" ry="10"/>
+  
+  <!-- 参与者：用户 -->
+  <circle cx="100" cy="200" r="20" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="100" y1="220" x2="100" y2="270" stroke="black" stroke-width="2"/>
+  <line x1="70" y1="240" x2="130" y2="240" stroke="black" stroke-width="2"/>
+  <line x1="70" y1="300" x2="100" y2="270" stroke="black" stroke-width="2"/>
+  <line x1="130" y1="300" x2="100" y2="270" stroke="black" stroke-width="2"/>
+  <text x="100" y="330" font-family="SimSun" font-size="14" text-anchor="middle">用户</text>
+  
+  <!-- 用例 -->
+  <ellipse cx="360" cy="140" rx="120" ry="40" fill="white" stroke="black" stroke-width="2"/>
+  <text x="360" y="145" font-family="SimSun" font-size="14" text-anchor="middle">注册新用户</text>
+  
+  <ellipse cx="360" cy="240" rx="120" ry="40" fill="white" stroke="black" stroke-width="2"/>
+  <text x="360" y="245" font-family="SimSun" font-size="14" text-anchor="middle">用户登录</text>
+  
+  <!-- 连接线（带箭头） -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  <line x1="130" y1="190" x2="230" y2="140" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="130" y1="210" x2="230" y2="240" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg> 

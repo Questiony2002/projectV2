@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    @font-face { font-family: "SimSun"; src: local("SimSun"); }
+    @font-face { font-family: "Times New Roman"; src: local("Times New Roman"); }
+    .title { font-family: "SimSun", serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+    .class-title { font-family: "SimSun", serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+    .class-text { font-family: "SimSun", serif; font-size: 12px; text-anchor: start; }
+    .method-text { font-family: "SimSun", serif; font-size: 12px; text-anchor: start; }
+    .relationship-text { font-family: "SimSun", serif; font-size: 11px; text-anchor: middle; }
+    .class-box { fill: #ffffff; stroke: #000000; stroke-width: 1.5; }
+    .entity-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .controller-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .service-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .dto-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .other-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .adapter-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .fragment-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .line { stroke: #000000; stroke-width: 1.5; fill: none; }
+    .dashed-line { stroke: #000000; stroke-width: 1.5; fill: none; stroke-dasharray: 5,3; }
+    .arrow { fill: #000000; }
+    .diamond { fill: white; stroke: #000000; stroke-width: 1.5; }
+  </style>
+  <rect width="100%" height="100%" fill="white" />
+  <!-- Message实体类 -->
+  <rect x="50" y="60" width="200" height="160" rx="5" ry="5" class="entity-class" />
+  <line x1="50" y1="85" x2="250" y2="85" class="line" />
+  <line x1="50" y1="170" x2="250" y2="170" class="line" />
+  <text x="150" y="75" class="class-title">Message</text>
+  <text x="60" y="100" class="class-text">- id: long</text>
+  <text x="60" y="115" class="class-text">- content: String</text>
+  <text x="60" y="130" class="class-text">- timestamp: long</text>
+  <text x="60" y="145" class="class-text">- isAi: boolean</text>
+  <text x="60" y="185" class="method-text">+ getters/setters</text>
+  <text x="60" y="200" class="method-text">+ Message()</text>
+  <text x="60" y="215" class="method-text">+ Message(String, boolean)</text>
+  
+  <!-- ChatDbHelper类 -->
+  <rect x="300" y="60" width="220" height="120" rx="5" ry="5" class="service-class" />
+  <line x1="300" y1="85" x2="520" y2="85" class="line" />
+  <line x1="300" y1="140" x2="520" y2="140" class="line" />
+  <text x="410" y="75" class="class-title">ChatDbHelper</text>
+  <text x="310" y="100" class="class-text">- DATABASE_NAME: String</text>
+  <text x="310" y="115" class="class-text">- DATABASE_VERSION: int</text>
+  <text x="310" y="130" class="class-text">- ...</text>
+  <text x="310" y="155" class="method-text">+ insertMessage(Message): long</text>
+  <text x="310" y="170" class="method-text">+ getAllMessages(): List&lt;Message&gt;</text>
+  
+  <!-- AiChatFragment类 -->
+  <rect x="50" y="250" width="200" height="130" rx="5" ry="5" class="controller-class" />
+  <line x1="50" y1="275" x2="250" y2="275" class="line" />
+  <line x1="50" y1="320" x2="250" y2="320" class="line" />
+  <text x="150" y="265" class="class-title">AiChatFragment</text>
+  <text x="60" y="290" class="class-text">- dbHelper: ChatDbHelper</text>
+  <text x="60" y="305" class="class-text">- messageAdapter: MessageAdapter</text>
+  <text x="60" y="335" class="method-text">+ onCreateView(...): View</text>
+  <text x="60" y="350" class="method-text">+ onViewCreated(...): void</text>
+  <text x="60" y="365" class="method-text">+ sendMessage(): void</text>
+  
+  <!-- MessageAdapter类 -->
+  <rect x="300" y="250" width="220" height="110" rx="5" ry="5" class="adapter-class" />
+  <line x1="300" y1="275" x2="520" y2="275" class="line" />
+  <line x1="300" y1="300" x2="520" y2="300" class="line" />
+  <text x="410" y="265" class="class-title">MessageAdapter</text>
+  <text x="310" y="290" class="class-text">- messages: List&lt;Message&gt;</text>
+  <text x="310" y="315" class="method-text">+ addMessage(Message): void</text>
+  <text x="310" y="330" class="method-text">+ onBindViewHolder(...): void</text>
+  
+  <!-- 类之间的关系 - 调整了线条路径避免交叉 -->
+  <!-- AiChatFragment使用ChatDbHelper -->
+  <path d="M150,250 L150,230 L410,230 L410,180" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="220" y="220" class="relationship-text">Uses</text>
+  
+  <!-- AiChatFragment使用MessageAdapter -->
+  <path d="M250,315 L275,315 L275,315 L300,315" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="275" y="305" class="relationship-text">Uses</text>
+  
+  <!-- MessageAdapter依赖Message -->
+  <path d="M410,250 L410,230 L200,230 L200,220" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="250" y="220" class="relationship-text">Depends On</text>
+  
+  <!-- ChatDbHelper操作Message -->
+  <path d="M300,120 L250,120" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="275" y="110" class="relationship-text">Operates</text>
+  
+  <defs>
+    <marker id="uses" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#000"/>
+    </marker>
+  </defs>
+</svg> 

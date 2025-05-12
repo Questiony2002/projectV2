@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    @font-face { font-family: "SimSun"; src: local("SimSun"); }
+    @font-face { font-family: "Times New Roman"; src: local("Times New Roman"); }
+    .title { font-family: "SimSun"; font-size: 10.5px; font-weight: bold; text-anchor: middle; }
+    .node-text { font-family: "SimSun"; font-size: 10.5px; text-anchor: middle; }
+    .activity { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .decision { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .start-end { fill: #000; stroke: #000; stroke-width: 1.5; }
+    .note { fill: #fff; stroke: #000; stroke-width: 1; }
+    .arrow { stroke: #000; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .arrow-text { font-family: "SimSun"; font-size: 10.5px; text-anchor: middle; }
+    .swimlane { stroke: #000; stroke-width: 1; fill: none; stroke-dasharray: 5,3; }
+    .swimlane-text { font-family: "SimSun"; font-size: 10.5px; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="white" />
+  <!-- 泳道 -->
+  <line x1="266" y1="50" x2="266" y2="580" class="swimlane" />
+  <line x1="533" y1="50" x2="533" y2="580" class="swimlane" />
+  <text x="133" y="90" class="swimlane-text">用户</text>
+  <text x="400" y="90" class="swimlane-text">服务器</text>
+  <text x="666" y="90" class="swimlane-text">数据库</text>
+  <!-- 开始节点 -->
+  <circle cx="75" cy="110" r="10" class="start-end" />
+  <!-- 加载新闻 -->
+  <rect x="20" y="140" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="75" y="165" class="node-text">加载新闻</text>
+  <!-- 请求新闻API -->
+  <rect x="170" y="140" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="225" y="165" class="node-text">请求新闻API</text>
+  <!-- 查询数据库 -->
+  <rect x="570" y="140" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="625" y="165" class="node-text">查询新闻表</text>
+  <!-- 返回新闻数据 -->
+  <rect x="170" y="210" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="225" y="235" class="node-text">返回新闻数据</text>
+  <!-- 展示新闻 -->
+  <rect x="20" y="280" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="75" y="305" class="node-text">展示新闻</text>
+  <!-- 下拉刷新 -->
+  <rect x="20" y="350" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="75" y="375" class="node-text">下拉刷新</text>
+  <!-- 触发刷新API -->
+  <rect x="170" y="350" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="225" y="375" class="node-text">触发刷新API</text>
+  <!-- 启动爬虫 -->
+  <rect x="370" y="350" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="425" y="375" class="node-text">启动爬虫</text>
+  <!-- 爬取新闻 -->
+  <rect x="570" y="350" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="625" y="375" class="node-text">爬取新闻</text>
+  <!-- 存储新闻 -->
+  <rect x="570" y="420" width="110" height="40" rx="5" ry="5" class="activity" />
+  <text x="625" y="445" class="node-text">存储新闻</text>
+  <!-- 结束节点 -->
+  <circle cx="75" cy="530" r="10" class="start-end" stroke="white" />
+  <circle cx="75" cy="530" r="8" fill="white" />
+  <!-- 连线 -->
+  <path d="M75,120 L75,140" class="arrow" />
+  <path d="M130,160 L170,160" class="arrow" />
+  <path d="M280,160 L570,160" class="arrow" />
+  <path d="M680,180 L280,230" class="arrow" />
+  <path d="M170,230 L130,300" class="arrow" />
+  <path d="M75,320 L75,350" class="arrow" />
+  <path d="M130,370 L170,370" class="arrow" />
+  <path d="M280,370 L370,370" class="arrow" />
+  <path d="M480,370 L570,370" class="arrow" />
+  <path d="M625,390 L625,420" class="arrow" />
+  <path d="M75,390 L75,530" class="arrow" />
+</svg> 

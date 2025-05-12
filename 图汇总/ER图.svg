@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+
+  
+  <!-- 用户表 -->
+  <rect x="50" y="100" width="200" height="220" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="150" y="120" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">用户表(users)</text>
+  <line x1="50" y1="130" x2="250" y2="130" stroke="#333" stroke-width="1"/>
+  <text x="60" y="150" font-family="SimSun" font-size="12">id [PK]</text>
+  <text x="60" y="170" font-family="SimSun" font-size="12">username</text>
+  <text x="60" y="190" font-family="SimSun" font-size="12">password</text>
+  <text x="60" y="210" font-family="SimSun" font-size="12">email</text>
+  <text x="60" y="230" font-family="SimSun" font-size="12">phone</text>
+  <text x="60" y="250" font-family="SimSun" font-size="12">mbti_type</text>
+  <text x="60" y="270" font-family="SimSun" font-size="12">age</text>
+  <text x="60" y="290" font-family="SimSun" font-size="12">avatar_url</text>
+  <text x="60" y="310" font-family="SimSun" font-size="12">gender</text>
+  
+  <!-- MBTI题目表 -->
+  <rect x="350" y="100" width="200" height="140" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="450" y="120" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">MBTI题目表(mbti_questions)</text>
+  <line x1="350" y1="130" x2="550" y2="130" stroke="#333" stroke-width="1"/>
+  <text x="360" y="150" font-family="SimSun" font-size="12">id [PK]</text>
+  <text x="360" y="170" font-family="SimSun" font-size="12">question_text</text>
+  <text x="360" y="190" font-family="SimSun" font-size="12">option_a</text>
+  <text x="360" y="210" font-family="SimSun" font-size="12">option_b</text>
+  <text x="360" y="230" font-family="SimSun" font-size="12">dimension</text>
+  
+  <!-- MBTI类型表 -->
+  <rect x="350" y="300" width="200" height="160" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="450" y="320" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">MBTI类型表(mbti_types)</text>
+  <line x1="350" y1="330" x2="550" y2="330" stroke="#333" stroke-width="1"/>
+  <text x="360" y="350" font-family="SimSun" font-size="12">type_code [PK]</text>
+  <text x="360" y="370" font-family="SimSun" font-size="12">type_name</text>
+  <text x="360" y="390" font-family="SimSun" font-size="12">description</text>
+  <text x="360" y="410" font-family="SimSun" font-size="12">characteristics</text>
+  <text x="360" y="430" font-family="SimSun" font-size="12">strengths</text>
+  <text x="360" y="450" font-family="SimSun" font-size="12">weaknesses</text>
+  
+  <!-- 新闻表 -->
+  <rect x="50" y="400" width="200" height="140" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="150" y="420" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">新闻表(news)</text>
+  <line x1="50" y1="430" x2="250" y2="430" stroke="#333" stroke-width="1"/>
+  <text x="60" y="450" font-family="SimSun" font-size="12">id [PK]</text>
+  <text x="60" y="470" font-family="SimSun" font-size="12">created_at</text>
+  <text x="60" y="490" font-family="SimSun" font-size="12">publish_date</text>
+  <text x="60" y="510" font-family="SimSun" font-size="12">title</text>
+  <text x="60" y="530" font-family="SimSun" font-size="12">url</text>
+  
+  <!-- SCL结果表 -->
+  <rect x="650" y="100" width="200" height="180" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="750" y="120" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">SCL结果表(scl_results)</text>
+  <line x1="650" y1="130" x2="850" y2="130" stroke="#333" stroke-width="1"/>
+  <text x="660" y="150" font-family="SimSun" font-size="12">id [PK]</text>
+  <text x="660" y="170" font-family="SimSun" font-size="12">user_id [FK]</text>
+  <text x="660" y="190" font-family="SimSun" font-size="12">factor_scores</text>
+  <text x="660" y="210" font-family="SimSun" font-size="12">total_score</text>
+  <text x="660" y="230" font-family="SimSun" font-size="12">total_average</text>
+  <text x="660" y="250" font-family="SimSun" font-size="12">positive_items</text>
+  <text x="660" y="270" font-family="SimSun" font-size="12">positive_average</text>
+  
+  <!-- SCL因子表 -->
+  <rect x="650" y="300" width="200" height="100" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="750" y="320" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">SCL因子表(scl_factors)</text>
+  <line x1="650" y1="330" x2="850" y2="330" stroke="#333" stroke-width="1"/>
+  <text x="660" y="350" font-family="SimSun" font-size="12">id [PK]</text>
+  <text x="660" y="370" font-family="SimSun" font-size="12">factor_name</text>
+  <text x="660" y="390" font-family="SimSun" font-size="12">description</text>
+  
+  <!-- SCL问题表 -->
+  <rect x="650" y="450" width="200" height="120" fill="white" stroke="#333" stroke-width="1" rx="5" ry="5"/>
+  <text x="750" y="470" font-family="SimSun" font-size="14" text-anchor="middle" font-weight="bold">SCL问题表(scl_questions)</text>
+  <line x1="650" y1="480" x2="850" y2="480" stroke="#333" stroke-width="1"/>
+  <text x="660" y="500" font-family="SimSun" font-size="12">id [PK]</text>
+  <text x="660" y="520" font-family="SimSun" font-size="12">question_text</text>
+  <text x="660" y="540" font-family="SimSun" font-size="12">factor</text>
+  <text x="660" y="560" font-family="SimSun" font-size="12">factor_id [FK]</text>
+  
+  <!-- 关系线 - 重新设计路径避免穿过表 -->
+  
+  <!-- 用户与SCL90结果的关系 -->
+  <path d="M 250 150 L 300 150 Q 310 150 310 150 L 310 40 Q 310 40 320 40 L 630 40 Q 750 40 750 40 L 750 100" stroke="#333" stroke-width="1" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="745,95 750,100 755,95" fill="#333"/>
+  <text x="550" y="35" font-family="SimSun" font-size="12">1:N</text>
+  
+  <!-- 用户与MBTI类型的关系 -->
+  <path d="M 250 250 L 310 250 Q 310 250 310 260 L 310 350 L 350 350" stroke="#333" stroke-width="1" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="345,345 350,350 345,355" fill="#333"/>
+  <text x="310" y="270" font-family="SimSun" font-size="12">N:1</text>
+  
+  <!-- SCL因子与SCL问题的关系 -->
+  <path d="M 750 400 L 750 430 Q 750 440 750 450" stroke="#333" stroke-width="1" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="745,445 750,450 755,445" fill="#333"/>
+  <text x="760" y="430" font-family="SimSun" font-size="12">1:N</text>
+  
+</svg> 

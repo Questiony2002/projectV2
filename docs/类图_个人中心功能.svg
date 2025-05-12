@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    @font-face { font-family: "SimSun"; src: local("SimSun"); }
+    @font-face { font-family: "Times New Roman"; src: local("Times New Roman"); }
+    .title { font-family: "SimSun", serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+    .class-title { font-family: "SimSun", serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+    .class-text { font-family: "SimSun", serif; font-size: 12px; text-anchor: start; }
+    .method-text { font-family: "SimSun", serif; font-size: 12px; text-anchor: start; }
+    .relationship-text { font-family: "SimSun", serif; font-size: 11px; text-anchor: middle; }
+    .class-box { fill: #ffffff; stroke: #000000; stroke-width: 1.5; }
+    .entity-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .controller-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .service-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .dto-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .fragment-class { fill: #fff; stroke: #000; stroke-width: 1.5; }
+    .line { stroke: #000000; stroke-width: 1.5; fill: none; }
+    .dashed-line { stroke: #000000; stroke-width: 1.5; fill: none; stroke-dasharray: 5,3; }
+    .arrow { fill: #000000; }
+  </style>
+  <rect width="100%" height="100%" fill="white" />
+  <!-- User实体类 -->
+  <rect x="50" y="60" width="180" height="160" rx="5" ry="5" class="entity-class" />
+  <line x1="50" y1="85" x2="230" y2="85" class="line" />
+  <text x="140" y="75" class="class-title">User</text>
+  <text x="60" y="100" class="class-text">- id: Long</text>
+  <text x="60" y="115" class="class-text">- username: String</text>
+  <text x="60" y="130" class="class-text">- avatarUrl: String</text>
+  <text x="60" y="145" class="class-text">- bio: String</text>
+  <text x="60" y="160" class="class-text">- grade: String</text>
+  <text x="60" y="175" class="class-text">- gender: String</text>
+  <text x="60" y="190" class="class-text">- age: Integer</text>
+  
+  <!-- UserDTO类 -->
+  <rect x="50" y="240" width="180" height="100" rx="5" ry="5" class="dto-class" />
+  <line x1="50" y1="265" x2="230" y2="265" class="line" />
+  <text x="140" y="255" class="class-title">UserDTO</text>
+  <text x="60" y="280" class="class-text">- id: Long</text>
+  <text x="60" y="295" class="class-text">- username: String</text>
+  <text x="60" y="310" class="class-text">- avatarUrl: String</text>
+  
+  <!-- UserService接口 -->
+  <rect x="270" y="60" width="200" height="100" rx="5" ry="5" class="service-class" />
+  <line x1="270" y1="85" x2="470" y2="85" class="line" />
+  <text x="370" y="75" class="class-title">UserService</text>
+  <text x="280" y="100" class="method-text">+ getUserInfo(Long): UserDTO</text>
+  <text x="280" y="115" class="method-text">+ updateUserField(Long, Map): UserDTO</text>
+  <text x="280" y="130" class="method-text">+ updatePassword(Long, String, String): void</text>
+  
+  <!-- UserController类 -->
+  <rect x="270" y="180" width="200" height="100" rx="5" ry="5" class="controller-class" />
+  <line x1="270" y1="205" x2="470" y2="205" class="line" />
+  <text x="370" y="195" class="class-title">UserController</text>
+  <text x="280" y="220" class="method-text">+ getUserInfo(Long): UserDTO</text>
+  <text x="280" y="235" class="method-text">+ updateUserField(Long, Map): UserDTO</text>
+  <text x="280" y="250" class="method-text">+ updatePassword(Long, String, String): void</text>
+  
+  <!-- FileUploadController类 -->
+  <rect x="270" y="300" width="200" height="80" rx="5" ry="5" class="controller-class" />
+  <line x1="270" y1="325" x2="470" y2="325" class="line" />
+  <text x="370" y="315" class="class-title">FileUploadController</text>
+  <text x="280" y="340" class="method-text">+ uploadAvatar(MultipartFile, Long): Response</text>
+  <text x="280" y="355" class="method-text">+ getFile(String): ResponseEntity</text>
+  
+  <!-- ProfileFragment类 -->
+  <rect x="500" y="60" width="220" height="130" rx="5" ry="5" class="fragment-class" />
+  <line x1="500" y1="85" x2="720" y2="85" class="line" />
+  <text x="610" y="75" class="class-title">ProfileFragment</text>
+  <text x="510" y="100" class="method-text">+ loadUserInfo(): void</text>
+  <text x="510" y="115" class="method-text">+ updateUserField(String, String): void</text>
+  <text x="510" y="130" class="method-text">+ uploadImage(Uri): void</text>
+  <text x="510" y="145" class="method-text">+ updatePassword(String, String): void</text>
+  <text x="510" y="160" class="method-text">+ logout(): void</text>
+  <text x="510" y="175" class="method-text">+ initView(): void</text>
+  
+  <!-- 类之间的关系 - 调整连接线避免交叉 -->
+  <!-- Service操作实体 -->
+  <path d="M270,110 L240,110 L240,140 L230,140" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="245" y="100" class="relationship-text">Operates</text>
+  
+  <!-- Controller使用Service -->
+  <path d="M370,180 L370,160" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="380" y="170" class="relationship-text">Uses</text>
+  
+  <!-- FileUploadController使用Service -->
+  <path d="M370,300 L370,280 L470,280 L470,110" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="480" y="200" class="relationship-text">Uses</text>
+  
+  <!-- Fragment请求Controller -->
+  <path d="M550,190 L550,230 L470,230" stroke="#000" stroke-width="1.5" marker-end="url(#uses)" fill="none"/>
+  <text x="510" y="210" class="relationship-text">Requests</text>
+  
+  <defs>
+    <marker id="uses" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#000"/>
+    </marker>
+  </defs>
+</svg> 

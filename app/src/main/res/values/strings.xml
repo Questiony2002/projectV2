@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">小蓝猫</string>
+    
+    <!-- 登录页面 -->
+    <string name="login_title">欢迎使用小蓝猫</string>
+    <string name="login_subtitle">您的心理健康伴侣</string>
+    
+    <!-- 主要功能模块 -->
+    <string name="module_chat">AI心理咨询</string>
+    <string name="module_mbti">MBTI测试</string>
+    <string name="module_news">心理健康资讯</string>
+    <string name="module_profile">个人中心</string>
 </resources>

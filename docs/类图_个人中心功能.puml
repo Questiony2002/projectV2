@@ -1,0 +1,53 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontName "Times New Roman"
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+skinparam classFontName "Times New Roman"
+skinparam classAttributeFontName "Times New Roman"
+skinparam classStereotypeFontName "Times New Roman"
+
+class User {
+    - id: long
+    - username: String
+    - phoneNumber: String
+    - avatar: String
+    + getters/setters()
+}
+
+class UserProfileFragment {
+    - user: User
+    - profileViewModel: ProfileViewModel
+    + onCreateView(...): View
+    + updateProfile(): void
+    + loadUserData(): void
+}
+
+class ProfileViewModel {
+    - userRepository: UserRepository
+    - _userProfile: MutableLiveData<User>
+    + getUserProfile(): LiveData<User>
+    + updateUserProfile(User): void
+}
+
+class UserRepository {
+    - apiService: ApiService
+    - userDao: UserDao
+    + fetchUserProfile(): User
+    + updateUser(User): void
+}
+
+UserProfileFragment --> ProfileViewModel : uses
+ProfileViewModel --> UserRepository : uses
+UserRepository --> User : manages
+UserProfileFragment --> User : displays
+
+@enduml 
