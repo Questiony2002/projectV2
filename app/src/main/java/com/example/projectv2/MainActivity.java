@@ -12,6 +12,7 @@ import com.example.projectv2.fragment.AiChatFragment;
 import com.example.projectv2.fragment.MbtiFragment;
 import com.example.projectv2.fragment.NewsFragment;
 import com.example.projectv2.fragment.ProfileFragment;
+import com.example.projectv2.fragment.TestSelectionFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -35,16 +36,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
-        int itemId = item.getItemId();
-
-        if (itemId == R.id.navigation_ai_chat) {
-            fragment = AiChatFragment.newInstance();
-        } else if (itemId == R.id.navigation_mbti) {
-            fragment = MbtiFragment.newInstance();
-        } else if (itemId == R.id.navigation_news) {
-            fragment = NewsFragment.newInstance();
-        } else if (itemId == R.id.navigation_profile) {
-            fragment = ProfileFragment.newInstance();
+        switch (item.getItemId()) {
+            case R.id.navigation_ai_chat:
+                fragment = AiChatFragment.newInstance();
+                break;
+            case R.id.navigation_test:
+                fragment = TestSelectionFragment.newInstance();
+                break;
+            case R.id.navigation_news:
+                fragment = NewsFragment.newInstance();
+                break;
+            case R.id.navigation_profile:
+                fragment = ProfileFragment.newInstance();
+                break;
         }
         return loadFragment(fragment);
     }
