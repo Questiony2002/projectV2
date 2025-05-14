@@ -139,8 +139,10 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
             // 滚动到底部
             messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
 
-            // 显示AI正在输入的状态
+            // 显示AI正在输入的状态，同时插入到数据库
             Message aiMessage = new Message("AI思考中...", true);
+            // 先插入到数据库获取ID
+            dbHelper.insertMessage(aiMessage);
             messageAdapter.addMessage(aiMessage);
             messagesRecyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
             
@@ -219,8 +221,12 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                     mainHandler.post(() -> {
                         if (isAdded() && getContext() != null) {
                             Log.e(TAG, "Chat error", e);
-                            Toast.makeText(getContext(), "生成失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            aiMessage.setContent("生成失败: " + e.getMessage());
+                            String errorMessage = "生成失败: " + e.getMessage();
+                            Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                            
+                            // 更新消息内容和数据库
+                            aiMessage.setContent(errorMessage);
+                            dbHelper.updateMessage(aiMessage);
                             messageAdapter.notifyItemChanged(messageAdapter.getItemCount() - 1);
                             
                             // 重新启用发送按钮
@@ -293,8 +299,13 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
             .setTitle("清除聊天历史")
             .setMessage("是否要清除所有聊天历史？AI将不再记得之前的对话内容。")
             .setPositiveButton("确定", (dialog, which) -> {
-                // 清除历史记录
+                // 清除LLamaAPI内部历史记录
                 llamaApi.resetChatSession(true);
+                
+                // 清除数据库中的所有消息
+                int deletedCount = dbHelper.deleteAllMessages();
+                Log.d(TAG, "已从数据库中删除 " + deletedCount + " 条消息");
+                
                 // 更新UI
                 if (messageAdapter != null) {
                     messageAdapter.clearMessages();
