@@ -99,8 +99,9 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
     // 下载模型相关变量
     private OkHttpClient client;
     private boolean isDownloading = false;
-    private static final String MODEL_URL = "https://huggingface.co/qwqcoder/MiniCPM3-4B_Q4_K_M/resolve/main/MiniCPM3-4B-F16_Q4_k_m.gguf?download=true"; // 将这里替换为实际的模型URL
-    private static final String MODEL_FILENAME = "MiniCPM3-4B-F16_Q4_k_m.gguf";
+//    private static final String MODEL_URL = "https://huggingface.co/qwqcoder/MiniCPM3-4B_Q4_K_M/resolve/main/MiniCPM3-4B-F16_Q4_k_m.gguf?download=true"; // 将这里替换为实际的模型URL
+    private static final String MODEL_URL = "https://huggingface.co/qwqcoder/MiniCPM3-4B_Q4_K_M/resolve/main/Merged_Model-4B_Q4_K_M.gguf?download=true"; // 将这里替换为实际的模型URL
+    private static final String MODEL_FILENAME = "MiniCPM3-4B_Q4_k_m.gguf";
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final int PERMISSION_REQUEST = 2;

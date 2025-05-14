@@ -370,7 +370,7 @@ public class LLamaAPI {
                 int estimated_tokens = estimateTokenCount(userMessage);
                 Log.i(TAG, "用户消息估计token数: " + estimated_tokens);
                 
-                // 1. 检查KV缓存状态
+                // 检查KV缓存状态
                 int n_ctx = get_context_size(loadedState.context);
                 int n_ctx_used = get_kv_cache_used(loadedState.context);
                 Log.i(TAG, String.format("KV缓存状态: %d/%d (%.1f%%)", 

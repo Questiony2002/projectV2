@@ -128,7 +128,7 @@ public class AiChatFragment extends Fragment implements LLamaAPI.ModelStateListe
                 return;
             }
             
-            // 保存并显示用户消息
+            // 保存并显示用户消息到数据库
             Message userMessage = new Message(content, false);
             dbHelper.insertMessage(userMessage);
             messageAdapter.addMessage(userMessage);
