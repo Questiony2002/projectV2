@@ -4,6 +4,7 @@ import com.example.mental.dto.UserDTO;
 import com.example.mental.entity.User;
 import com.example.mental.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,13 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> register(@RequestBody User user) {
+    public ResponseEntity<?> register(@RequestBody User user) {
+        try {
         return ResponseEntity.ok(userService.register(user));
+        } catch (RuntimeException e) {
+            // 返回错误信息和400状态码
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
     }
 
     @PostMapping("/login")
