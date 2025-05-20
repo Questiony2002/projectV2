@@ -35,6 +35,7 @@ FetchContent_Declare(
 #load local llama.cpp
 # 下载并配置 llama.cpp
 #add_subdirectory(D:/study_space/java_project/tmp/llama.cpp build-llama)
+set(LLAMA_CURL OFF CACHE BOOL "Disable CURL support" FORCE)
 FetchContent_MakeAvailable(llama)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DGGML_USE_ACCELERATE=OFF -DGGML_USE_METAL=OFF -DGGML_USE_CUBLAS=OFF")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DGGML_USE_ACCELERATE=OFF -DGGML_USE_METAL=OFF -DGGML_USE_CUBLAS=OFF")
