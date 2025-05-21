@@ -21,7 +21,8 @@ public class NewsServiceImpl implements NewsService {
 
     private final NewsRepository newsRepository;
     private final ObjectMapper objectMapper;
-    private static final String PYTHON_SCRIPT_PATH = "src/main/python/news_crawler.py";
+    // private static final String PYTHON_SCRIPT_PATH = "src/main/python/news_crawler.py";
+    private static final String PYTHON_SCRIPT_PATH = "/app/news_crawler.py";
 
     @Override
     public List<News> getLatestNews() {
@@ -35,7 +36,7 @@ public class NewsServiceImpl implements NewsService {
             log.info("开始刷新新闻数据");
             
             // 执行Python脚本
-            Process process = Runtime.getRuntime().exec("python " + PYTHON_SCRIPT_PATH);
+            Process process = Runtime.getRuntime().exec("python3 " + PYTHON_SCRIPT_PATH);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "UTF-8"));
             StringBuilder output = new StringBuilder();
             String line;
