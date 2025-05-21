@@ -10,6 +10,8 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,6 +40,10 @@ import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.example.projectv2.LLamaAPI;
 import com.example.projectv2.LoginActivity;
 import com.example.projectv2.ModelDownloadService;
@@ -265,11 +271,33 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
 
         // 加载头像
         if (currentUser.getAvatarUrl() != null) {
+            String avatarUrl = ApiClient.BASE_URL.substring(0, ApiClient.BASE_URL.length() - 1) + currentUser.getAvatarUrl();
+            Log.d(TAG, "Loading avatar from URL: " + avatarUrl);
+            
             Glide.with(this)
-                    .load(ApiClient.BASE_URL.substring(0, ApiClient.BASE_URL.length() - 1) + currentUser.getAvatarUrl())
+                    .load(avatarUrl)
                     .placeholder(R.drawable.default_avatar)
                     .error(R.drawable.default_avatar)
+                    .listener(new RequestListener<Drawable>() {
+                        @Override
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model,
+                                                  Target<Drawable> target, boolean isFirstResource) {
+                            Log.e(TAG, "Avatar load failed for URL: " + avatarUrl + ", error: " + 
+                                  (e != null ? e.getMessage() : "unknown"));
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(Drawable resource, Object model,
+                                                     Target<Drawable> target, DataSource dataSource,
+                                                     boolean isFirstResource) {
+                            Log.d(TAG, "Avatar loaded successfully from: " + avatarUrl);
+                            return false;
+                        }
+                    })
                     .into(avatarImage);
+        } else {
+            avatarImage.setImageResource(R.drawable.default_avatar);
         }
     }
 
@@ -311,38 +339,29 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
 
     private void uploadImage(Uri imageUri) {
         try {
-            final String mimeType = requireContext().getContentResolver().getType(imageUri);
-            final String finalMimeType = mimeType != null ? mimeType : "image/*";
+            // 获取原始图片
+            Bitmap originalBitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), imageUri);
+            
+            // 压缩图片
+            Bitmap compressedBitmap = compressImage(originalBitmap);
+            
+            // 确保缓存目录存在
+            File cacheDir = requireContext().getCacheDir();
+            if (!cacheDir.exists()) {
+                cacheDir.mkdirs();
+            }
+            
+            // 将压缩后的图片转换为文件
+            File compressedFile = new File(cacheDir, "compressed_avatar.jpg");
+            FileOutputStream fos = new FileOutputStream(compressedFile);
+            compressedBitmap.compress(Bitmap.CompressFormat.JPEG, 80, fos);
+            fos.flush();
+            fos.close();
+            
+            Log.d(TAG, "压缩后的图片已保存到: " + compressedFile.getAbsolutePath() + ", 文件大小: " + compressedFile.length() + " 字节");
 
-            // 创建请求体
-            RequestBody requestFile = new RequestBody() {
-                @Override
-                public MediaType contentType() {
-                    return MediaType.parse(finalMimeType);
-                }
-
-                @Override
-                public void writeTo(okio.BufferedSink sink) throws IOException {
-                    InputStream inputStream = null;
-                    try {
-                        inputStream = requireContext().getContentResolver().openInputStream(imageUri);
-                        if (inputStream == null) {
-                            throw new IOException("无法打开文件流");
-                        }
-                        byte[] buffer = new byte[4096];
-                        int read;
-                        while ((read = inputStream.read(buffer)) != -1) {
-                            sink.write(buffer, 0, read);
-                        }
-                    } finally {
-                        if (inputStream != null) {
-                            inputStream.close();
-                        }
-                    }
-                }
-            };
-
-            // 创建 MultipartBody.Part
+            // 直接使用文件路径创建RequestBody
+            RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), compressedFile);
             MultipartBody.Part body = MultipartBody.Part.createFormData("file", "image.jpg", requestFile);
             RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(this.userId));
 
@@ -353,15 +372,31 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
                     if (isAdded() && getContext() != null) {
                         if (response.isSuccessful() && response.body() != null) {
                             String avatarUrl = response.body().get("url");
+                            Log.d(TAG, "头像上传成功，URL: " + avatarUrl);
+                            
+                            if (currentUser != null) {
+                                currentUser.setAvatarUrl(avatarUrl);
+                            }
+                            
                             // 更新UI显示新头像
+                            String fullUrl = ApiClient.BASE_URL.substring(0, ApiClient.BASE_URL.length() - 1) + avatarUrl;
+                            Log.d(TAG, "加载头像: " + fullUrl);
+                            
                             Glide.with(ProfileFragment.this)
-                                    .load(ApiClient.BASE_URL.substring(0, ApiClient.BASE_URL.length() - 1) + avatarUrl)
+                                    .load(fullUrl)
                                     .placeholder(R.drawable.default_avatar)
                                     .error(R.drawable.default_avatar)
                                     .into(avatarImage);
                             Toast.makeText(getContext(), "头像上传成功", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getContext(), "头像上传失败", Toast.LENGTH_SHORT).show();
+                            try {
+                                String errorBody = response.errorBody() != null ? response.errorBody().string() : "Unknown error";
+                                Log.e(TAG, "上传失败: HTTP " + response.code() + " - " + errorBody);
+                                Toast.makeText(getContext(), "头像上传失败: " + errorBody, Toast.LENGTH_SHORT).show();
+                            } catch (IOException e) {
+                                Log.e(TAG, "读取错误响应失败", e);
+                                Toast.makeText(getContext(), "头像上传失败", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 }
@@ -369,16 +404,53 @@ public class ProfileFragment extends Fragment implements LLamaAPI.ModelStateList
                 @Override
                 public void onFailure(Call<Map<String, String>> call, Throwable t) {
                     if (isAdded() && getContext() != null) {
+                        Log.e(TAG, "上传请求失败", t);
                         Toast.makeText(getContext(), "头像上传失败: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
+            // 清理资源
+            originalBitmap.recycle();
+            compressedBitmap.recycle();
+            // 不要立即删除文件，等上传完成后再删除
+            // compressedFile.delete();
+
         } catch (Exception e) {
+            Log.e(TAG, "处理图片失败", e);
             if (isAdded() && getContext() != null) {
                 Toast.makeText(getContext(), "文件处理失败: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private Bitmap compressImage(Bitmap image) {
+        if (image == null) return null;
+
+        // 计算压缩比例
+        int originalWidth = image.getWidth();
+        int originalHeight = image.getHeight();
+        
+        // 目标大小为800像素（可以根据需求调整）
+        float maxDimension = 800.0f;
+        
+        float scale = 1.0f;
+        if (originalWidth > originalHeight) {
+            if (originalWidth > maxDimension) {
+                scale = maxDimension / originalWidth;
+            }
+        } else {
+            if (originalHeight > maxDimension) {
+                scale = maxDimension / originalHeight;
+            }
+        }
+        
+        // 计算新的尺寸
+        int newWidth = Math.round(originalWidth * scale);
+        int newHeight = Math.round(originalHeight * scale);
+        
+        // 创建新的缩放后的位图
+        return Bitmap.createScaledBitmap(image, newWidth, newHeight, true);
     }
 
     private void showEditUsernameDialog() {
