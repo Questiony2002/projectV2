@@ -3,6 +3,8 @@
 ![项目状态](https://img.shields.io/badge/状态-已完成-brightgreen.svg)
 ![技术栈](https://img.shields.io/badge/技术栈-Android%20%7C%20Spring%20Boot%20%7C%20LLaMA-blue.svg)
 ![开发语言](https://img.shields.io/badge/语言-Java%20%7C%20C%2B%2B%20%7C%20Python-orange.svg)
+![数据库](https://img.shields.io/badge/ORM-MyBatis--Plus%203.5.3.1-red.svg)
+![架构迁移](https://img.shields.io/badge/迁移-JPA→MyBatis--Plus-yellow.svg)
 
 ## 📖 项目简介
 
@@ -66,16 +68,19 @@
 - **开发语言**：Java 8
 - **框架**：Spring Boot 2.7.0
 - **数据库**：MySQL 8.0 (mysql-connector-java)
-- **ORM**：Spring Data JPA + Hibernate
+- **ORM**：MyBatis-Plus 3.5.3.1 (替代了原来的JPA)
 - **安全认证**：Spring Security + JWT (jjwt 0.9.1)
+- **XML绑定**：JAXB API 2.3.1 + JAXB Runtime 2.3.1 (Java 11+兼容性)
 - **API架构**：RESTful API
 - **爬虫模块**：Python + Requests
 - **工具库**：Lombok (简化代码)
 - **依赖管理**：Maven
 - **核心依赖**：
   - spring-boot-starter-web
-  - spring-boot-starter-data-jpa
+  - mybatis-plus-boot-starter
   - spring-boot-starter-security
+  - javax.xml.bind:jaxb-api
+  - org.glassfish.jaxb:jaxb-runtime
 
 ### 其他技术
 - **版本控制**：Git
@@ -135,8 +140,8 @@ projectV2/
 │
 ├── server/                       # Spring Boot后端
 │   ├── src/main/
-│   │   ├── java/com/example/mental/
-│   │   │   ├── MentalHealthApplication.java # 应用启动类
+│   │   ├── java/com/example/bluecat/       # 包名已从mental更改为bluecat
+│   │   │   ├── BluecatApplication.java     # 应用启动类 (已从MentalHealthApplication重命名)
 │   │   │   ├── controller/                 # 控制器层
 │   │   │   │   ├── UserController.java     # 用户管理 (/api/user)
 │   │   │   │   ├── SCL90Controller.java    # SCL-90测试 (/api/scl90)
@@ -153,18 +158,22 @@ projectV2/
 │   │   │   │       ├── SCL90ServiceImpl.java
 │   │   │   │       ├── MbtiServiceImpl.java
 │   │   │   │       └── NewsServiceImpl.java
-│   │   │   ├── repository/                 # 数据访问层
-│   │   │   │   ├── UserRepository.java     # 用户数据访问
-│   │   │   │   ├── SCL90Repository.java    # SCL-90数据访问
-│   │   │   │   ├── MbtiQuestionRepository.java # MBTI题目访问
-│   │   │   │   ├── MbtiTypeRepository.java # MBTI类型访问
-│   │   │   │   └── NewsRepository.java     # 新闻数据访问
-│   │   │   ├── entity/                     # 实体类
-│   │   │   │   ├── User.java               # 用户实体
-│   │   │   │   ├── News.java               # 新闻实体
+│   │   │   ├── mapper/                     # MyBatis-Plus数据访问层
+│   │   │   │   ├── UserMapper.java         # 用户数据映射器
+│   │   │   │   ├── NewsMapper.java         # 新闻数据映射器
+│   │   │   │   ├── MbtiQuestionMapper.java # MBTI题目映射器
+│   │   │   │   ├── MbtiTypeMapper.java     # MBTI类型映射器
+│   │   │   │   ├── SCL90ResultMapper.java  # SCL-90结果映射器
+│   │   │   │   ├── SCLFactorMapper.java    # SCL因子映射器
+│   │   │   │   └── SCLQuestionMapper.java  # SCL题目映射器
+│   │   │   ├── entity/                     # 实体类 (带MyBatis-Plus注解)
+│   │   │   │   ├── User.java               # 用户实体 (@TableName, @TableId)
+│   │   │   │   ├── News.java               # 新闻实体 (@TableName, @TableId)
 │   │   │   │   ├── SCL90Result.java        # SCL-90结果实体
 │   │   │   │   ├── MbtiQuestion.java       # MBTI题目实体
-│   │   │   │   └── MbtiType.java           # MBTI类型实体
+│   │   │   │   ├── MbtiType.java           # MBTI类型实体
+│   │   │   │   ├── SCLFactor.java          # SCL因子实体
+│   │   │   │   └── SCLQuestion.java        # SCL题目实体
 │   │   │   ├── dto/                        # 数据传输对象
 │   │   │   │   ├── UserDTO.java            # 用户DTO
 │   │   │   │   ├── SCL90QuestionDTO.java   # SCL-90题目DTO
@@ -180,12 +189,52 @@ projectV2/
 │   │   ├── python/
 │   │   │   └── news_crawler.py            # 新闻爬虫脚本
 │   │   └── resources/
-│   │       └── application.yml            # 应用配置文件
+│   │       ├── application.yml            # 应用配置文件 (MyBatis-Plus配置)
+│   │       └── mapper/                    # MyBatis XML映射文件
+│   │           ├── UserMapper.xml          # 用户映射文件
+│   │           ├── NewsMapper.xml          # 新闻映射文件
+│   │           ├── MbtiQuestionMapper.xml  # MBTI题目映射文件
+│   │           ├── MbtiTypeMapper.xml      # MBTI类型映射文件
+│   │           ├── SCL90ResultMapper.xml   # SCL-90结果映射文件
+│   │           ├── SCLFactorMapper.xml     # SCL因子映射文件
+│   │           └── SCLQuestionMapper.xml   # SCL题目映射文件
 │   ├── uploads/                           # 用户上传文件目录
 │   │   └── avatars/                       # 用户头像存储
-│   └── pom.xml                            # Maven依赖配置
+│   └── pom.xml                            # Maven依赖配置 (含MyBatis-Plus和JAXB依赖)
 │
 └── README.md                     # 项目说明文档
+```
+
+## 🔄 架构迁移说明
+
+### MyBatis-Plus 迁移
+项目已从Spring Data JPA迁移至MyBatis-Plus，带来以下优势：
+- **更灵活的SQL控制**：支持复杂查询和原生SQL
+- **高性能**：减少N+1查询问题，优化数据库访问
+- **强大的代码生成**：自动生成基础CRUD操作
+- **丰富的查询包装器**：链式查询，类型安全
+- **分页插件**：内置分页支持
+
+### 技术栈升级
+```xml
+<!-- MyBatis-Plus核心依赖 -->
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.5.3.1</version>
+</dependency>
+
+<!-- JAXB支持 (Java 11+兼容性) -->
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.1</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+    <version>2.3.1</version>
+</dependency>
 ```
 
 ## 🚀 快速开始
@@ -236,6 +285,20 @@ spring:
     username: your_username
     password: your_password
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+# MyBatis-Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.bluecat.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 ```
 
 ### 🚀 快速部署
@@ -292,6 +355,25 @@ cd server
 mvn clean install
 mvn spring-boot:run
 ```
+
+**注意**：项目已迁移至MyBatis-Plus，请确保：
+- 数据库表结构与实体类匹配
+- Mapper XML文件路径正确配置
+- MyBatis-Plus依赖已正确导入
+
+### 📊 数据库表结构
+
+项目使用以下7个数据库表：
+
+| 表名 | 功能 | 主要字段 |
+|------|------|----------|
+| `users` | 用户信息 | id, username, password, email, avatar, mbti_type |
+| `news` | 新闻资讯 | id, title, summary, publish_time, source, category |
+| `mbti_questions` | MBTI测试题目 | id, question_text, options |
+| `mbti_types` | MBTI人格类型 | type_code, type_name, description |
+| `scl90_results` | SCL-90测试结果 | id, user_id, scores, test_date |
+| `scl_factors` | SCL-90因子定义 | id, factor_name, description |
+| `scl_questions` | SCL-90测试题目 | id, question_text, factor_id |
 
 ### 🔧 LLaMA模型配置
 
@@ -379,12 +461,20 @@ fetch(`${API_BASE_URL}/user/login`, {
 
 ## 🔮 未来规划
 
+### 功能扩展
 - [ ] 支持更多心理测试量表
 - [ ] 增加语音交互功能
 - [ ] 集成更多AI模型选择
 - [ ] 添加社区功能模块
 - [ ] 支持数据云端同步
 - [ ] 增加心理健康数据分析
+
+### 技术优化
+- [ ] 利用MyBatis-Plus代码生成器自动生成CRUD代码
+- [ ] 实现MyBatis-Plus分页插件优化大数据量查询
+- [ ] 添加MyBatis-Plus多租户插件支持
+- [ ] 集成MyBatis-Plus性能分析插件
+- [ ] 优化复杂查询的SQL性能
 
 ## 🤝 贡献指南
 
