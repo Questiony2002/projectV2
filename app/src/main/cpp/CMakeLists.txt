@@ -15,8 +15,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     llama
-    GIT_REPOSITORY https://github.com/ggml-org/llama.cpp
-    GIT_TAG b6e4ff69b8abd509647b531bd5b4e86950204f66  # 使用特定的提交哈希
+    GIT_REPOSITORY https://gitee.com/com_jx_zy/llama
 )
 
 # Also provides "common"
