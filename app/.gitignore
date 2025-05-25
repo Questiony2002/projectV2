@@ -3,10 +3,8 @@
 /.vscode/*
 /local.properties
 /.idea/*
-/server/*
 .DS_Store
 /build
-/server/*
 /captures
 .externalNativeBuild
 .cxx
@@ -16,3 +14,9 @@ app/src/main/assets/QwQ-0.5B.Q4_K_M.gguf
 app/src/main/cpp/simple-chat.cpp
 app/src/main/cpp/llama-android.cpp.bak
 .idea/deploymentTargetSelector.xml
+
+# Server build artifacts
+server/target/
+server/.mvn/
+server/mvnw
+server/mvnw.cmd
