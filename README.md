@@ -501,17 +501,17 @@ fetch(`${API_BASE_URL}/user/login`, {
 
 ## 📄 开源协议
 
-本项目采用 MIT 协议 - 查看 [LICENSE](LICENSE) 文件了解详情
+本项目采用 MIT 协议 
 
 ## 👥 开发团队
 
-- **项目开发人员**:  Questiony, 
+- **项目开发人员**:  Questiony, qwqcoder
 - **指导教师**: will Wei
 
 ## 📞 联系方式
 
-- **邮箱**: 2640289029@qq.com
-- **GitHub**: https://github.com/Questiony2002
+- **邮箱**: 2640289029@qq.com(Questiony), qwqcoder@163.com(qwqcoder)
+- **GitHub**: https://github.com/Questiony2002, https://github.com/qwqcoder
 
 ---
 
