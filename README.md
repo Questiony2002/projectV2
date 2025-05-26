@@ -141,7 +141,7 @@ projectV2/
 ├── server/                       # Spring Boot后端
 │   ├── src/main/
 │   │   ├── java/com/example/bluecat/       # 包名已从mental更改为bluecat
-│   │   │   ├── BluecatApplication.java     # 应用启动类 (已从MentalHealthApplication重命名)
+│   │   │   ├── BlueCatServerApplication.java     # 应用启动类 (已从MentalHealthApplication重命名)
 │   │   │   ├── controller/                 # 控制器层
 │   │   │   │   ├── UserController.java     # 用户管理 (/api/user)
 │   │   │   │   ├── SCL90Controller.java    # SCL-90测试 (/api/scl90)
@@ -241,10 +241,22 @@ projectV2/
 
 ### 🌐 在线服务
 
-**后端服务已部署至阿里云**
-- **服务器地址**: `http://39.106.39.255:8080`
-- **API基础路径**: `http://39.106.39.255:8080/api`
-- **数据库**: MySQL 8.0 (阿里云RDS)
+**后端服务部署说明**
+- **服务器地址**: `http://YOUR_SERVER_IP:8080`
+- **API基础路径**: `http://YOUR_SERVER_IP:8080/api`
+- **数据库**: MySQL 8.0
+
+### ⚙️ 部署前配置
+
+**重要提醒**: 在部署前，请确保修改以下配置文件中的IP地址和数据库信息：
+
+1. **Android端API地址**：
+   - 文件: `app/src/main/java/com/example/projectv2/api/ApiClient.java`
+   - 修改: `BASE_URL` 为您的服务器地址
+
+2. **服务端数据库配置**：
+   - 文件: `server/src/main/resources/application.yml`
+   - 修改: 数据库连接URL、用户名、密码
 
 ### 环境要求
 
@@ -259,10 +271,10 @@ projectV2/
 #### Android应用配置
 
 1. **修改API基础地址**：
-   在Android项目中，API地址已配置为阿里云服务器：
+   在Android项目中配置您的服务器地址：
    ```java
    // 在 ApiClient.java 中
-   public static final String BASE_URL = "http://39.106.39.255:8080/";
+   public static final String BASE_URL = "http://YOUR_SERVER_IP:8080/";
    ```
 
 2. **网络权限配置**：
@@ -277,11 +289,11 @@ projectV2/
 
 #### 数据库配置 (仅供参考)
 
-云端数据库配置示例 (`application.yml`)：
+数据库配置示例 (`application.yml`)：
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://39.106.39.255:3306/ai_chat_v2?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://YOUR_DB_HOST:3306/ai_chat_v2?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     username: your_username
     password: your_password
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -306,7 +318,10 @@ mybatis-plus:
 #### 1. Android应用构建
 
 1. 使用Android Studio打开项目根目录
-2. 确认API地址指向阿里云服务器 (`39.106.39.255:8080`)
+2. **重要**: 修改API地址配置
+   - 编辑 `app/src/main/java/com/example/projectv2/api/ApiClient.java`
+   - 将 `BASE_URL` 修改为您的服务器地址
+   - 示例: `http://YOUR_SERVER_IP:8080/`
 3. 等待Gradle同步完成
 4. 连接Android设备或启动模拟器
 5. 点击运行按钮构建并安装应用
@@ -314,25 +329,25 @@ mybatis-plus:
 #### 2. 服务器端 (已部署至阿里云)
 
 **✅ 后端服务状态**: 已部署运行
-- **部署平台**: 阿里云ECS
+- **部署平台**: 云服务器ECS
 - **服务端口**: 8080
-- **数据库**: 阿里云RDS MySQL
-- **访问地址**: http://39.106.39.255:8080
+- **数据库**: MySQL 8.0
+- **访问地址**: http://YOUR_SERVER_IP:8080
 
 **API接口测试**:
 ```bash
 # 测试用户注册
-curl -X POST http://39.106.39.255:8080/api/user/register \
+curl -X POST http://YOUR_SERVER_IP:8080/api/user/register \
   -H "Content-Type: application/json" \
   -d '{"username":"test","password":"123456","email":"test@example.com"}'
 
 # 测试用户登录
-curl -X POST http://39.106.39.255:8080/api/user/login \
+curl -X POST http://YOUR_SERVER_IP:8080/api/user/login \
   -H "Content-Type: application/json" \
   -d '{"username":"test","password":"123456"}'
 
 # 测试新闻接口
-curl -X GET http://39.106.39.255:8080/api/news
+curl -X GET http://YOUR_SERVER_IP:8080/api/news
 ```
 
 #### 3. 本地后端开发 (可选)
@@ -367,13 +382,13 @@ mvn spring-boot:run
 
 | 表名 | 功能 | 主要字段 |
 |------|------|----------|
-| `users` | 用户信息 | id, username, password, email, avatar, mbti_type |
-| `news` | 新闻资讯 | id, title, summary, publish_time, source, category |
-| `mbti_questions` | MBTI测试题目 | id, question_text, options |
-| `mbti_types` | MBTI人格类型 | type_code, type_name, description |
-| `scl90_results` | SCL-90测试结果 | id, user_id, scores, test_date |
+| `users` | 用户信息 | id, username, password, email, phone, avatar_url, mbti_type, age, bio, gender, grade, created_at, updated_at |
+| `news` | 新闻资讯 | id, title, url, publish_date, created_at |
+| `mbti_questions` | MBTI测试题目 | id, question_text, option_a, option_b, dimension |
+| `mbti_types` | MBTI人格类型 | type_code, type_name, description, characteristics, strengths, weaknesses |
+| `scl90_results` | SCL-90测试结果 | id, user_id, factor_scores, positive_average, positive_items, total_average, total_score |
 | `scl_factors` | SCL-90因子定义 | id, factor_name, description |
-| `scl_questions` | SCL-90测试题目 | id, question_text, factor_id |
+| `scl_questions` | SCL-90测试题目 | id, question_text, factor, factor_id |
 
 ### 🔧 LLaMA模型配置
 
@@ -418,7 +433,7 @@ mvn spring-boot:run
 #### API访问示例
 ```javascript
 // 前端请求示例
-const API_BASE_URL = 'http://39.106.39.255:8080/api';
+const API_BASE_URL = 'http://YOUR_SERVER_IP:8080/api';
 
 // 用户登录
 fetch(`${API_BASE_URL}/user/login`, {
@@ -490,13 +505,13 @@ fetch(`${API_BASE_URL}/user/login`, {
 
 ## 👥 开发团队
 
-- **项目负责人**: [Your Name]
-- **指导教师**: [Supervisor Name]
+- **项目开发人员**:  Questiony, 
+- **指导教师**: will Wei
 
 ## 📞 联系方式
 
-- **邮箱**: your.email@example.com
-- **GitHub**: [Your GitHub Profile]
+- **邮箱**: 2640289029@qq.com
+- **GitHub**: https://github.com/Questiony2002
 
 ---
 
