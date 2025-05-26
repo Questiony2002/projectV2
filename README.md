@@ -65,12 +65,12 @@
   - androidx.swiperefreshlayout:swiperefreshlayout:1.1.0
 
 ### 后端 (Spring Boot)
-- **开发语言**：Java 17
+- **开发语言**：Java 8
 - **框架**：Spring Boot 2.7.0
 - **数据库**：MySQL 8.0 (mysql-connector-java)
 - **ORM**：MyBatis-Plus 3.5.3.1 (替代了原来的JPA)
 - **安全认证**：Spring Security + JWT (jjwt 0.9.1)
-- **XML绑定**：JAXB API 2.3.1 + JAXB Runtime 2.3.1 (Java 17兼容性)
+- **XML绑定**：JAXB API 2.3.1 + JAXB Runtime 2.3.1 (Java 11+兼容性)
 - **API架构**：RESTful API
 - **爬虫模块**：Python + Requests
 - **工具库**：Lombok (简化代码)
@@ -224,7 +224,7 @@ projectV2/
     <version>3.5.3.1</version>
 </dependency>
 
-<!-- JAXB支持 (Java 17兼容性) -->
+<!-- JAXB支持 (Java 11+兼容性) -->
 <dependency>
     <groupId>javax.xml.bind</groupId>
     <artifactId>jaxb-api</artifactId>
@@ -260,7 +260,7 @@ projectV2/
 
 ### 环境要求
 
-- **JDK**: 17+ (服务器部署)
+- **JDK**: 1.8+ (服务器部署)
 - **Android Studio**: 4.0+ (本地开发)
 - **MySQL**: 8.0+ (已部署至阿里云)
 - **Python**: 3.7+ (用于爬虫模块)
