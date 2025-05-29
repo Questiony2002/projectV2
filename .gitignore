@@ -121,4 +121,37 @@ target/
 
 # Custom ignores
 /server/src/main/resources/application-prod.yml
-/server/src/main/resources/application-dev.yml 
+/server/src/main/resources/application-dev.yml
+
+# Local configuration files (do not upload)
+application-local.yml
+application-local.properties
+config.properties
+config.local.properties
+*.local.properties
+*.local.yml
+*.local.yaml
+database.properties
+db.properties
+secrets.properties
+env.properties
+.env
+.env.local
+.env.development
+.env.production
+
+# IDE specific local configurations
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+.idea/misc.xml
+.idea/runConfigurations/
+.idea/libraries/
+.idea/httpRequests/
+
+# Personal notes and temp files
+notes.txt
+todo.txt
+*.notes
+*.personal
+personal/ 
