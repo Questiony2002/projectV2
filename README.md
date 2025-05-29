@@ -68,7 +68,7 @@
 - **开发语言**：Java 8
 - **框架**：Spring Boot 2.7.0
 - **数据库**：MySQL 8.0 (mysql-connector-java)
-- **ORM**：MyBatis-Plus 3.5.3.1 (替代了原来的JPA)
+- **ORM**：MyBatis-Plus 3.5.3.1 
 - **安全认证**：Spring Security + JWT (jjwt 0.9.1)
 - **XML绑定**：JAXB API 2.3.1 + JAXB Runtime 2.3.1 (Java 11+兼容性)
 - **API架构**：RESTful API
