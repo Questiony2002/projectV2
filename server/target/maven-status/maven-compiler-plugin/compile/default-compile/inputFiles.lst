@@ -10,6 +10,7 @@ D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\b
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\controller\NewsController.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\impl\NewsServiceImpl.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\MbtiQuestion.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\SCL90FactorMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\security\JwtTokenUtil.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\SCL90Result.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\impl\SCL90ServiceImpl.java
@@ -17,12 +18,15 @@ D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\b
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\NewsService.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\MbtiTypeDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\SCL90ResultDTO.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\security\JwtAuthenticationFilter.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\NewsDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\MbtiMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\NewsMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\SCL90Mapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\controller\SCL90Controller.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\SCL90QuestionMapper.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\SCL90FactorDTO.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\SCL90Factor.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\User.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\MbtiQuestionDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\impl\UserServiceImpl.java
@@ -32,4 +36,5 @@ D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\b
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\SCL90QuestionDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\UserService.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\News.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\security\JwtAuthenticationEntryPoint.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\MbtiService.java

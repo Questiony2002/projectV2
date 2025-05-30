@@ -1,3 +1,4 @@
+com\example\bluecat\security\JwtAuthenticationEntryPoint.class
 com\example\bluecat\BlueCatServerApplication.class
 com\example\bluecat\mapper\NewsMapper.class
 com\example\bluecat\dto\SCL90QuestionDTO.class
@@ -16,6 +17,7 @@ com\example\bluecat\security\JwtTokenUtil.class
 com\example\bluecat\controller\NewsController.class
 com\example\bluecat\mapper\UserMapper.class
 com\example\bluecat\dto\MbtiQuestionDTO.class
+com\example\bluecat\security\JwtAuthenticationFilter.class
 com\example\bluecat\controller\UserController.class
 com\example\bluecat\entity\SCL90Question.class
 com\example\bluecat\mapper\MbtiMapper.class

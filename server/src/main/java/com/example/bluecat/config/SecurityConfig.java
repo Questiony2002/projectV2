@@ -1,5 +1,7 @@
 package com.example.bluecat.config;
 
+import com.example.bluecat.security.JwtAuthenticationEntryPoint;
+import com.example.bluecat.security.JwtAuthenticationFilter;
 import com.example.bluecat.security.JwtTokenUtil;
 import com.example.bluecat.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -26,6 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserServiceImpl userService;
     private final JwtTokenUtil jwtTokenUtil;
     private final PasswordEncoder passwordEncoder;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Bean
     @Override
@@ -43,18 +48,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .cors().and()
             .csrf().disable()
-            .authorizeRequests()
-            .antMatchers("/api/user/login", "/api/user/register").permitAll()
-            .antMatchers("/api/mbti/**").permitAll()
-            .antMatchers("/api/scl90/**").permitAll()
-            .antMatchers("/api/user/{userId}/**").permitAll()
-            .antMatchers("/api/upload/**").permitAll()
-            .antMatchers("/uploads/**").permitAll()
-            .antMatchers("/api/news/**").permitAll()
-            .anyRequest().authenticated()
+            .exceptionHandling()
+                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
             .and()
             .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+            .authorizeRequests()
+                // 公开接口 - 不需要JWT验证
+                .antMatchers("/api/user/login", "/api/user/register").permitAll()
+                .antMatchers("/uploads/**").permitAll()
+                .antMatchers("/static/**").permitAll()
+                
+                // 需要JWT验证的接口
+                .antMatchers("/api/user/{userId}/**").authenticated()
+                .antMatchers("/api/mbti/**").authenticated()
+                .antMatchers("/api/scl90/**").authenticated()
+                .antMatchers("/api/upload/**").authenticated()
+                .antMatchers("/api/news/**").authenticated()
+                
+                // 其他所有请求都需要认证
+                .anyRequest().authenticated();
+
+        // 添加JWT验证过滤器
+        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean
