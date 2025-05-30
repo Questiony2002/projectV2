@@ -1,0 +1,14 @@
+# Target labels
+ llama-populate
+# Source files and their labels
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/CMakeFiles/llama-populate
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/CMakeFiles/llama-populate.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/CMakeFiles/llama-populate-complete.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-build.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-configure.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-download.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-install.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-mkdir.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-patch.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-test.rule
+D:/Users/Wangzeyu/wzyDiplomaProject/projectV2/app/.cxx/Release/466a2e6h/arm64-v8a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-update.rule

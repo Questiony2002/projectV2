@@ -1,0 +1,170 @@
+[
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\xml_network_security_config.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\menu_bottom_nav_menu.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_logout.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_logout.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_send.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_send.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_scl_test.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_scl_test.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_dialog_change_password.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\dialog_change_password.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_mbti_test.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_mbti_test.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_fragment_mbti.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\fragment_mbti.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.projectv2.app-merged_res-24:/xml_network_security_config.xml.flat",
+        "source": "com.example.projectv2.app-main-26:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_fragment_test_selection.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\fragment_test_selection.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_circle_background.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\circle_background.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_default_avatar.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\default_avatar.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_telegram_button_background.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\telegram_button_background.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_activity_login.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_activity_main.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_blue_cat_logo.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\blue_cat_logo.png"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_splash_image.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\splash_image.png"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_telegram_input_background.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\telegram_input_background.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_activity_register.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_item_message.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\item_message.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_item_news.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\item_news.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_lock.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_lock.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_profile.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_profile.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_fragment_profile.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_fragment_ai_chat.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\fragment_ai_chat.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_activity_splash.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_message_bubble_user.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\message_bubble_user.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_fragment_scl90.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\fragment_scl90.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\layout_fragment_news.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\layout\\fragment_news.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_message_bubble.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\message_bubble.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_ai_chat.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_ai_chat.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_delete.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_message_bubble_ai.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\message_bubble_ai.xml"
+    },
+    {
+        "merged": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-merged_res-24:\\drawable_ic_news.xml.flat",
+        "source": "D:\\Applications\\AndroidStudio\\gradle\\daemon\\8.2\\com.example.projectv2.app-main-26:\\drawable\\ic_news.xml"
+    }
+]

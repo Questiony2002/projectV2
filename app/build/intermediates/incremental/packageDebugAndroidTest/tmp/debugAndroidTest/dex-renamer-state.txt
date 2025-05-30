@@ -1,0 +1,10 @@
+#Tue May 27 09:50:21 CST 2025
+base.2=D\:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\15\\classes.dex
+path.2=15/classes.dex
+base.1=D\:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.1=0/classes.dex
+base.0=D\:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

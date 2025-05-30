@@ -1,0 +1,100 @@
+{
+  "buildFiles": [
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-src\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-src\\common\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-src\\ggml\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-src\\ggml\\src\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-src\\ggml\\src\\ggml-cpu\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-src\\src\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Applications\\AndroidStudio\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Applications\\AndroidStudio\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "build_info::@52a65ce15c198c168a2a": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "build_info"
+    },
+    "common::@52a65ce15c198c168a2a": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "common",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\_deps\\llama-build\\common\\libcommon.a"
+    },
+    "ggml::@5dca07ab0e77b5af6ddc": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ggml",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-cpu.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-base.so"
+      ]
+    },
+    "ggml-base::@5dca07ab0e77b5af6ddc": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ggml-base",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-base.so",
+      "runtimeFiles": []
+    },
+    "ggml-cpu::@5dca07ab0e77b5af6ddc": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ggml-cpu",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-cpu.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-base.so",
+        "D:\\Applications\\AndroidStudio\\sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\14.0.6\\lib\\linux\\aarch64\\libomp.so"
+      ]
+    },
+    "llama::@af043c1aa1ae7f9d767d": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "llama",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libllama.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-cpu.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-base.so"
+      ]
+    },
+    "llama-android::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "llama-android",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\build\\intermediates\\cxx\\Release\\466a2e6h\\obj\\arm64-v8a\\libllama-android.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libllama.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-cpu.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\arm64-v8a\\bin\\libggml-base.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "D:\\Applications\\AndroidStudio\\sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "D:\\Applications\\AndroidStudio\\sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

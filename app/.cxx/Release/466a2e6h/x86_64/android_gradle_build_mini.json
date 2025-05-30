@@ -1,0 +1,83 @@
+{
+  "buildFiles": [
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-src\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-src\\common\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-src\\ggml\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-src\\ggml\\src\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-src\\ggml\\src\\ggml-cpu\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-src\\src\\CMakeLists.txt",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Applications\\AndroidStudio\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Applications\\AndroidStudio\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ggml-cpu::@5dca07ab0e77b5af6ddc": {
+      "artifactName": "ggml-cpu",
+      "abi": "x86_64",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-cpu.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-base.so",
+        "D:\\Applications\\AndroidStudio\\sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\14.0.6\\lib\\linux\\x86_64\\libomp.so"
+      ]
+    },
+    "common::@52a65ce15c198c168a2a": {
+      "artifactName": "common",
+      "abi": "x86_64",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\_deps\\llama-build\\common\\libcommon.a",
+      "runtimeFiles": []
+    },
+    "ggml::@5dca07ab0e77b5af6ddc": {
+      "artifactName": "ggml",
+      "abi": "x86_64",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-cpu.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-base.so"
+      ]
+    },
+    "ggml-base::@5dca07ab0e77b5af6ddc": {
+      "artifactName": "ggml-base",
+      "abi": "x86_64",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-base.so",
+      "runtimeFiles": []
+    },
+    "llama-android::@6890427a1f51a3e7e1df": {
+      "artifactName": "llama-android",
+      "abi": "x86_64",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\build\\intermediates\\cxx\\Release\\466a2e6h\\obj\\x86_64\\libllama-android.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libllama.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-cpu.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-base.so"
+      ]
+    },
+    "build_info::@52a65ce15c198c168a2a": {
+      "artifactName": "build_info",
+      "abi": "x86_64",
+      "runtimeFiles": []
+    },
+    "llama::@af043c1aa1ae7f9d767d": {
+      "artifactName": "llama",
+      "abi": "x86_64",
+      "output": "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libllama.so",
+      "runtimeFiles": [
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-cpu.so",
+        "D:\\Users\\Wangzeyu\\wzyDiplomaProject\\projectV2\\app\\.cxx\\Release\\466a2e6h\\x86_64\\bin\\libggml-base.so"
+      ]
+    }
+  }
+}
