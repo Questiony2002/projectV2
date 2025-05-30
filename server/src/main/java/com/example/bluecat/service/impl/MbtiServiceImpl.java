@@ -44,8 +44,7 @@ public class MbtiServiceImpl implements MbtiService {
         if (user == null) {
             throw new RuntimeException("用户不存在: " + userId);
         }
-        user.setMbtiType(mbtiType);
-        userMapper.updateById(user);
+        userMapper.updateMbtiType(userId, mbtiType);
     }
 
     private MbtiQuestionDTO convertToQuestionDTO(MbtiQuestion question) {

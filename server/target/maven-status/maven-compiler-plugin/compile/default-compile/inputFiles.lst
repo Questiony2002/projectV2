@@ -4,6 +4,7 @@ D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\b
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\UserMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\config\PasswordEncoderConfig.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\controller\MbtiController.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\SCL90Question.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\BlueCatServerApplication.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\impl\MbtiServiceImpl.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\controller\NewsController.java
@@ -16,10 +17,12 @@ D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\b
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\NewsService.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\MbtiTypeDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\SCL90ResultDTO.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\NewsDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\MbtiMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\NewsMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\SCL90Mapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\controller\SCL90Controller.java
+D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\mapper\SCL90QuestionMapper.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\entity\User.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\dto\MbtiQuestionDTO.java
 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\server\src\main\java\com\example\bluecat\service\impl\UserServiceImpl.java

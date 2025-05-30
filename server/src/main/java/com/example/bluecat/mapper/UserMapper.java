@@ -28,6 +28,9 @@ public interface UserMapper extends BaseMapper<User> {
     // 检查手机号是否存在
     int countByPhone(@Param("phone") String phone);
     
+    // 更新用户MBTI类型
+    void updateMbtiType(@Param("userId") Long userId, @Param("mbtiType") String mbtiType);
+    
     // 注意：以下方法由BaseMapper提供，无需重复定义
     // selectById(Long id) - 替代 findById
     // insert(User user) - 已提供

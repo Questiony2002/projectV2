@@ -1,6 +1,6 @@
 package com.example.bluecat.controller;
 
-import com.example.bluecat.entity.News;
+import com.example.bluecat.dto.NewsDTO;
 import com.example.bluecat.service.NewsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class NewsController {
     private final NewsService newsService;
 
     @GetMapping
-    public ResponseEntity<List<News>> getLatestNews() {
+    public ResponseEntity<List<NewsDTO>> getLatestNews() {
         return ResponseEntity.ok(newsService.getLatestNews());
     }
 

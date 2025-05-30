@@ -1,9 +1,9 @@
 package com.example.bluecat.service;
 
-import com.example.bluecat.entity.News;
+import com.example.bluecat.dto.NewsDTO;
 import java.util.List;
 
 public interface NewsService {
-    List<News> getLatestNews();
+    List<NewsDTO> getLatestNews();
     void refreshNews();
 } 

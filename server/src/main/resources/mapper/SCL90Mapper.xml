@@ -8,16 +8,15 @@
         <id property="id" column="id"/>
         <result property="userId" column="user_id"/>
         <result property="totalScore" column="total_score"/>
-        <result property="symptomLevel" column="symptom_level"/>
-        <result property="dimensions" column="dimensions"/>
-        <result property="suggestions" column="suggestions"/>
-        <result property="createdAt" column="created_at"/>
-        <result property="hasSymptoms" column="has_symptoms"/>
+        <result property="totalAverage" column="total_average"/>
+        <result property="positiveItems" column="positive_items"/>
+        <result property="positiveAverage" column="positive_average"/>
+        <result property="factorScores" column="factor_scores"/>
     </resultMap>
 
     <!-- 基础字段 -->
     <sql id="Base_Column_List">
-        id, user_id, total_score, symptom_level, dimensions, suggestions, created_at, has_symptoms
+        id, user_id, total_score, total_average, positive_items, positive_average, factor_scores
     </sql>
 
     <!-- 根据用户ID查找结果 -->
@@ -31,9 +30,9 @@
     <!-- 插入新结果 -->
     <insert id="insert" parameterType="SCL90Result" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO scl90_results (
-            user_id, total_score, symptom_level, dimensions, suggestions, created_at, has_symptoms
+            user_id, total_score, total_average, positive_items, positive_average, factor_scores
         ) VALUES (
-            #{userId}, #{totalScore}, #{symptomLevel}, #{dimensions}, #{suggestions}, NOW(), #{hasSymptoms}
+            #{userId}, #{totalScore}, #{totalAverage}, #{positiveItems}, #{positiveAverage}, #{factorScores}
         )
     </insert>
 
@@ -42,10 +41,10 @@
         UPDATE scl90_results 
         SET 
             total_score = #{totalScore},
-            symptom_level = #{symptomLevel},
-            dimensions = #{dimensions},
-            suggestions = #{suggestions},
-            has_symptoms = #{hasSymptoms}
+            total_average = #{totalAverage},
+            positive_items = #{positiveItems},
+            positive_average = #{positiveAverage},
+            factor_scores = #{factorScores}
         WHERE id = #{id}
     </update>
 
@@ -59,7 +58,7 @@
         SELECT 
         <include refid="Base_Column_List"/>
         FROM scl90_results 
-        ORDER BY created_at DESC
+        ORDER BY id DESC
     </select>
 
 </mapper> 

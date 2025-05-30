@@ -3,9 +3,12 @@ com\example\bluecat\mapper\NewsMapper.class
 com\example\bluecat\dto\SCL90QuestionDTO.class
 com\example\bluecat\config\SecurityConfig.class
 com\example\bluecat\entity\SCL90Result.class
+com\example\bluecat\mapper\SCL90QuestionMapper.class
 com\example\bluecat\service\NewsService.class
+com\example\bluecat\mapper\SCL90FactorMapper.class
 com\example\bluecat\service\SCL90Service.class
 com\example\bluecat\controller\MbtiController.class
+com\example\bluecat\entity\SCL90Factor.class
 com\example\bluecat\service\impl\NewsServiceImpl$1.class
 com\example\bluecat\mapper\SCL90Mapper.class
 com\example\bluecat\service\impl\MbtiServiceImpl.class
@@ -14,6 +17,7 @@ com\example\bluecat\controller\NewsController.class
 com\example\bluecat\mapper\UserMapper.class
 com\example\bluecat\dto\MbtiQuestionDTO.class
 com\example\bluecat\controller\UserController.class
+com\example\bluecat\entity\SCL90Question.class
 com\example\bluecat\mapper\MbtiMapper.class
 com\example\bluecat\config\FileUploadConfig.class
 com\example\bluecat\dto\MbtiTypeDTO.class
@@ -26,6 +30,8 @@ com\example\bluecat\entity\News.class
 com\example\bluecat\config\PasswordEncoderConfig.class
 com\example\bluecat\controller\FileUploadController.class
 com\example\bluecat\entity\MbtiType.class
+com\example\bluecat\dto\NewsDTO.class
+com\example\bluecat\dto\SCL90FactorDTO.class
 com\example\bluecat\dto\UserDTO.class
 com\example\bluecat\entity\User.class
 com\example\bluecat\service\UserService.class

@@ -6,7 +6,7 @@
     <!-- MBTI问题结果映射 -->
     <resultMap id="MbtiQuestionResultMap" type="MbtiQuestion">
         <id property="id" column="id"/>
-        <result property="question" column="question"/>
+        <result property="question" column="question_text"/>
         <result property="optionA" column="option_a"/>
         <result property="optionB" column="option_b"/>
         <result property="dimension" column="dimension"/>
@@ -14,46 +14,46 @@
 
     <!-- MBTI类型结果映射 -->
     <resultMap id="MbtiTypeResultMap" type="MbtiType">
-        <id property="type" column="type"/>
-        <result property="name" column="name"/>
+        <id property="type" column="type_code"/>
+        <result property="name" column="type_name"/>
         <result property="description" column="description"/>
         <result property="characteristics" column="characteristics"/>
-        <result property="suitable" column="suitable"/>
-        <result property="notSuitable" column="not_suitable"/>
+        <result property="suitable" column="strengths"/>
+        <result property="notSuitable" column="weaknesses"/>
     </resultMap>
 
     <!-- 查询所有MBTI问题 -->
     <select id="findAllQuestions" resultMap="MbtiQuestionResultMap">
-        SELECT id, question, option_a, option_b, dimension
+        SELECT id, question_text, option_a, option_b, dimension
         FROM mbti_questions 
         ORDER BY id
     </select>
 
     <!-- 根据ID查询MBTI问题 -->
     <select id="findQuestionById" resultMap="MbtiQuestionResultMap">
-        SELECT id, question, option_a, option_b, dimension
+        SELECT id, question_text, option_a, option_b, dimension
         FROM mbti_questions 
         WHERE id = #{id}
     </select>
 
     <!-- 查询所有MBTI类型 -->
     <select id="findAllTypes" resultMap="MbtiTypeResultMap">
-        SELECT type, name, description, characteristics, suitable, not_suitable
+        SELECT type_code, type_name, description, characteristics, strengths, weaknesses
         FROM mbti_types 
-        ORDER BY type
+        ORDER BY type_code
     </select>
 
     <!-- 根据类型代码查询MBTI类型 -->
     <select id="findTypeByCode" resultMap="MbtiTypeResultMap">
-        SELECT type, name, description, characteristics, suitable, not_suitable
+        SELECT type_code, type_name, description, characteristics, strengths, weaknesses
         FROM mbti_types 
-        WHERE type = #{type}
+        WHERE type_code = #{type}
     </select>
 
     <!-- 插入MBTI问题 -->
     <insert id="insertQuestion" parameterType="MbtiQuestion" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO mbti_questions (
-            question, option_a, option_b, dimension
+            question_text, option_a, option_b, dimension
         ) VALUES (
             #{question}, #{optionA}, #{optionB}, #{dimension}
         )
@@ -62,7 +62,7 @@
     <!-- 插入MBTI类型 -->
     <insert id="insertType" parameterType="MbtiType">
         INSERT INTO mbti_types (
-            type, name, description, characteristics, suitable, not_suitable
+            type_code, type_name, description, characteristics, strengths, weaknesses
         ) VALUES (
             #{type}, #{name}, #{description}, #{characteristics}, #{suitable}, #{notSuitable}
         )
@@ -72,12 +72,12 @@
     <update id="updateType" parameterType="MbtiType">
         UPDATE mbti_types 
         SET 
-            name = #{name},
+            type_name = #{name},
             description = #{description},
             characteristics = #{characteristics},
-            suitable = #{suitable},
-            not_suitable = #{notSuitable}
-        WHERE type = #{type}
+            strengths = #{suitable},
+            weaknesses = #{notSuitable}
+        WHERE type_code = #{type}
     </update>
 
 </mapper> 

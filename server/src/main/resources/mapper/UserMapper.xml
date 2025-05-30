@@ -93,6 +93,15 @@
         WHERE id = #{id}
     </update>
 
+    <!-- 更新用户MBTI类型 -->
+    <update id="updateMbtiType">
+        UPDATE users 
+        SET 
+            mbti_type = #{mbtiType},
+            updated_at = NOW()
+        WHERE id = #{userId}
+    </update>
+
     <!-- 根据ID删除用户 -->
     <delete id="deleteById">
         DELETE FROM users WHERE id = #{id}

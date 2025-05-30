@@ -1,5 +1,6 @@
 package com.example.bluecat.service.impl;
 
+import com.example.bluecat.dto.NewsDTO;
 import com.example.bluecat.entity.News;
 import com.example.bluecat.mapper.NewsMapper;
 import com.example.bluecat.service.NewsService;
@@ -14,6 +15,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -29,8 +31,11 @@ public class NewsServiceImpl implements NewsService {
     private static final String SERVER_PYTHON_SCRIPT_PATH = "/app/news_crawler.py";
 
     @Override
-    public List<News> getLatestNews() {
-        return newsMapper.findLatestNews(20);
+    public List<NewsDTO> getLatestNews() {
+        List<News> newsList = newsMapper.findLatestNews(20);
+        return newsList.stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -93,6 +98,18 @@ public class NewsServiceImpl implements NewsService {
         } catch (Exception e) {
             log.error("刷新新闻数据时发生错误", e);
         }
+    }
+    
+    /**
+     * 将News实体转换为NewsDTO
+     */
+    private NewsDTO convertToDTO(News news) {
+        NewsDTO dto = new NewsDTO();
+        dto.setId(news.getId());
+        dto.setTitle(news.getTitle());
+        dto.setUrl(news.getUrl());
+        dto.setPublishDate(news.getPublishDate());
+        return dto;
     }
     
     /**
