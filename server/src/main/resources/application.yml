@@ -10,7 +10,7 @@ spring:
   datasource:
     url: jdbc:mysql://39.106.39.255:3306/ai_chat_v2?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     username: root
-    password: Wx.74624
+    password: xxxxxx
     driver-class-name: com.mysql.cj.jdbc.Driver
   # MyBatis配置 - 将在mybatis配置中设置日志
   # 添加文件上传配置
