@@ -44,6 +44,7 @@ public class SCL90Fragment extends Fragment {
     private Map<Integer, Integer> answers = new HashMap<>(); // 问题ID -> 分数
     
     private Long userId;
+    private boolean isTestCompleted = false; // 新增：跟踪测试完成状态
     
     private LinearLayout questionLayout;
     private ScrollView resultLayout;
@@ -560,6 +561,7 @@ public class SCL90Fragment extends Fragment {
         // 隐藏问题布局，显示结果布局
         questionLayout.setVisibility(View.GONE);
         resultLayout.setVisibility(View.VISIBLE);
+        isTestCompleted = true; // 设置测试完成状态
         
         // 设置结果文本
         double totalAverage = (double) totalScore / 90;
@@ -642,6 +644,7 @@ public class SCL90Fragment extends Fragment {
     private void displaySavedResult(SCL90Result result) {
         questionLayout.setVisibility(View.GONE);
         resultLayout.setVisibility(View.VISIBLE);
+        isTestCompleted = true; // 设置测试完成状态
         
         // 设置结果文本，改为单行格式
         totalScoreText.setText(String.format("总分: %d | 总均分: %.2f", 
@@ -688,6 +691,23 @@ public class SCL90Fragment extends Fragment {
     }
     
     private void restartTest() {
+        if (isTestCompleted) {
+            // 已完成测试，显示确认对话框
+            new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                .setTitle("确认重新测试")
+                .setMessage("您已经完成了SCL-90测试，确定要重新开始测试吗？")
+                .setPositiveButton("确定", (dialog, which) -> {
+                    checkForPartialAnswers();
+                })
+                .setNegativeButton("取消", null)
+                .show();
+        } else {
+            // 未完成测试，直接检查部分答案
+            checkForPartialAnswers();
+        }
+    }
+    
+    private void checkForPartialAnswers() {
         // 检查本地是否有未完成的作答
         SharedPreferences prefs = requireActivity().getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String answersJson = prefs.getString(PREF_SCL90_ANSWERS + "_" + userId, "");
@@ -720,6 +740,7 @@ public class SCL90Fragment extends Fragment {
         // 重置测试
         currentQuestionIndex = 0;
         answers.clear();
+        isTestCompleted = false; // 重置测试完成状态
         questionLayout.setVisibility(View.VISIBLE);
         resultLayout.setVisibility(View.GONE);
         showQuestion(0);

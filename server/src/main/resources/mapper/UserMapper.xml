@@ -64,7 +64,7 @@
         SELECT COUNT(1) FROM users WHERE phone = #{phone}
     </select>
 
-    <!-- 注意：selectById 方法由BaseMapper提供，此映射已不需要 -->
+    <!-- 注意：selectById和updateById方法由BaseMapper提供，无需自定义 -->
 
     <!-- 插入新用户 -->
     <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
@@ -74,24 +74,6 @@
             #{username}, #{password}, #{email}, #{phone}, #{mbtiType}, #{grade}, #{gender}, #{age}, #{bio}, #{avatarUrl}, NOW(), NOW()
         )
     </insert>
-
-    <!-- 更新用户信息 -->
-    <update id="updateById" parameterType="User">
-        UPDATE users 
-        SET 
-            username = #{username},
-            password = #{password},
-            email = #{email},
-            phone = #{phone},
-            mbti_type = #{mbtiType},
-            grade = #{grade},
-            gender = #{gender},
-            age = #{age},
-            bio = #{bio},
-            avatar_url = #{avatarUrl},
-            updated_at = NOW()
-        WHERE id = #{id}
-    </update>
 
     <!-- 更新用户MBTI类型 -->
     <update id="updateMbtiType">
@@ -106,7 +88,5 @@
     <delete id="deleteById">
         DELETE FROM users WHERE id = #{id}
     </delete>
-
-    <!-- 注意：selectList 方法由BaseMapper提供，可替代 findAll -->
 
 </mapper> 

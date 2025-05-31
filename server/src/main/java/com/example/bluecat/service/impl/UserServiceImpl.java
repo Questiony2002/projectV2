@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -121,6 +122,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 throw new IllegalArgumentException("不支持的字段: " + field);
         }
 
+        // 设置更新时间
+        user.setUpdatedAt(LocalDateTime.now());
         userMapper.updateById(user);
         return convertToDTO(user, null);
     }
@@ -138,6 +141,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         }
 
         user.setPassword(passwordEncoder.encode(newPassword));
+        // 设置更新时间
+        user.setUpdatedAt(LocalDateTime.now());
         userMapper.updateById(user);
     }
 
