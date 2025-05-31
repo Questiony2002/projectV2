@@ -5,6 +5,7 @@ import com.example.projectv2.model.MbtiType;
 import com.example.projectv2.model.User;
 import com.example.projectv2.model.SCL90Result;
 import com.example.projectv2.model.SCL90Question;
+import com.example.projectv2.model.SCL90Factor;
 
 import java.util.List;
 import java.util.Map;
@@ -65,4 +66,14 @@ public interface UserApi {
     
     @DELETE("api/scl90/results/{userId}")
     Call<Void> deleteSCL90Result(@Path("userId") Long userId);
+    
+    // SCL-90因子相关接口
+    @GET("api/scl90/factors")
+    Call<List<SCL90Factor>> getSCL90Factors();
+    
+    @GET("api/scl90/factors/{id}")
+    Call<SCL90Factor> getSCL90FactorById(@Path("id") Integer id);
+    
+    @GET("api/scl90/factors/name/{factorName}")
+    Call<SCL90Factor> getSCL90FactorByName(@Path("factorName") String factorName);
 } 

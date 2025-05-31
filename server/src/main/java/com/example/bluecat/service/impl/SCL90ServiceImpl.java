@@ -12,7 +12,7 @@ import com.example.bluecat.mapper.SCL90QuestionMapper;
 import com.example.bluecat.service.SCL90Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,19 +21,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class SCL90ServiceImpl implements SCL90Service {
 
-    @Autowired
-    private SCL90Mapper scl90Mapper;
-    
-    @Autowired
-    private SCL90QuestionMapper scl90QuestionMapper;
-    
-    @Autowired
-    private SCL90FactorMapper scl90FactorMapper;
-    
-    @Autowired
-    private ObjectMapper objectMapper;
+    private final SCL90Mapper scl90Mapper;
+    private final SCL90QuestionMapper scl90QuestionMapper;
+    private final SCL90FactorMapper scl90FactorMapper;
+    private final ObjectMapper objectMapper;
 
     @Override
     @Transactional
@@ -118,19 +112,25 @@ public class SCL90ServiceImpl implements SCL90Service {
         return factor != null ? convertToFactorDTO(factor) : null;
     }
     
+    /**
+     * 手动映射：SCL90Question Entity -> SCL90QuestionDTO
+     */
     private SCL90QuestionDTO convertToQuestionDTO(SCL90Question question) {
-        return new SCL90QuestionDTO(
-                question.getId(),
-                question.getQuestionText(),
-                question.getFactor()
-        );
+        SCL90QuestionDTO dto = new SCL90QuestionDTO();
+        dto.setId(question.getId());
+        dto.setQuestionText(question.getQuestionText());
+        dto.setFactor(question.getFactor());
+        return dto;
     }
     
+    /**
+     * 手动映射：SCL90Factor Entity -> SCL90FactorDTO
+     */
     private SCL90FactorDTO convertToFactorDTO(SCL90Factor factor) {
-        return new SCL90FactorDTO(
-                factor.getId(),
-                factor.getFactorName(),
-                factor.getDescription()
-        );
+        SCL90FactorDTO dto = new SCL90FactorDTO();
+        dto.setId(factor.getId());
+        dto.setFactorName(factor.getFactorName());
+        dto.setDescription(factor.getDescription());
+        return dto;
     }
 } 
