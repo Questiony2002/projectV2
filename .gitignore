@@ -56,4 +56,6 @@ Thumbs.db
 server/src/main/resources/application.yml
 server/src/main/resources/application.properties
 server/src/main/resources/application-*.yml
-server/src/main/resources/application-*.properties 
+server/src/main/resources/application-*.properties
+
+app/build/

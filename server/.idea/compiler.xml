@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mental-health-server" />
+        <module name="blue-cat-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blue-cat-server" options="-parameters" />
       <module name="mental-health-server" options="-parameters" />
     </option>
   </component>

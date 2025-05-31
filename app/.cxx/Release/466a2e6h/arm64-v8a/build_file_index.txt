@@ -1,7 +1,0 @@
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\arm64-v8a\_deps\llama-src\CMakeLists.txt
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\arm64-v8a\_deps\llama-src\common\CMakeLists.txt
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\arm64-v8a\_deps\llama-src\ggml\CMakeLists.txt
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\arm64-v8a\_deps\llama-src\ggml\src\CMakeLists.txt
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\arm64-v8a\_deps\llama-src\ggml\src\ggml-cpu\CMakeLists.txt
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\arm64-v8a\_deps\llama-src\src\CMakeLists.txt
-D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\src\main\cpp\CMakeLists.txt

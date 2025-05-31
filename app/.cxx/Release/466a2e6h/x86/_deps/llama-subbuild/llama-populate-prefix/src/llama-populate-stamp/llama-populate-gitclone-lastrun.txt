@@ -1,3 +1,0 @@
-repository='https://github.com/ggml-org/llama.cpp'
-module=''
-tag='origin'

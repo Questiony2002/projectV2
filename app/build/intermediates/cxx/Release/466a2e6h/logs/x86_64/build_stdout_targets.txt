@@ -1,2 +1,0 @@
-ninja: Entering directory `D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\.cxx\Release\466a2e6h\x86_64'
-ninja: no work to do.

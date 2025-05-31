@@ -1,4 +1,0 @@
-com.example.projectv2.test.app-androidTest-0 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\build\generated\res\resValues\androidTest\debug
-com.example.projectv2.test.app-mergeDebugAndroidTestResources-1 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.projectv2.test.app-mergeDebugAndroidTestResources-2 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.projectv2.test.app-merged_res-3 D:\Users\Wangzeyu\wzyDiplomaProject\projectV2\app\build\intermediates\merged_res\debugAndroidTest
