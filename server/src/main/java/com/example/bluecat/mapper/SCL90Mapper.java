@@ -24,20 +24,6 @@ public interface SCL90Mapper extends BaseMapper<SCL90Result> {
     SCL90Result findByUserId(@Param("userId") Long userId);
     
     /**
-     * 插入新结果
-     * @param result SCL90测试结果对象
-     * @return 受影响的行数
-     */
-    int insert(SCL90Result result);
-    
-    /**
-     * 更新结果
-     * @param result SCL90测试结果对象
-     * @return 受影响的行数
-     */
-    int updateById(SCL90Result result);
-    
-    /**
      * 根据用户ID删除结果
      * @param userId 用户ID
      * @return 受影响的行数
@@ -52,7 +38,6 @@ public interface SCL90Mapper extends BaseMapper<SCL90Result> {
     
     // ==================== BaseMapper提供的方法说明 ====================
     // 以下方法由MyBatis-Plus的BaseMapper自动提供，无需手动实现
-    // 注意：上面的insert和updateById方法与BaseMapper重复，建议使用BaseMapper提供的版本
     
     /**
      * 根据ID查询SCL90测试结果
@@ -65,7 +50,6 @@ public interface SCL90Mapper extends BaseMapper<SCL90Result> {
     /**
      * 插入新的SCL90测试结果（BaseMapper版本）
      * 使用方法：scl90Mapper.insert(result)
-     * 推荐使用此方法替代上面的自定义insert方法
      * @param entity SCL90测试结果实体对象
      * @return 影响的行数
      */
@@ -74,7 +58,6 @@ public interface SCL90Mapper extends BaseMapper<SCL90Result> {
     /**
      * 根据ID更新SCL90测试结果（BaseMapper版本）
      * 使用方法：scl90Mapper.updateById(result)
-     * 推荐使用此方法替代上面的自定义updateById方法
      * @param entity SCL90测试结果实体对象
      * @return 影响的行数
      */

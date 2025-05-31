@@ -50,4 +50,10 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.temp 
+*.temp
+
+# Configuration files with sensitive information
+server/src/main/resources/application.yml
+server/src/main/resources/application.properties
+server/src/main/resources/application-*.yml
+server/src/main/resources/application-*.properties 

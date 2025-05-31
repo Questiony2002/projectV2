@@ -27,27 +27,6 @@
         WHERE user_id = #{userId}
     </select>
 
-    <!-- 插入新结果 -->
-    <insert id="insert" parameterType="SCL90Result" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO scl90_results (
-            user_id, total_score, total_average, positive_items, positive_average, factor_scores
-        ) VALUES (
-            #{userId}, #{totalScore}, #{totalAverage}, #{positiveItems}, #{positiveAverage}, #{factorScores}
-        )
-    </insert>
-
-    <!-- 更新结果 -->
-    <update id="updateById" parameterType="SCL90Result">
-        UPDATE scl90_results 
-        SET 
-            total_score = #{totalScore},
-            total_average = #{totalAverage},
-            positive_items = #{positiveItems},
-            positive_average = #{positiveAverage},
-            factor_scores = #{factorScores}
-        WHERE id = #{id}
-    </update>
-
     <!-- 根据用户ID删除结果 -->
     <delete id="deleteByUserId">
         DELETE FROM scl90_results WHERE user_id = #{userId}
